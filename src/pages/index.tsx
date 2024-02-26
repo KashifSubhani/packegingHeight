@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/home/testimonials";
 import { ContentSection } from "@/components/shared/contentSection";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
-import { Navbar } from "@/components/shared/navbar/navbar";
+// import { Navbar } from "@/components/shared/navbar/navbar";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 
@@ -22,7 +22,7 @@ const Index = ({data}:any) => {
       >
         Request for call
       </button>
-      <Navbar data={data} />
+      {/* <Navbar data={data} /> */}
       <Header />
       <PackagingStyle list={data} />
       <PremiumFinishes />
