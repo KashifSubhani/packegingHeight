@@ -26,7 +26,11 @@ const DetailsHeader = (props: any) => {
           {props.product &&
             props.product.images &&
             props.product.images.length > 0 && (
-              <ImagesCarousel images={props.product.images} />
+              <ImagesCarousel
+                images={props.product.images.filter(
+                  (_d: any, ind: any) => ind < 4
+                )}
+              />
             )}
         </div>
         <div
