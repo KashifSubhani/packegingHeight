@@ -1,0 +1,53 @@
+import { Container, useMediaQuery } from "@mui/material";
+import { useRouter } from "next/router";
+import { getImg, renderDescription } from "@/services/descriptionService";
+export const PackagingStyle = (props: any) => {
+  const matches = useMediaQuery("(max-width:450px)");
+  const router = useRouter();
+
+  return (
+    <Container maxWidth={"lg"}>
+      <div className="pb-10 pt-5">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
+          Custom Pakaging Style
+        </h1>
+        <p className="text-center mt-2 leading-5 opacity-70 text-sm">
+          Choose a packaging style for your custom boxes, start designing with
+          us, and get your
+          <br className="hidden sm:block" />
+          boxes with the most advanced printing techniques
+        </p>
+        {props.list && props.list.length > 0 && (
+          <div
+            className={`grid grid-cols-12 mt-14 gap-y-4 md:gap-y-0 ${
+              matches ? "" : "gap-x-4"
+            }`}
+          >
+            {props.list.map((data: any, ind: any) => (
+              <div
+                key={ind + 1}
+                onClick={() => router.push(`/category/${data.url}`)}
+                className={`cursor-pointer ${
+                  matches ? "col-span-12" : "col-span-6 md:col-span-3"
+                }`}
+              >
+                <div
+                  className="p-3 h-80 md:h-60 lg:h-80 rounded-md flex items-center justify-center"
+                  style={{ background: "#F1F8F1" }}
+                >
+                  <img src={getImg(data.image)} alt="cardImg" />
+                </div>
+                <h2 className="fw_600 text-lg md:text-base lg:text-lg mt-3">
+                  {data.name}
+                </h2>
+                <p className="text-sm md:text-xs lg:text-sm mt-2 big_three_lines_elipsis">
+                  {renderDescription(data.description)}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </Container>
+  );
+};
