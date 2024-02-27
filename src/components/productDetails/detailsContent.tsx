@@ -17,8 +17,8 @@ export const DetailsContent = (props: any) => {
         </div>
 
         <h1 className="text-3xl fw_600 mt-8">Description</h1>
-        <p className="mt-10 text-sm">
-          {renderDescription(props.product.description)}
+        <p className="mt-10 text-sm md:text-base">
+          {renderDescription(props.product.details)}
         </p>
 {/*         <ul className="mt-10 flex flex-col gap-y-2">
           <li className="text-xs flex items-center gap-x-2">

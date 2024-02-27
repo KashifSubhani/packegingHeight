@@ -26,13 +26,13 @@ export const ImagesCarousel = (props: any) => {
             }`}
             onClick={() => setMyImg(img)}
           >
-            <img src={getImg(img)} alt="carousel_img" />
+            <img src={getImg(img).url} alt={getImg(img).alt} />
           </div>
         ))}
       </div>
       <div
         className="h-full w-full rounded-md bg-center bg-cover"
-        style={{ backgroundImage: `url(${getImg(myImg)})` }}
+        style={{ backgroundImage: `url(${getImg(myImg).url})` }}
       ></div>
     </div>
   );

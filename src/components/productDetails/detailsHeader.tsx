@@ -2,7 +2,6 @@ import { Container, useMediaQuery } from "@mui/material";
 import React from "react";
 import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
-import { renderDescription } from "@/services/descriptionService";
 
 const DetailsHeader = (props: any) => {
   const matches = useMediaQuery("(max-width:1100px)");
@@ -20,7 +19,7 @@ const DetailsHeader = (props: any) => {
               {props.product.name}
             </h1>
             <p className="text-sm mb-4 mt-3 three_lines_elipsis">
-              {renderDescription(props.product.description)}
+              {props.product.shortDescription}
             </p>
           </div>
           {props.product &&
@@ -40,14 +39,14 @@ const DetailsHeader = (props: any) => {
         >
           <div className="w-full">
             <div className="hidden md:block">
-              <h1 className="text-3xl lg:text-4xl fw_600">
+              <h1 className="text-3xl lg:text-4xl fw_600 mb-3">
                 {props.product.name}
               </h1>
-              <p className="text-sm mb-4 mt-3 big_three_lines_elipsis">
-                {renderDescription(props.product.description)}
+              <p className="text-sm big_three_lines_elipsis">
+                {props.product.shortDescription}
               </p>
             </div>
-            <h2 className="text-xl fw_600 mt-5 text-center md:text-left">
+            <h2 className="text-xl fw_600 mt-8 text-center md:text-left">
               Get Custom Qoute
             </h2>
             <QouteForm3 />

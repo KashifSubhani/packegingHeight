@@ -10,8 +10,9 @@ import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
+import { homePageContentSectionData } from "@/demoData/homePageContentSectionData";
 
-const Index = ({data, faqs}:any) => {
+const Index = ({ data, faqs }: any) => {
   const router = useRouter();
   return (
     <div className="relative p-0 m-0 w-full h-full">
@@ -28,7 +29,7 @@ const Index = ({data, faqs}:any) => {
       <PremiumFinishes />
       <HowItWorks />
       <GetQoute />
-      <ContentSection />
+      <ContentSection contentData={homePageContentSectionData} />
       <Faq faqs={faqs} />
       <Testimonials />
       <Footer />
