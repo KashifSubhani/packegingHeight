@@ -17,8 +17,7 @@ export const homePageContentSectionData = {
     },
   ],
   contentImage: {
-    realIm:
-      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+    realImg: "https://u4d2z7k9.rocketcdn.me/wp-content/uploads/2022/07/Untitled-1024-%C3%97-683px-56.jpg",
     alt: "homePageImg",
   },
 };

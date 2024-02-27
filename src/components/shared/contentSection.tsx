@@ -37,7 +37,7 @@ export const ContentSection = (props: any) => {
             </div>
           </div>
           <div
-            className={`mx-auto flex ${
+            className={`mx-auto flex rounded-md overflow-hidden ${
               matches2 ? "h-full" : "h-80 lg:h-96"
             } md:mx-0 `}
             style={{
@@ -45,11 +45,21 @@ export const ContentSection = (props: any) => {
               minWidth: matches ? (matches2 ? "100%" : "20rem") : "24rem",
             }}
           >
-            {props.contentData && props.contentData.contentImage && (
+            {props.contentData &&
+            props.contentData.contentImage &&
+            props.contentData.contentImage.realImg ? (
               <img
-                src={getImg(props.contentData.contentImage).url}
-                alt={getImg(props.contentData.contentImage).alt}
+                src={props.contentData.contentImage.realImg}
+                alt={props.contentData.contentImage.alt}
               />
+            ) : (
+              props.contentData &&
+              props.contentData.contentImage && (
+                <img
+                  src={getImg(props.contentData.contentImage).url}
+                  alt={getImg(props.contentData.contentImage).alt}
+                />
+              )
             )}
           </div>
         </div>

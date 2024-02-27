@@ -7,7 +7,7 @@ import { CardsGrid } from "./cardsGrid";
 import { useState } from "react";
 import { CardsList } from "./cardsList";
 
-export const CategoryCards = (props:any) => {
+export const CategoryCards = (props: any) => {
   const matches = useMediaQuery("(max-width:640px)");
   const [tab, setTab] = useState(0);
   return (
@@ -18,7 +18,7 @@ export const CategoryCards = (props:any) => {
         </h1>
         <div className="flex items-center justify-between mt-4 gap-y-5 gap-x-10 flex-wrap">
           <div className="drop-shadow-md h-10 w-80 items-center gap-x-3 rounded-md bg-white px-3 flex">
-            <FontAwesomeIcon icon={faSearch} className="text-sm" />
+            <FontAwesomeIcon icon={faSearch} style={{ fontSize: "16px" }} />
             <input
               type="text"
               placeholder="Search"
@@ -26,10 +26,11 @@ export const CategoryCards = (props:any) => {
             />
           </div>
           <div className="hidden sm:flex items-center gap-x-3 ml-auto">
-            <button className="-mt-1" onClick={() => setTab(1)}>
+            <button onClick={() => setTab(1)}>
               <FontAwesomeIcon
                 icon={faList}
-                className={`text-lg ${tab === 1 ? "greenText" : ""}`}
+                style={{ fontSize: "17px" }}
+                className={`${tab === 1 ? "greenText" : ""}`}
               />
             </button>
             <button
