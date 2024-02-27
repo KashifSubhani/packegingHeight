@@ -27,11 +27,21 @@ export const renderDescription = (description: any) => {
   }
 };
 
-export const getImg = (image: any) => {
-  if (image && image.asset) {
-    const imageRef = image.asset._ref;
+export const getImg = (imageWithAlt: any) => {
+  if (imageWithAlt && imageWithAlt.image && imageWithAlt.image.asset) {
+    const imageRef = imageWithAlt.image.asset._ref;
     const imageUrl = builder.image(imageRef).url();
-    return imageUrl;
+    return { url: imageUrl, alt: imageWithAlt.alt };
   }
-  return "";
+  return { url: "", alt: "" };
 };
+
+export const getIcon = (iconWithAlt: any) => {
+  if (iconWithAlt && iconWithAlt.icon && iconWithAlt.icon.asset) {
+    const imageRef = iconWithAlt.icon.asset._ref;
+    const imageUrl = builder.image(imageRef).url();
+    return { url: imageUrl, alt: iconWithAlt.alt };
+  }
+  return { url: "", alt: "" };
+};
+

@@ -11,7 +11,7 @@ import { Navbar } from "@/components/shared/navbar/navbar";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 
-const Index = ({data}:any) => {
+const Index = ({data, faqs}:any) => {
   const router = useRouter();
   return (
     <div className="relative p-0 m-0 w-full h-full">
@@ -29,7 +29,7 @@ const Index = ({data}:any) => {
       <HowItWorks />
       <GetQoute />
       <ContentSection />
-      <Faq />
+      <Faq faqs={faqs} />
       <Testimonials />
       <Footer />
     </div>

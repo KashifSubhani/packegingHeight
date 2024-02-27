@@ -1,4 +1,5 @@
-import { getImg } from "@/services/descriptionService";
+import { getSlug } from "@/services/categoriesService";
+import { getIcon } from "@/services/descriptionService";
 import { Container } from "@mui/material";
 import { useRouter } from "next/router";
 
@@ -10,16 +11,16 @@ export const AllCategoriesContent = (props: any) => {
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 pb-14">
           {props.data.map((category: any, index: any) => (
             <div
-              onClick={() => router.push(`/category/${category.url}`)}
+              onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
               key={index + 1}
               className="flex flex-col items-center justify-center gap-x-3 cursor-pointer hover:font-bold hover:text-black rounded-lg shadow-md hover:shadow-lg px-3 h-40 border"
             >
               <div>
                 <img
-                  src={getImg(category.icon)}
+                  src={getIcon(category.iconWithAlt).url}
                   width={60}
                   height={60}
-                  alt="category"
+                  alt={getIcon(category.iconWithAlt).alt}
                 />
               </div>
               <h2 className="text-sm md:text-base fw_400 text-center">
@@ -30,7 +31,9 @@ export const AllCategoriesContent = (props: any) => {
         </div>
       ) : (
         <div className="h-60">
-          <h1 className="text-2xl sm:text-4xl text-center">No category found!</h1>
+          <h1 className="text-2xl sm:text-4xl text-center">
+            No category found!
+          </h1>
         </div>
       )}
     </Container>

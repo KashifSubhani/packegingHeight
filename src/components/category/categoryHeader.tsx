@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { GetQouteForm2 } from "./subcomponents/getQouteForm2";
 import { useRouter } from "next/router";
-import { getImg, renderDescription } from "@/services/descriptionService";
+import { getImg } from "@/services/descriptionService";
 
 export const CategoryHeader = (props: any) => {
   const router = useRouter();
@@ -20,13 +20,11 @@ export const CategoryHeader = (props: any) => {
               /<span className="text-zinc-600"> {router.query.url}</span>
             </span>
             <h1 className="text-4xl fw_600 mt-3">{props.category.name}</h1>
-            <p className="text-sm mb-4 mt-3">
-              {renderDescription(props.category.description)}
-            </p>
+            <p className="text-sm mb-4 mt-3">{props.category.description}</p>
             <div className="grayBg roundede-md p-4 h-80 flex items-center justify-center">
               <img
-                src={getImg(props.category.image)}
-                alt="categoryHeader"
+                src={getImg(props.category.imageWithAlt).url}
+                alt={getImg(props.category.imageWithAlt).alt}
                 style={{ objectFit: "cover" }}
               />
             </div>

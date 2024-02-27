@@ -1,12 +1,13 @@
 "use client";
 
-import { getImg } from "@/services/descriptionService";
+import { getSlug } from "@/services/categoriesService";
+import { getIcon } from "@/services/descriptionService";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const IndustriesDropdown = (props:any) => {
+const IndustriesDropdown = (props: any) => {
   const router = useRouter();
   const [list, setList] = useState([]);
 
@@ -26,16 +27,16 @@ const IndustriesDropdown = (props:any) => {
           list.length > 0 &&
           list.map((category: any, index: any) => (
             <div
-              onClick={() => router.push(`/category/${category.url}`)}
+              onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
               key={index + 1}
               className="flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black h-12 sm:h-14 md:h-16"
             >
               <div>
                 <img
-                  src={getImg(category.icon)}
+                  src={getIcon(category.iconWithAlt).url}
                   width={30}
                   height={30}
-                  alt="category"
+                  alt={getIcon(category.iconWithAlt).alt}
                 />
               </div>
               <h2 className="text-xs sm:text-sm md:text-base fw_400">
