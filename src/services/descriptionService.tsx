@@ -45,3 +45,13 @@ export const getIcon = (iconWithAlt: any) => {
   return { url: "", alt: "" };
 };
 
+export function createArrayOfSets(arr:any) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i += 3) {
+    const set = arr.slice(i, i + 3);
+    result.push(set);
+  }
+
+  return result;
+}

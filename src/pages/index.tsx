@@ -11,8 +11,10 @@ import { Navbar } from "@/components/shared/navbar/navbar";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 import { homePageContentSectionData } from "@/demoData/homePageContentSectionData";
+import { faqsData } from "@/demoData/faqsData";
+import { createArrayOfSets } from "@/services/descriptionService";
 
-const Index = ({ data, faqs }: any) => {
+const Index = ({ data, testimonials }: any) => {
   const router = useRouter();
   return (
     <div className="relative p-0 m-0 w-full h-full">
@@ -30,8 +32,8 @@ const Index = ({ data, faqs }: any) => {
       <HowItWorks />
       <GetQoute />
       <ContentSection contentData={homePageContentSectionData} />
-      <Faq faqs={faqs} />
-      <Testimonials />
+      <Faq faqs={faqsData} />
+      <Testimonials testimonials={createArrayOfSets(testimonials)} />
       <Footer />
     </div>
   );
