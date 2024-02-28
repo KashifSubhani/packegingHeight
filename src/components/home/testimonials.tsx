@@ -53,7 +53,7 @@ export const Testimonials = () => {
                 {tab === 2 &&
                   "it helps me in my difficult times. It's my other brain!"}
               </h2>
-              <div className="mt-2 flex items-center gap-x-1 text-yellow-500">
+              <div className="mt-2 flex items-center gap-x-1 text-yellow-500" style={{fontSize: "12px"}}>
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />

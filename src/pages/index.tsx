@@ -25,7 +25,7 @@ const Index = ({ data, faqs }: any) => {
       </button>
       <Navbar data={data} />
       <Header />
-      <PackagingStyle list={data} />
+      <PackagingStyle list={data.filter((_d: any, ind: any) => ind < 4)} />
       <PremiumFinishes />
       <HowItWorks />
       <GetQoute />

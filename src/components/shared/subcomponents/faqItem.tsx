@@ -1,8 +1,8 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
+import chev from "../../../static/chev.svg";
+import Image from "next/image";
 
 export const FaqItem = (props: any) => {
   return (
@@ -11,7 +11,7 @@ export const FaqItem = (props: any) => {
       className="overflow-hidden border-none shadow-md"
     >
       <AccordionSummary
-        expandIcon={<FontAwesomeIcon icon={faChevronDown} />}
+        expandIcon={<Image src={chev} alt="" width={16} height={16} />}
         className="fw_400 px-6 py-2 text-sm"
       >
         {props.item.question}

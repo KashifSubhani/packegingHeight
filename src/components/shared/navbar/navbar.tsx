@@ -1,9 +1,9 @@
-import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import chev from "../../../static/chev.svg";
 import logo from "../../../static/logo.png";
 import { SmallNav } from "./subComponents/smallNav";
 import { useRouter } from "next/router";
@@ -116,7 +116,7 @@ export const Navbar = (props:any) => {
                 >
                   {d.name}
                   {d.name === "Industries" && (
-                    <FontAwesomeIcon icon={faChevronDown} className="text-xs" />
+                    <Image src={chev} alt="" width={14} height={14} />
                   )}
                   {showDropdown && d.name === "Industries" && (
                     <IndustriesDropdown list={props.data} setShowDropdown={setShowDropdown} />

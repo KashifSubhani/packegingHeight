@@ -1,7 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import gridActiveImg from "../../static/gridActiveImg.svg";
+import GridBlack from "../../static/2GridBlack.png";
+import GreenList from "../../static/GreenList.png";
+import blackList from "../../static/blackList.svg";
+import search from "../../static/search.svg";
 import Image from "next/image";
-import { faList, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Container, useMediaQuery } from "@mui/material";
 import { CardsGrid } from "./cardsGrid";
 import { useState } from "react";
@@ -18,7 +20,7 @@ export const CategoryCards = (props: any) => {
         </h1>
         <div className="flex items-center justify-between mt-4 gap-y-5 gap-x-10 flex-wrap">
           <div className="drop-shadow-md h-10 w-80 items-center gap-x-3 rounded-md bg-white px-3 flex">
-            <FontAwesomeIcon icon={faSearch} style={{ fontSize: "16px" }} />
+            <Image src={search} alt="" width={20} height={20} />
             <input
               type="text"
               placeholder="Search"
@@ -27,17 +29,24 @@ export const CategoryCards = (props: any) => {
           </div>
           <div className="hidden sm:flex items-center gap-x-3 ml-auto">
             <button onClick={() => setTab(1)}>
-              <FontAwesomeIcon
-                icon={faList}
-                style={{ fontSize: "17px" }}
-                className={`${tab === 1 ? "greenText" : ""}`}
+              <Image
+                src={tab === 1 ? GreenList : blackList}
+                alt="4Grid"
+                width={20}
+                height={20}
+                style={{ minWidth: "20" }}
               />
             </button>
             <button
               onClick={() => setTab(0)}
               style={{ width: "20px", minWidth: "20px" }}
             >
-              <Image src={gridActiveImg} alt="gridActiveImg" width={18} />
+              <Image
+                src={tab === 0 ? gridActiveImg : GridBlack}
+                alt="gridActiveImg"
+                width={20}
+                height={20}
+              />
             </button>
           </div>
         </div>

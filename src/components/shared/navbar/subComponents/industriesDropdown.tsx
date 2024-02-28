@@ -2,8 +2,8 @@
 
 import { getSlug } from "@/services/categoriesService";
 import { getIcon } from "@/services/descriptionService";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import chev from "../../../../static/chev.svg";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -51,7 +51,13 @@ const IndustriesDropdown = (props: any) => {
           <h2 className="text-xs sm:text-sm md:text-base fw_600 text-black">
             Show All
           </h2>
-          <FontAwesomeIcon icon={faChevronRight} />
+          <Image
+            src={chev}
+            alt=""
+            width={16}
+            height={16}
+            style={{ transform: "rotate(-90deg)" }}
+          />
         </div>
       </div>
     </div>
