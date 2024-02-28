@@ -8,7 +8,7 @@ export const linksData = [
   },
   {
     name: "Shape & Styles",
-    path: "/category/shape-&-styles",
+    path: "/category/shape-and-styles",
     active: "/category/shape-and-styles",
   },
   { name: "Contact Us", path: "/contactUs", active: "/contactUs" },
