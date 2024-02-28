@@ -55,7 +55,7 @@ export const Testimonials = () => {
               </h2>
               <div
                 className="mt-2 flex items-center gap-x-1 text-yellow-500"
-                style={{ fontSize: "12px" }}
+                style={{ fontSize: "14px" }}
               >
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
