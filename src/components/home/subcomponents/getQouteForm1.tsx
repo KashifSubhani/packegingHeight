@@ -12,25 +12,25 @@ export const GetQouteForm1 = () => {
     setFinalData(updatedData);
   };
 
-  const handleUpload = async (file: any) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      let res = await response.json();
-      onchnage("file", { name: res.name, path: res.path });
-    } catch (error) {
-      toast.error("Error in uploading file!");
-    }
-  };
+  // const handleUpload = async (file: any) => {
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   try {
+  //     const response = await fetch("/api/upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+  //     let res = await response.json();
+  //     onchnage("file", { name: res.name, path: res.path });
+  //   } catch (error) {
+  //     toast.error("Error in uploading file!");
+  //   }
+  // };
   const sendEmail = async (e: any) => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData(resetForm(finalData));
+      setFinalData({...resetForm(finalData), color: "Black"});
       toast.success("Email sent successfully");
     } catch (error) {
       toast.error("Failed to send message");
@@ -58,7 +58,7 @@ export const GetQouteForm1 = () => {
             value={finalData.width}
             onChange={(e) => onchnage("width", e.target.value)}
             placeholder="Width"
-            className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-3">
@@ -68,7 +68,7 @@ export const GetQouteForm1 = () => {
             value={finalData.depth}
             onChange={(e) => onchnage("depth", e.target.value)}
             placeholder="Depth"
-            className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-3">
@@ -78,7 +78,7 @@ export const GetQouteForm1 = () => {
             value={finalData.length}
             onChange={(e) => onchnage("length", e.target.value)}
             placeholder="Length"
-            className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-3">
@@ -88,7 +88,7 @@ export const GetQouteForm1 = () => {
             value={finalData.inch}
             onChange={(e) => onchnage("inch", e.target.value)}
             placeholder="Inch"
-            className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -158,7 +158,7 @@ export const GetQouteForm1 = () => {
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
-        <div className="col-span-12">
+        {/* <div className="col-span-12">
           <label className="fw_400 text-xs">Attach Your Design:</label>
           <label className="flex h-10 rounded-md border border-zinc-200">
             <p className="mb-0 flex h-full items-center bg-zinc-200 px-2 text-xs">
@@ -171,16 +171,17 @@ export const GetQouteForm1 = () => {
             </p>
             <input
               type="file"
+              accept="image/*"
               onChange={(e: any) => {
                 handleUpload(e.target.files[0]);
               }}
               className="hidden h-8 w-full rounded-md border border-zinc-200 px-2 text-xs"
             />
           </label>
-        </div>
+        </div> */}
         <div className="col-span-12">
           <textarea
-            rows={4}
+            rows={5}
             required
             value={finalData.description}
             onChange={(e) => onchnage("description", e.target.value)}
@@ -192,7 +193,7 @@ export const GetQouteForm1 = () => {
           <button
             type="submit"
             style={{ background: "#808F91" }}
-            className="fw_400 h-8 w-full rounded-md text-xs uppercase text-white"
+            className="fw_400 h-10 w-full rounded-md text-xs uppercase text-white"
           >
             Get Inquiry
           </button>

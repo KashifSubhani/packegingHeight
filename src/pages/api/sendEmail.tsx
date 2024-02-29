@@ -37,28 +37,16 @@ const generateEmailContent = (data: any) => {
 const handler = async (req: any, res: any) => {
   if (req.method === "POST") {
     const data = req.body;
-    let obj = req.body;
-    if (obj.file && obj.file.path) {
-      delete obj.file;
-    }
     if (!data || !data.name || !data.email || !data.description) {
       return res.status(400).send({ message: "Bad request" });
     }
+
     try {
       await transporter.sendMail({
         from: data.email,
         to: recipientEmail,
-        ...generateEmailContent(obj),
+        ...generateEmailContent(data),
         subject: data.productName,
-        attachments: [
-          data.file && data.file.path
-            ? {
-                filename: data.file.name,
-                content: data.file.path,
-                encoding: 'base64',
-              }
-            : {},
-        ],
       });
 
       return res.status(200).json({ success: true });

@@ -14,20 +14,6 @@ const Index = ({ data }: any) => {
     setFinalData(updatedData);
   };
 
-  const handleUpload = async (file: any) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      let res = await response.json();
-      onchnage("file", { name: res.name, path: res.path });
-    } catch (error) {
-      toast.error("Error in uploading file!");
-    }
-  };
   const sendEmail = async (e: any) => {
     e.preventDefault();
     try {
@@ -66,7 +52,7 @@ const Index = ({ data }: any) => {
                 required
                 value={finalData.name}
                 onChange={(e) => onchnage("name", e.target.value)}
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -77,7 +63,7 @@ const Index = ({ data }: any) => {
                 value={finalData.email}
                 onChange={(e) => onchnage("email", e.target.value)}
                 placeholder="Email"
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -88,7 +74,7 @@ const Index = ({ data }: any) => {
                 value={finalData.productName}
                 onChange={(e) => onchnage("productName", e.target.value)}
                 placeholder="Product Name"
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -99,7 +85,7 @@ const Index = ({ data }: any) => {
                 value={finalData.code}
                 onChange={(e) => onchnage("code", e.target.value)}
                 placeholder="Select Code"
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -110,7 +96,7 @@ const Index = ({ data }: any) => {
                 value={finalData.quantity}
                 onChange={(e) => onchnage("quantity", e.target.value)}
                 placeholder="Quantity"
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -121,7 +107,7 @@ const Index = ({ data }: any) => {
                 value={finalData.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
-                className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
@@ -131,7 +117,7 @@ const Index = ({ data }: any) => {
                 value={finalData.width}
                 onChange={(e) => onchnage("width", e.target.value)}
                 placeholder="Width"
-                className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
@@ -141,7 +127,7 @@ const Index = ({ data }: any) => {
                 value={finalData.depth}
                 onChange={(e) => onchnage("depth", e.target.value)}
                 placeholder="Depth"
-                className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
@@ -151,7 +137,7 @@ const Index = ({ data }: any) => {
                 value={finalData.length}
                 onChange={(e) => onchnage("length", e.target.value)}
                 placeholder="Length"
-                className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
@@ -161,10 +147,10 @@ const Index = ({ data }: any) => {
                 value={finalData.inch}
                 onChange={(e) => onchnage("inch", e.target.value)}
                 placeholder="Inch"
-                className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
-            <div className="col-span-12 flex flex-col gap-y-2">
+            {/* <div className="col-span-12 flex flex-col gap-y-2">
               <label>Attach Your Design:</label>
               <label className="flex h-10 rounded-md border border-zinc-300">
                 <p className="mb-0 flex h-full items-center bg-zinc-200 px-2 text-xs">
@@ -184,7 +170,7 @@ const Index = ({ data }: any) => {
                   className="hidden h-8 w-full rounded-md border border-zinc-300 px-2 text-xs"
                 />
               </label>
-            </div>
+            </div> */}
             <div className="col-span-12">
               <textarea
                 rows={5}
@@ -197,7 +183,7 @@ const Index = ({ data }: any) => {
             </div>
             <button
               type="submit"
-              className="greenBg fw_400 h-10 col-span-12 rounded-md text-sm uppercase text-white"
+              className="greenBg fw_400 h-12 col-span-12 rounded-md text-sm uppercase text-white"
             >
               Get Inquiry
             </button>

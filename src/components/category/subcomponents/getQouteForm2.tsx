@@ -27,7 +27,7 @@ export const GetQouteForm2 = (props: any) => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData(resetForm(finalData));
+      setFinalData({...resetForm(finalData), color: "Black"});
       toast.success("Email sent successfully");
     } catch (error) {
       toast.error("Failed to send message");
