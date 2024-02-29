@@ -11,7 +11,6 @@ export const config = {
 export default async function handler(req: any, res: any) {
   try {
     upload.single("file")(req, res, () => {
-      console.log("ffffffffffffffffffff", req.file);
       res.status(200).json({
         success: true,
         message: "File uploaded successfully",
