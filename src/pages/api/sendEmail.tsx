@@ -38,7 +38,7 @@ const handler = async (req: any, res: any) => {
   if (req.method === "POST") {
     const data = req.body;
     let obj = req.body;
-    if (req.file && req.file.path) {
+    if (obj.file && obj.file.path) {
       delete obj.file;
     }
     if (!data || !data.name || !data.email || !data.description) {
@@ -54,8 +54,8 @@ const handler = async (req: any, res: any) => {
           data.file && data.file.path
             ? {
                 filename: data.file.name,
-                path: data.file.path, // Path to your image in the public directory
-                cid: data.file.path, // Unique ID for referencing the image in HTML
+                content: data.file.path,
+                encoding: 'base64',
               }
             : {},
         ],
