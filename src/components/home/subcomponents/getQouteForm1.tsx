@@ -1,23 +1,62 @@
-import { useMediaQuery } from '@mui/material';
+import { resetForm } from "@/services/categoriesService";
+import { sendContactForm } from "@/services/emailService";
+import { useMediaQuery } from "@mui/material";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const GetQouteForm1 = () => {
-  const matches = useMediaQuery('(max-width:1000px)');
+  const matches = useMediaQuery("(max-width:1000px)");
+  const [finalData, setFinalData] = useState<any>({color: "Black"});
+  const onchnage = (key: any, val: any) => {
+    const updatedData = { ...finalData, [key]: val };
+    setFinalData(updatedData);
+  };
 
+  const handleUpload = async (file: any) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      let res = await response.json();
+      onchnage("file", { name: res.name, path: res.path });
+    } catch (error) {
+      toast.error("Error in uploading file!");
+    }
+  };
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      await sendContactForm(finalData);
+      setFinalData(resetForm(finalData));
+      toast.success("Email sent successfully");
+    } catch (error) {
+      toast.error("Failed to send message");
+    }
+  };
   return (
     <div
       style={{
-        width: matches ? '100%' : '26rem',
-        minWidth: matches ? '100%' : '26rem',
+        width: matches ? "100%" : "26rem",
+        minWidth: matches ? "100%" : "26rem",
       }}
       className="overflow-hidden rounded-xl shadow-xl"
     >
       <div className="greenBg flex h-14 items-center justify-center text-white">
         <p className="fw_600 m-0 p-0 text-xl">Get Custom Quote</p>
       </div>
-      <div className="grid grid-cols-12 gap-3 bg-white p-3">
+      <form
+        onSubmit={sendEmail}
+        className="grid grid-cols-12 gap-3 bg-white p-3"
+      >
         <div className="col-span-3">
           <input
             type="number"
+            required
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
             placeholder="Width"
             className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -25,6 +64,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-3">
           <input
             type="number"
+            required
+            value={finalData.depth}
+            onChange={(e) => onchnage("depth", e.target.value)}
             placeholder="Depth"
             className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -32,6 +74,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-3">
           <input
             type="number"
+            required
+            value={finalData.length}
+            onChange={(e) => onchnage("length", e.target.value)}
             placeholder="Length"
             className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -39,6 +84,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-3">
           <input
             type="number"
+            required
+            value={finalData.inch}
+            onChange={(e) => onchnage("inch", e.target.value)}
             placeholder="Inch"
             className="h-8 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -46,20 +94,36 @@ export const GetQouteForm1 = () => {
         <div className="col-span-6">
           <input
             type="text"
+            required
+            value={finalData.productName}
+            onChange={(e) => onchnage("productName", e.target.value)}
             placeholder="Product Name"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-6">
-          <input
-            type="text"
-            placeholder="Select Color"
+          <select
+            required
+            value={finalData.color}
+            onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
-          />
+          >
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Pink</option>
+            <option>Blue</option>
+            <option>Silver</option>
+            <option>Green</option>
+          </select>
         </div>
         <div className="col-span-6">
           <input
-            type="text"
+            type="number"
+            required
+            value={finalData.quantity}
+            onChange={(e) => onchnage("quantity", e.target.value)}
             placeholder="Quantity"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -67,6 +131,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-6">
           <input
             type="text"
+            required
+            value={finalData.name}
+            onChange={(e) => onchnage("name", e.target.value)}
             placeholder="Enter your name"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -74,6 +141,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-6">
           <input
             type="tel"
+            required
+            value={finalData.phone}
+            onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="+1 123-123-1234"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -81,6 +151,9 @@ export const GetQouteForm1 = () => {
         <div className="col-span-6">
           <input
             type="email"
+            required
+            value={finalData.email}
+            onChange={(e) => onchnage("email", e.target.value)}
             placeholder="Email"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
@@ -92,11 +165,15 @@ export const GetQouteForm1 = () => {
               Choose File
             </p>
             <p className="flex h-full items-center px-4 text-xs">
-              No file choosen
+              {finalData && finalData.file && finalData.file.name
+                ? finalData.file.name
+                : "No file choosen"}
             </p>
             <input
               type="file"
-              placeholder="Width"
+              onChange={(e: any) => {
+                handleUpload(e.target.files[0]);
+              }}
               className="hidden h-8 w-full rounded-md border border-zinc-200 px-2 text-xs"
             />
           </label>
@@ -104,19 +181,23 @@ export const GetQouteForm1 = () => {
         <div className="col-span-12">
           <textarea
             rows={4}
+            required
+            value={finalData.description}
+            onChange={(e) => onchnage("description", e.target.value)}
             className="w-full rounded-md border border-zinc-200 px-2 py-1 text-xs"
             placeholder="Write your message"
           ></textarea>
         </div>
         <div className="col-span-12">
           <button
-            style={{ background: '#808F91' }}
+            type="submit"
+            style={{ background: "#808F91" }}
             className="fw_400 h-8 w-full rounded-md text-xs uppercase text-white"
           >
             Get Inquiry
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

@@ -1,5 +1,34 @@
-export const QouteForm3 = () => {
+import { resetForm } from "@/services/categoriesService";
+import { sendContactForm } from "@/services/emailService";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
+export const QouteForm3 = (props: any) => {
+  const [finalData, setFinalData] = useState<any>({
+    color: "Black",
+    productName: props.productName,
+  });
+
+  useEffect(() => {
+    if (props.productName) {
+      setFinalData({ ...finalData, productName: props.productName });
+    }
+  }, []);
+  const onchnage = (key: any, val: any) => {
+    const updatedData = { ...finalData, [key]: val };
+    setFinalData(updatedData);
+  };
+
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      await sendContactForm(finalData);
+      setFinalData(resetForm(finalData));
+      toast.success("Email sent successfully");
+    } catch (error) {
+      toast.error("Failed to send message");
+    }
+  };
   return (
     <div
       style={{
@@ -8,10 +37,16 @@ export const QouteForm3 = () => {
       }}
       className="overflow-hidden mt-5"
     >
-      <div className={`grid grid-cols-12 gap-y-6 gap-x-4 lg:gap-6 bg-white`}>
+      <form
+        onSubmit={sendEmail}
+        className={`grid grid-cols-12 gap-y-6 gap-x-4 lg:gap-6 bg-white`}
+      >
         <div className="col-span-6">
           <input
             type="text"
+            required
+            value={finalData.name}
+            onChange={(e) => onchnage("name", e.target.value)}
             placeholder="Name"
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
@@ -19,6 +54,9 @@ export const QouteForm3 = () => {
         <div className="col-span-6">
           <input
             type="email"
+            required
+            value={finalData.email}
+            onChange={(e) => onchnage("email", e.target.value)}
             placeholder="Email"
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
@@ -26,27 +64,46 @@ export const QouteForm3 = () => {
         <div className="col-span-6">
           <input
             type="tel"
+            required
+            value={finalData.phone}
+            onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
         </div>
         <div className="col-span-6">
           <input
-            type="text"
+            type="number"
+            required
+            value={finalData.quantity}
+            onChange={(e) => onchnage("quantity", e.target.value)}
             placeholder="Quantity"
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
         </div>
         <div className="col-span-6">
-          <input
-            type="text"
-            placeholder="Select Box Type"
+          <select
+            required
+            value={finalData.color}
+            onChange={(e) => onchnage("color", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
-          />
+          >
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Pink</option>
+            <option>Blue</option>
+            <option>Silver</option>
+            <option>Green</option>
+          </select>
         </div>
         <div className="col-span-6">
           <input
             type="text"
+            required
+            value={finalData.shortDescription}
+            onChange={(e) => onchnage("shortDescription", e.target.value)}
             placeholder="Description"
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
@@ -54,18 +111,22 @@ export const QouteForm3 = () => {
         <div className="col-span-12">
           <textarea
             rows={1}
+            required
+            value={finalData.description}
+            onChange={(e) => onchnage("description", e.target.value)}
             className="w-full rounded-md border-b border-zinc-200 px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
             placeholder="Write your message"
           ></textarea>
         </div>
         <div className="col-span-12">
           <button
+            type="submit"
             className="fw_400 h-8 lg:h-10 w-full greenBg rounded-md text-xs lg:text-sm uppercase text-white"
           >
             Get Inquiry
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

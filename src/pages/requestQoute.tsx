@@ -2,8 +2,42 @@ import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
 import { Container } from "@mui/material";
 import qouteBg from "../static/qouteBg.svg";
-import { getServerSideProps } from "@/services/categoriesService";
+import { useState } from "react";
+import { getServerSideProps, resetForm } from "@/services/categoriesService";
+import { sendContactForm } from "@/services/emailService";
+import { toast } from "react-toastify";
+
 const Index = ({ data }: any) => {
+  const [finalData, setFinalData] = useState<any>({});
+  const onchnage = (key: any, val: any) => {
+    const updatedData = { ...finalData, [key]: val };
+    setFinalData(updatedData);
+  };
+
+  const handleUpload = async (file: any) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      let res = await response.json();
+      onchnage("file", { name: res.name, path: res.path });
+    } catch (error) {
+      toast.error("Error in uploading file!");
+    }
+  };
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      await sendContactForm(finalData);
+      setFinalData(resetForm(finalData));
+      toast.success("Email sent successfully");
+    } catch (error) {
+      toast.error("Failed to send message");
+    }
+  };
   return (
     <div>
       <Navbar data={data} />
@@ -20,12 +54,18 @@ const Index = ({ data }: any) => {
           </p>
         </div>
         <Container maxWidth="lg" className="-mt-72">
-          <form className="bg-white rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5">
+          <form
+            onSubmit={sendEmail}
+            className="bg-white rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5"
+          >
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Enter your Name</label>
               <input
                 type="text"
                 placeholder="Full Name"
+                required
+                value={finalData.name}
+                onChange={(e) => onchnage("name", e.target.value)}
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
@@ -33,6 +73,9 @@ const Index = ({ data }: any) => {
               <label className="text-sm sm:text-base">Email</label>
               <input
                 type="email"
+                required
+                value={finalData.email}
+                onChange={(e) => onchnage("email", e.target.value)}
                 placeholder="Email"
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -41,7 +84,10 @@ const Index = ({ data }: any) => {
               <label className="text-sm sm:text-base">Product Name</label>
               <input
                 type="text"
-                placeholder="Full Name"
+                required
+                value={finalData.productName}
+                onChange={(e) => onchnage("productName", e.target.value)}
+                placeholder="Product Name"
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
@@ -49,29 +95,41 @@ const Index = ({ data }: any) => {
               <label className="text-sm sm:text-base">Select Code</label>
               <input
                 type="text"
-                placeholder="Full Name"
+                required
+                value={finalData.code}
+                onChange={(e) => onchnage("code", e.target.value)}
+                placeholder="Select Code"
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Quantity</label>
               <input
-                type="text"
-                placeholder="Full Name"
+                type="number"
+                required
+                value={finalData.quantity}
+                onChange={(e) => onchnage("quantity", e.target.value)}
+                placeholder="Quantity"
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
-                type="text"
-                placeholder="Full Name"
+                type="tel"
+                required
+                value={finalData.phone}
+                onChange={(e) => onchnage("phone", e.target.value)}
+                placeholder="Phone number"
                 className="h-10 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
               <input
                 type="number"
+                required
+                value={finalData.width}
+                onChange={(e) => onchnage("width", e.target.value)}
                 placeholder="Width"
                 className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -79,6 +137,9 @@ const Index = ({ data }: any) => {
             <div className="col-span-6 sm:col-span-3">
               <input
                 type="number"
+                required
+                value={finalData.depth}
+                onChange={(e) => onchnage("depth", e.target.value)}
                 placeholder="Depth"
                 className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -86,6 +147,9 @@ const Index = ({ data }: any) => {
             <div className="col-span-6 sm:col-span-3">
               <input
                 type="number"
+                required
+                value={finalData.length}
+                onChange={(e) => onchnage("length", e.target.value)}
                 placeholder="Length"
                 className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -93,6 +157,9 @@ const Index = ({ data }: any) => {
             <div className="col-span-6 sm:col-span-3">
               <input
                 type="number"
+                required
+                value={finalData.inch}
+                onChange={(e) => onchnage("inch", e.target.value)}
                 placeholder="Inch"
                 className="h-10 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -104,10 +171,15 @@ const Index = ({ data }: any) => {
                   Choose File
                 </p>
                 <p className="flex h-full items-center px-4 text-xs">
-                  No file choosen
+                  {finalData && finalData.file && finalData.file.name
+                    ? finalData.file.name
+                    : "No file choosen"}
                 </p>
                 <input
                   type="file"
+                  onChange={(e: any) => {
+                    handleUpload(e.target.files[0]);
+                  }}
                   placeholder="Width"
                   className="hidden h-8 w-full rounded-md border border-zinc-300 px-2 text-xs"
                 />
@@ -116,6 +188,9 @@ const Index = ({ data }: any) => {
             <div className="col-span-12">
               <textarea
                 rows={5}
+                required
+                value={finalData.description}
+                onChange={(e) => onchnage("description", e.target.value)}
                 className="w-full rounded-md border border-zinc-300 px-3 py-2 text-xs"
                 placeholder="Write your message"
               ></textarea>
@@ -133,5 +208,6 @@ const Index = ({ data }: any) => {
     </div>
   );
 };
+
 export { getServerSideProps };
 export default Index;

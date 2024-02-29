@@ -30,7 +30,7 @@ export const CategoryHeader = (props: any) => {
             </div>
           </div>
           <div>
-            <GetQouteForm2 />
+            <GetQouteForm2 productName={props.category.name} />
           </div>
         </div>
       </Container>

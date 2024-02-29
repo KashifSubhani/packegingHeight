@@ -1,0 +1,1 @@
+export const recipientEmail = 'kashifsubhaniseo@gmail.com';

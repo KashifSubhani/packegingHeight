@@ -16,3 +16,12 @@ export const getSlug = (slug: any) => {
   }
   return "";
 };
+
+
+export const resetForm = (finalData:any) => {
+  let obj = {};
+  Object.keys(finalData).forEach((key) => {
+    obj = { ...obj, [key]: "" };
+  });
+  return obj;
+};
