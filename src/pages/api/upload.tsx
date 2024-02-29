@@ -18,10 +18,9 @@ export default async function handler(req: any, res: any) {
         path: req.file.path,
       });
     });
-    // const uploadedImagePath = req.img.path;
   } catch (error) {
     res
       .status(500)
-      .json({ success: false, error: "bbbbbbbbbb Failed to upload file" });
+      .json({ success: false, error: "Failed to upload file" });
   }
 }
