@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 export const GetQouteForm1 = () => {
   const matches = useMediaQuery("(max-width:1000px)");
-  const [finalData, setFinalData] = useState<any>({color: "Black"});
+  const [finalData, setFinalData] = useState<any>({ color: "1-Color", unit: "Inches" });
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
@@ -30,7 +30,7 @@ export const GetQouteForm1 = () => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData({...resetForm(finalData), color: "Black"});
+      setFinalData({ ...resetForm(finalData), color: "1-Color", unit: "Inches" });
       toast.success("Email sent successfully");
     } catch (error) {
       toast.error("Failed to send message");
@@ -82,14 +82,16 @@ export const GetQouteForm1 = () => {
           />
         </div>
         <div className="col-span-3">
-          <input
-            type="number"
+          <select
             required
-            value={finalData.inch}
-            onChange={(e) => onchnage("inch", e.target.value)}
-            placeholder="Inch"
+            value={finalData.unit}
+            onChange={(e) => onchnage("unit", e.target.value)}
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
-          />
+          >
+            <option>Inches</option>
+            <option>MM</option>
+            <option>CM</option>
+          </select>
         </div>
         <div className="col-span-6">
           <input
@@ -108,14 +110,14 @@ export const GetQouteForm1 = () => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           >
-            <option>Black</option>
-            <option>White</option>
-            <option>Red</option>
-            <option>Yellow</option>
-            <option>Pink</option>
-            <option>Blue</option>
-            <option>Silver</option>
-            <option>Green</option>
+            <option>1-Color</option>
+            <option>2-Color</option>
+            <option>3-Color</option>
+            <option>4-Color</option>
+            <option>4/1-Color</option>
+            <option>4/2-Color</option>
+            <option>4/3-Color</option>
+            <option>4/4-Color</option>
           </select>
         </div>
         <div className="col-span-6">

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export const QouteForm3 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({
-    color: "Black",
+    color: "1-Color",
     productName: props.productName,
   });
 
@@ -23,7 +23,7 @@ export const QouteForm3 = (props: any) => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData({...resetForm(finalData), color: "Black"});
+      setFinalData({ ...resetForm(finalData), color: "1-Color" });
       toast.success("Email sent successfully");
     } catch (error) {
       toast.error("Failed to send message");
@@ -88,14 +88,14 @@ export const QouteForm3 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           >
-            <option>Black</option>
-            <option>White</option>
-            <option>Red</option>
-            <option>Yellow</option>
-            <option>Pink</option>
-            <option>Blue</option>
-            <option>Silver</option>
-            <option>Green</option>
+            <option>1-Color</option>
+            <option>2-Color</option>
+            <option>3-Color</option>
+            <option>4-Color</option>
+            <option>4/1-Color</option>
+            <option>4/2-Color</option>
+            <option>4/3-Color</option>
+            <option>4/4-Color</option>
           </select>
         </div>
         <div className="col-span-6">

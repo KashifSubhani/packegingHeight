@@ -8,7 +8,7 @@ import { sendContactForm } from "@/services/emailService";
 import { toast } from "react-toastify";
 
 const Index = ({ data }: any) => {
-  const [finalData, setFinalData] = useState<any>({});
+  const [finalData, setFinalData] = useState<any>({unit: "Inches"});
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
@@ -18,7 +18,7 @@ const Index = ({ data }: any) => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData(resetForm(finalData));
+      setFinalData({...resetForm(finalData), unit: "Inches"});
       toast.success("Email sent successfully");
     } catch (error) {
       toast.error("Failed to send message");
@@ -141,14 +141,16 @@ const Index = ({ data }: any) => {
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
-              <input
-                type="number"
+              <select
                 required
-                value={finalData.inch}
-                onChange={(e) => onchnage("inch", e.target.value)}
-                placeholder="Inch"
+                value={finalData.unit}
+                onChange={(e) => onchnage("unit", e.target.value)}
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
+              >
+                <option>Inches</option>
+                <option>MM</option>
+                <option>CM</option>
+              </select>
             </div>
             {/* <div className="col-span-12 flex flex-col gap-y-2">
               <label>Attach Your Design:</label>

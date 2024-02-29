@@ -13,7 +13,7 @@ const CONTACT_MESSAGE_FIELDS: any = {
   width: "Width",
   depth: "Depth",
   length: "Length",
-  inch: "Inch",
+  unit: "Unit",
   shortDescription: "Short Description",
   description: "Message",
 };
