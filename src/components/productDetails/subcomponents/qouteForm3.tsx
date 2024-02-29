@@ -1,5 +1,6 @@
 import { resetForm } from "@/services/categoriesService";
 import { sendContactForm } from "@/services/emailService";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -8,7 +9,7 @@ export const QouteForm3 = (props: any) => {
     color: "1-Color",
     productName: props.productName,
   });
-
+const router = useRouter()
   useEffect(() => {
     if (props.productName) {
       setFinalData({ ...finalData, productName: props.productName });
@@ -25,6 +26,7 @@ export const QouteForm3 = (props: any) => {
       await sendContactForm(finalData);
       setFinalData({ ...resetForm(finalData), color: "1-Color" });
       toast.success("Email sent successfully");
+      router.push("/thank-you")
     } catch (error) {
       toast.error("Failed to send message");
     }

@@ -1,17 +1,21 @@
 import { resetForm } from "@/services/categoriesService";
 import { sendContactForm } from "@/services/emailService";
 import { useMediaQuery } from "@mui/material";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 export const GetQouteForm1 = () => {
   const matches = useMediaQuery("(max-width:1000px)");
-  const [finalData, setFinalData] = useState<any>({ color: "1-Color", unit: "Inches" });
+  const [finalData, setFinalData] = useState<any>({
+    color: "1-Color",
+    unit: "Inches",
+  });
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
-
+  const router = useRouter();
   // const handleUpload = async (file: any) => {
   //   const formData = new FormData();
   //   formData.append("file", file);
@@ -30,8 +34,13 @@ export const GetQouteForm1 = () => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData({ ...resetForm(finalData), color: "1-Color", unit: "Inches" });
+      setFinalData({
+        ...resetForm(finalData),
+        color: "1-Color",
+        unit: "Inches",
+      });
       toast.success("Email sent successfully");
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }

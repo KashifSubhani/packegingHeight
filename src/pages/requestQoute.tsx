@@ -6,9 +6,11 @@ import { useState } from "react";
 import { getServerSideProps, resetForm } from "@/services/categoriesService";
 import { sendContactForm } from "@/services/emailService";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const Index = ({ data }: any) => {
-  const [finalData, setFinalData] = useState<any>({unit: "Inches"});
+  const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
+  const router = useRouter();
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
@@ -18,8 +20,9 @@ const Index = ({ data }: any) => {
     e.preventDefault();
     try {
       await sendContactForm(finalData);
-      setFinalData({...resetForm(finalData), unit: "Inches"});
+      setFinalData({ ...resetForm(finalData), unit: "Inches" });
       toast.success("Email sent successfully");
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }

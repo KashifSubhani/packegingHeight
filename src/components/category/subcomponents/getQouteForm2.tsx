@@ -1,6 +1,7 @@
 import { resetForm } from "@/services/categoriesService";
 import { sendContactForm } from "@/services/emailService";
 import { useMediaQuery } from "@mui/material";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -8,6 +9,7 @@ export const GetQouteForm2 = (props: any) => {
   const matches = useMediaQuery("(max-width:1280px)");
   const matches2 = useMediaQuery("(max-width:850px)");
   const matches3 = useMediaQuery("(max-width:767px)");
+  const router = useRouter();
   const [finalData, setFinalData] = useState<any>({
     color: "1-Color",
     productName: props.productName,
@@ -29,6 +31,7 @@ export const GetQouteForm2 = (props: any) => {
       await sendContactForm(finalData);
       setFinalData({ ...resetForm(finalData), color: "1-Color" });
       toast.success("Email sent successfully");
+      router.push("/thank-you")
     } catch (error) {
       toast.error("Failed to send message");
     }
