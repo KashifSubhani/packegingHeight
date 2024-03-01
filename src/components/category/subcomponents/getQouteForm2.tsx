@@ -1,5 +1,4 @@
 import { resetForm } from "@/services/categoriesService";
-import { sendContactForm } from "@/services/emailService";
 import { useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -28,12 +27,22 @@ export const GetQouteForm2 = (props: any) => {
   const sendEmail = async (e: any) => {
     e.preventDefault();
     try {
-      await sendContactForm(finalData);
-      setFinalData({ ...resetForm(finalData), color: "1-Color" });
-      toast.success("Email sent successfully");
-      router.push("/thank-you")
+      const response = await fetch("https://formspree.io/f/mjvnrldz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setFinalData({ ...resetForm(finalData), color: "1-Color" });
+        router.push("/thank-you");
+      } else {
+        toast.error("Failed to send email");
+      }
     } catch (error) {
-      toast.error("Failed to send message");
+      toast.error("Failed to send email");
     }
   };
 

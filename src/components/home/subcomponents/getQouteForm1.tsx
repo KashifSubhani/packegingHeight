@@ -1,5 +1,4 @@
 import { resetForm } from "@/services/categoriesService";
-import { sendContactForm } from "@/services/emailService";
 import { useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -16,33 +15,25 @@ export const GetQouteForm1 = () => {
     setFinalData(updatedData);
   };
   const router = useRouter();
-  // const handleUpload = async (file: any) => {
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  //   try {
-  //     const response = await fetch("/api/upload", {
-  //       method: "POST",
-  //       body: formData,
-  //     });
-  //     let res = await response.json();
-  //     onchnage("file", { name: res.name, path: res.path });
-  //   } catch (error) {
-  //     toast.error("Error in uploading file!");
-  //   }
-  // };
   const sendEmail = async (e: any) => {
     e.preventDefault();
     try {
-      await sendContactForm(finalData);
-      setFinalData({
-        ...resetForm(finalData),
-        color: "1-Color",
-        unit: "Inches",
+      const response = await fetch("https://formspree.io/f/mjvnrldz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
       });
-      toast.success("Email sent successfully");
-      router.push("/thank-you");
+
+      if (response.ok) {
+        setFinalData({ ...resetForm(finalData), color: "1-Color" });
+        router.push("/thank-you");
+      } else {
+        toast.error("Failed to send email");
+      }
     } catch (error) {
-      toast.error("Failed to send message");
+      toast.error("Failed to send email");
     }
   };
   return (

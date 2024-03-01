@@ -6,7 +6,6 @@ if (typeof window === 'undefined') {
   nodemailer = require('nodemailer');
 }
 
-
 export const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
