@@ -1,4 +1,4 @@
-import { faBars} from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { linksData } from "@/demoData/navLinksData";
 import IndustriesDropdown from "./subComponents/industriesDropdown";
 
-export const Navbar = (props:any) => {
+export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
@@ -82,10 +82,10 @@ export const Navbar = (props:any) => {
               <p className="fw_400 whitespace-nowrap text-sm">
                 Talk to our packaging expert
               </p>
-              <p className="greenText fw_400">+1 (123) 123 4567</p>
+              <p className="greenText fw_400">+1(307) 429 2922</p>
             </div>
             <p className="fw_400 hidden text-sm text-green-300 lg:block lg:text-zinc-700">
-              mail@packaginghight.com
+              info@packagingheight.com
             </p>
           </div>
         </div>
@@ -119,7 +119,10 @@ export const Navbar = (props:any) => {
                     <Image src={chev} alt="" width={14} height={14} />
                   )}
                   {showDropdown && d.name === "Industries" && (
-                    <IndustriesDropdown list={props.data} setShowDropdown={setShowDropdown} />
+                    <IndustriesDropdown
+                      list={props.data}
+                      setShowDropdown={setShowDropdown}
+                    />
                   )}
                 </div>
               </li>
@@ -137,11 +140,10 @@ export const Navbar = (props:any) => {
             </button>
           </div>
           <p className="fw_400 block text-sm text-green-500 lg:hidden lg:text-zinc-700 mb-3">
-            mail@packaginghight.com
+            info@packagingheight.com
           </p>
         </div>
       </Container>
     </div>
   );
 };
-

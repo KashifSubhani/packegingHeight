@@ -194,8 +194,8 @@ export const GetQouteForm1 = () => {
           <textarea
             rows={5}
             required
-            value={finalData.description}
-            onChange={(e) => onchnage("description", e.target.value)}
+            value={finalData.message}
+            onChange={(e) => onchnage("message", e.target.value)}
             className="w-full rounded-md border border-zinc-200 px-2 py-1 text-xs"
             placeholder="Write your message"
           ></textarea>

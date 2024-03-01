@@ -114,8 +114,8 @@ const router = useRouter()
           <textarea
             rows={1}
             required
-            value={finalData.description}
-            onChange={(e) => onchnage("description", e.target.value)}
+            value={finalData.message}
+            onChange={(e) => onchnage("message", e.target.value)}
             className="w-full rounded-md border-b border-zinc-200 px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
             placeholder="Write your message"
           ></textarea>

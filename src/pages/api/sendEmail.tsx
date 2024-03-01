@@ -3,6 +3,9 @@ import { transporter } from "./config/nodemailer";
 
 const CONTACT_MESSAGE_FIELDS: any = {
   name: "Name",
+  firstName: "First Name",
+  lastName: "Last Name",
+  subject: "Subject",
   email: "Email",
   code: "Code",
   color: "Color",
@@ -15,7 +18,7 @@ const CONTACT_MESSAGE_FIELDS: any = {
   length: "Length",
   unit: "Unit",
   shortDescription: "Short Description",
-  description: "Message",
+  message: "Message",
 };
 
 const generateEmailContent = (data: any) => {
@@ -37,7 +40,7 @@ const generateEmailContent = (data: any) => {
 const handler = async (req: any, res: any) => {
   if (req.method === "POST") {
     const data = req.body;
-    if (!data || !data.name || !data.email || !data.description) {
+    if (!data || !data.email || !data.message) {
       return res.status(400).send({ message: "Bad request" });
     }
 
@@ -46,7 +49,7 @@ const handler = async (req: any, res: any) => {
         from: data.email,
         to: recipientEmail,
         ...generateEmailContent(data),
-        subject: data.productName,
+        subject: data.email,
       });
 
       return res.status(200).json({ success: true });
