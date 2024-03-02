@@ -21,11 +21,12 @@ export const CategoryHeader = (props: any) => {
             </span>
             <h1 className="text-4xl fw_600 mt-3">{props.category.name}</h1>
             <p className="text-sm mb-4 mt-3">{props.category.description}</p>
-            <div className="grayBg roundede-md p-4 h-80 flex items-center justify-center">
+            <div className="grayBg roundede-md p-4 h-80 overflow-hidden flex items-center justify-center">
               <img
                 src={getImg(props.category.imageWithAlt).url}
                 alt={getImg(props.category.imageWithAlt).alt}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
+                className="w-full h-full"
               />
             </div>
           </div>
