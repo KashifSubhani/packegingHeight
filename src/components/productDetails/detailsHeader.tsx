@@ -11,14 +11,14 @@ const DetailsHeader = (props: any) => {
       <div
         className={`grid ${
           matches ? "grid-cols-11" : "grid-cols-12"
-        } gap-y-10 py-10 md:gap-x-10`}
+        } gap-y-10 pb-10 pt-6 sm:py-10 md:gap-x-10`}
       >
         <div className="col-span-11 md:col-span-6">
           <div className="block md:hidden mb-8">
             <h1 className="text-3xl lg:text-4xl fw_600">
               {props.product.name}
             </h1>
-            <p className="text-sm mb-4 mt-3 three_lines_elipsis">
+            <p className="text-sm mb-4 mt-3">
               {props.product.shortDescription}
             </p>
           </div>
