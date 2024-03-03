@@ -2,7 +2,7 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable react/no-unescaped-entities */
 import { Container, useMediaQuery } from "@mui/material";
-import { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getImg } from "@/services/descriptionService";
 import BlockContent from "@sanity/block-content-to-html";
 
