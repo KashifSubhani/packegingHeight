@@ -9,7 +9,7 @@ export const PremiumFinishes = () => {
           Premimum Finishes
         </h1>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
-          We know how crucial it is for your packaging to shine bright like a diamond! Our premium finishes guarantee that your packaging looks amazing and feels super fancy in your customers' hands.{" "}
+          We know how crucial it is for your packaging to shine bright like a diamond! Our premium finishes guarantee that your packaging looks amazing and feels super fancy in your customers' hands. Because when it comes to packaging, it's all about making a statement, and we're here to help you do it with style!{" "}
           <span className="lowercase">
             of finishing options to ensure SPECTACULAR LOOKS AND PREMIUM
           </span>
