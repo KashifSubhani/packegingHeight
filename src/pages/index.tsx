@@ -9,7 +9,6 @@ import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
-import { homePageContentSectionData } from "@/demoData/homePageContentSectionData";
 import { faqsData } from "@/demoData/faqsData";
 import { createArrayOfSets } from "@/services/descriptionService";
 import { HomeContentSection } from "@/components/home/homeContentSection";
@@ -31,7 +30,7 @@ const Index = ({ data, testimonials }: any) => {
       <PremiumFinishes />
       <HowItWorks />
       <GetQoute />
-      <HomeContentSection contentData={homePageContentSectionData} />
+      <HomeContentSection />
       <Faq faqs={faqsData} />
       <Testimonials testimonials={createArrayOfSets(testimonials)} />
       <Footer />
