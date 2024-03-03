@@ -11,7 +11,6 @@ export const config = {
 export default async function handler(req: any, res: any) {
   try {
     upload.single("file")(req, res, () => {
-      console.log("vvvvvvvvvvvvvvvv", req.file)
       const base64Data = req.file.buffer.toString('base64')
       res.status(200).json({
         success: true,

@@ -1,7 +1,7 @@
-import { renderDescription } from "@/services/descriptionService";
 import { Container } from "@mui/material";
 import Image from "next/image";
 import search from "../../static/search.svg";
+import BlockContent from "@sanity/block-content-to-html";
 
 export const DetailsContent = (props: any) => {
   return (
@@ -17,9 +17,16 @@ export const DetailsContent = (props: any) => {
         </div>
 
         <h1 className="text-3xl fw_600 mt-8">Description</h1>
-        <p className="mt-10 text-sm md:text-base">
-          {renderDescription(props.product.details)}
-        </p>
+        <div className="mt-10 text-sm sm:text-base">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: BlockContent({
+                blocks: props.product.details,
+                className: "flex flex-col gap-y-3",
+              }),
+            }}
+          />
+        </div>
       </div>
     </Container>
   );

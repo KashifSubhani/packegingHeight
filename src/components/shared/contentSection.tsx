@@ -2,14 +2,14 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable react/no-unescaped-entities */
 import { Container, useMediaQuery } from "@mui/material";
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import { getImg } from "@/services/descriptionService";
+import BlockContent from "@sanity/block-content-to-html";
 
 export const ContentSection = (props: any) => {
   const matches = useMediaQuery("(max-width:1024px)");
   const matches2 = useMediaQuery("(max-width:400px)");
   const [details, setDetails] = useState([]);
-
   useEffect(() => {
     if (
       props.contentData &&
@@ -26,14 +26,14 @@ export const ContentSection = (props: any) => {
         <div className="flex flex-col-reverse gap-y-6 gap-x-0 rounded-lg py-5 sm:py-10 px-3 sm:px-4 md:flex-row md:gap-y-0 md:gap-x-10 md:py-14 xl:px-14">
           <div className="scrollDiv h-80 overflow-y-auto pl-3 md:pl-5 lg:h-96">
             <div className="scrollItem">
-              {details.map((item: any, ind: any) => (
-                <div key={ind + 1} className="mb-6">
-                  <h1 className="fw_600 text-lg">{item.contentHeading}</h1>
-                  <p className="scrollItem mb-0 mt-4 text-sm">
-                    {item.contentDescription}
-                  </p>
-                </div>
-              ))}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: BlockContent({
+                    blocks: details,
+                    className: "flex flex-col gap-y-3",
+                  }),
+                }}
+              />
             </div>
           </div>
           <div
