@@ -10,10 +10,10 @@ export const GetQoute = () => {
     <Container maxWidth={'lg'}>
       <div className="pb-10 pt-5">
         <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
-          Get a Quote
+          Request Your Quote Now!
         </h1>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
-          We work closely with our clients, getting to know what they need
+          Simply go to our website and give us the lowdown on your product specs, toss in your contact details, and if you've got a killer design in mind, feel free to attach it. We'll create a personalized quote.
         </p>
         <div
           className={`mt-14 grid grid-cols-11 gap-y-8 rounded-lg py-5 px-3 sm:px-5 md:gap-y-0 ${
@@ -51,9 +51,9 @@ export const GetQoute = () => {
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: '#024E77' }}
                     >
-                      Easy and simple way to request a quote or
+                      Just spill the beans on what you need, and
                       <br className={matches ? 'hidden' : 'block'} />
-                      order directly through our website.
+                      we'll handle the rest like the pros.
                     </p>
                   </div>
                 </div>
@@ -76,9 +76,9 @@ export const GetQoute = () => {
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: '#024E77' }}
                     >
-                      Come up with your design or choose a layout,
+                      Wanna flex your design skills? Go ahead and create your own masterpiece.
                       <br className={matches ? 'hidden' : 'block'} />
-                      logo, fonts, color, etc., from our designing sections.
+                      If not, then you can totally leave it to our designers.
                     </p>
                   </div>
                 </div>
@@ -101,9 +101,9 @@ export const GetQoute = () => {
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: '#024E77' }}
                     >
-                      You will get an email or call once your design
+                      Once you've hit send on that design, sit back and relax.
                       <br className={matches ? 'hidden' : 'block'} />
-                      is approved.
+                      We'll shoot you an email to confirm we've got it.
                     </p>
                   </div>
                 </div>
@@ -128,9 +128,9 @@ export const GetQoute = () => {
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: '#024E77' }}
                     >
-                      After that, we manufacture custom designs
+                      With your green light, we dive straight into the nitty-gritty
                       <br className={matches ? 'hidden' : 'block'} />
-                      boxes with approved design options.
+                      of crafting your custom-designed boxes.
                     </p>
                   </div>
                 </div>
@@ -153,9 +153,9 @@ export const GetQoute = () => {
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: '#024E77' }}
                     >
-                      You will get the order delivered within 8-10
+                      Drumroll, please! Your custom packaging will be making its grand entrance
                       <br className={matches ? 'hidden' : 'block'} />
-                      days after manufacturing.
+                      at your doorstep within 8-10 days after we've worked our magic.
                     </p>
                   </div>
                 </div>
