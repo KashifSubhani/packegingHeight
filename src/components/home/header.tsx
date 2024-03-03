@@ -1,6 +1,6 @@
 import { Container, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
-import headerImg1 from '../../static/headerImg1.svg';
+import headerImg1 from '../../static/headerImg1.png';
 
 export const Header = () => {
   const matches = useMediaQuery('(max-width:870px)');

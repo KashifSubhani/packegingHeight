@@ -4,7 +4,6 @@ import { HowItWorks } from "@/components/home/howItWorks";
 import { PackagingStyle } from "@/components/home/packagingStyle";
 import { PremiumFinishes } from "@/components/home/premiumFinishes";
 import { Testimonials } from "@/components/home/testimonials";
-import { ContentSection } from "@/components/shared/contentSection";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
@@ -13,6 +12,7 @@ import { getServerSideProps } from "@/services/categoriesService";
 import { homePageContentSectionData } from "@/demoData/homePageContentSectionData";
 import { faqsData } from "@/demoData/faqsData";
 import { createArrayOfSets } from "@/services/descriptionService";
+import { HomeContentSection } from "@/components/home/homeContentSection";
 
 const Index = ({ data, testimonials }: any) => {
   const router = useRouter();
@@ -31,7 +31,7 @@ const Index = ({ data, testimonials }: any) => {
       <PremiumFinishes />
       <HowItWorks />
       <GetQoute />
-      <ContentSection contentData={homePageContentSectionData} />
+      <HomeContentSection contentData={homePageContentSectionData} />
       <Faq faqs={faqsData} />
       <Testimonials testimonials={createArrayOfSets(testimonials)} />
       <Footer />

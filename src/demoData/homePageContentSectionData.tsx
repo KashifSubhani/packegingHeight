@@ -17,7 +17,7 @@ export const homePageContentSectionData = {
     },
   ],
   contentImage: {
-    realImg: "https://u4d2z7k9.rocketcdn.me/wp-content/uploads/2022/07/Untitled-1024-%C3%97-683px-56.jpg",
-    alt: "homePageImg",
+    realImg: "/static/headerImg1.png",
+    alt: "headerImg1",
   },
 };
