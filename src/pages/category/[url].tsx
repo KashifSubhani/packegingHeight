@@ -14,13 +14,15 @@ const Index = ({ data, category, products, faqs }: any) => {
       <NextSeo
         title={category.metaTitle}
         description={category.metaDescription}
-        canonical={category.slug.current}
         additionalMetaTags={[
           {
             name: "keywords",
             content: category.metaTags,
           },
         ]}
+        canonical={
+          "https://packagingheight.com/category/" + category.slug.current
+        }
       />
       <Navbar data={data} />
       <CategoryHeader category={category} />
