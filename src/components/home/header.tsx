@@ -1,6 +1,5 @@
 import { Container, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
-
 import headerImg1 from '../../static/headerImg1.svg';
 
 export const Header = () => {
@@ -26,9 +25,9 @@ export const Header = () => {
                   matches ? 'mt-6' : 'mt-10 xl:mt-14'
                 }`}
               >
-                Order personalized, high-quality custom printed packaging and{' '}
+                We're your ultimate destination for top-notch custom packaging solutions to make your brand stand out.{' '}
                 <br className="hidden xl:block" />
-                branded boxes your customers will love all-in one place.
+                Whether you're a tiny online shop or a big corporation, we have everything you need to wow your customers.
               </p>
               <div
                 className={`flex flex-wrap sm:flex-nowrap items-center gap-y-3 gap-x-3 lg:gap-x-5 ${
