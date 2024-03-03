@@ -1,25 +1,29 @@
-import { Container, useMediaQuery } from '@mui/material';
-import Image from 'next/image';
+import { Container, useMediaQuery } from "@mui/material";
+import Image from "next/image";
 
-import steps from '../../static/steps.svg';
-import { GetQouteForm1 } from './subcomponents/getQouteForm1';
+import steps from "../../static/steps.svg";
+import { GetQouteForm1 } from "./subcomponents/getQouteForm1";
 
 export const GetQoute = () => {
-  const matches = useMediaQuery('(max-width:880px)');
+  const matches = useMediaQuery("(max-width:880px)");
+  const matches2 = useMediaQuery("(max-width:1250px)");
+  const matches3 = useMediaQuery("(max-width:1100px)");
   return (
-    <Container maxWidth={'lg'}>
+    <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
         <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
           Request Your Quote Now!
         </h1>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
-          Simply go to our website and give us the lowdown on your product specs, toss in your contact details, and if you've got a killer design in mind, feel free to attach it. We'll create a personalized quote.
+          Simply go to our website and give us the lowdown on your product
+          specs, toss in your contact details, and if you've got a killer design
+          in mind, feel free to attach it. We'll create a personalized quote.
         </p>
         <div
-          className={`mt-14 grid grid-cols-11 gap-y-8 rounded-lg py-5 px-3 sm:px-5 md:gap-y-0 ${
-            matches ? 'gap-x-0 md:gap-x-10' : 'gap-x-14'
+          className={`mt-14 grid grid-cols-11 gap-y-14 rounded-lg py-5 px-3 sm:px-5 md:gap-y-0 ${
+            matches ? "gap-x-0 md:gap-x-10" : "gap-x-14"
           } md:py-10 lg:p-14 xl:grid-cols-12`}
-          style={{ background: '#F1F8F1' }}
+          style={{ background: "#F1F8F1" }}
         >
           <div className="col-span-11 flex justify-end md:col-span-6">
             <GetQouteForm1 />
@@ -28,19 +32,23 @@ export const GetQoute = () => {
             <div className="flex items-center gap-x-4 lg:gap-x-8">
               {!matches && (
                 <div className="hidden md:block">
-                  <Image src={steps} alt="steps" height={400} />
+                  <Image
+                    src={steps}
+                    alt="steps"
+                    height={matches3 ? 1200 : matches2 ? 900 : 800}
+                  />
                 </div>
               )}
               <div className="flex flex-col gap-y-6">
                 <div className="flex h-24 items-start gap-x-4 md:h-auto">
                   <div
                     style={{
-                      width: '2.2rem',
-                      minWidth: '2.2rem',
-                      height: '2.2rem',
+                      width: "2.2rem",
+                      minWidth: "2.2rem",
+                      height: "2.2rem",
                     }}
                     className={`greenBg ${
-                      matches ? 'flex' : 'hidden'
+                      matches ? "flex" : "hidden"
                     } items-center justify-center rounded-full text-lg text-white`}
                   >
                     1
@@ -49,23 +57,22 @@ export const GetQoute = () => {
                     <h1 className="fw_600 mb-2 text-sm">Request A process</h1>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
-                      style={{ color: '#024E77' }}
+                      style={{ color: "#024E77" }}
                     >
-                      Just spill the beans on what you need, and
-                      <br className={matches ? 'hidden' : 'block'} />
-                      we'll handle the rest like the pros.
+                      Just spill the beans on what you need, and we'll handle
+                      the rest like the pros.
                     </p>
                   </div>
                 </div>
                 <div className="flex h-24 items-start gap-x-4 md:h-auto">
                   <div
                     style={{
-                      width: '2.2rem',
-                      minWidth: '2.2rem',
-                      height: '2.2rem',
+                      width: "2.2rem",
+                      minWidth: "2.2rem",
+                      height: "2.2rem",
                     }}
                     className={`greenBg ${
-                      matches ? 'flex' : 'hidden'
+                      matches ? "flex" : "hidden"
                     } items-center justify-center rounded-full text-lg text-white`}
                   >
                     2
@@ -74,23 +81,23 @@ export const GetQoute = () => {
                     <h1 className="fw_600 mb-2 text-sm">Choose Design</h1>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
-                      style={{ color: '#024E77' }}
+                      style={{ color: "#024E77" }}
                     >
-                      Wanna flex your design skills? Go ahead and create your own masterpiece.
-                      <br className={matches ? 'hidden' : 'block'} />
-                      If not, then you can totally leave it to our designers.
+                      Wanna flex your design skills? Go ahead and create your
+                      own masterpiece. If not, then you can totally leave it to
+                      our designers.
                     </p>
                   </div>
                 </div>
                 <div className="flex h-24 items-start gap-x-4 md:h-auto">
                   <div
                     style={{
-                      width: '2.2rem',
-                      minWidth: '2.2rem',
-                      height: '2.2rem',
+                      width: "2.2rem",
+                      minWidth: "2.2rem",
+                      height: "2.2rem",
                     }}
                     className={`greenBg ${
-                      matches ? 'flex' : 'hidden'
+                      matches ? "flex" : "hidden"
                     } items-center justify-center rounded-full text-lg text-white`}
                   >
                     3
@@ -99,10 +106,9 @@ export const GetQoute = () => {
                     <h1 className="fw_600 mb-2 text-sm">Confirmation</h1>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
-                      style={{ color: '#024E77' }}
+                      style={{ color: "#024E77" }}
                     >
                       Once you've hit send on that design, sit back and relax.
-                      <br className={matches ? 'hidden' : 'block'} />
                       We'll shoot you an email to confirm we've got it.
                     </p>
                   </div>
@@ -110,12 +116,12 @@ export const GetQoute = () => {
                 <div className="flex h-24 items-start gap-x-4 md:h-auto">
                   <div
                     style={{
-                      width: '2.2rem',
-                      minWidth: '2.2rem',
-                      height: '2.2rem',
+                      width: "2.2rem",
+                      minWidth: "2.2rem",
+                      height: "2.2rem",
                     }}
                     className={`greenBg ${
-                      matches ? 'flex' : 'hidden'
+                      matches ? "flex" : "hidden"
                     } items-center justify-center rounded-full text-lg text-white`}
                   >
                     4
@@ -126,23 +132,22 @@ export const GetQoute = () => {
                     </h1>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
-                      style={{ color: '#024E77' }}
+                      style={{ color: "#024E77" }}
                     >
-                      With your green light, we dive straight into the nitty-gritty
-                      <br className={matches ? 'hidden' : 'block'} />
-                      of crafting your custom-designed boxes.
+                      With your green light, we dive straight into the
+                      nitty-gritty of crafting your custom-designed boxes.
                     </p>
                   </div>
                 </div>
                 <div className="flex h-24 items-start gap-x-4 md:h-auto">
                   <div
                     style={{
-                      width: '2.2rem',
-                      minWidth: '2.2rem',
-                      height: '2.2rem',
+                      width: "2.2rem",
+                      minWidth: "2.2rem",
+                      height: "2.2rem",
                     }}
                     className={`greenBg ${
-                      matches ? 'flex' : 'hidden'
+                      matches ? "flex" : "hidden"
                     } items-center justify-center rounded-full text-lg text-white`}
                   >
                     5
@@ -151,11 +156,11 @@ export const GetQoute = () => {
                     <h1 className="fw_600 mb-2 text-sm">Delivery</h1>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
-                      style={{ color: '#024E77' }}
+                      style={{ color: "#024E77" }}
                     >
-                      Drumroll, please! Your custom packaging will be making its grand entrance
-                      <br className={matches ? 'hidden' : 'block'} />
-                      at your doorstep within 8-10 days after we've worked our magic.
+                      Drumroll, please! Your custom packaging will be making its
+                      grand entrance at your doorstep within 8-10 days after
+                      we've worked our magic.
                     </p>
                   </div>
                 </div>

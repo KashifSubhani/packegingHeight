@@ -42,7 +42,7 @@ export const GetQouteForm1 = () => {
         width: matches ? "100%" : "26rem",
         minWidth: matches ? "100%" : "26rem",
       }}
-      className="overflow-hidden rounded-xl shadow-xl"
+      className="overflow-hidden rounded-xl shadow-xl h-max"
     >
       <div className="greenBg flex h-14 items-center justify-center text-white">
         <p className="fw_600 m-0 p-0 text-xl">Get Custom Quote</p>
