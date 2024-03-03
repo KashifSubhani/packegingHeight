@@ -4,12 +4,12 @@
 import { Container, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getImg } from "@/services/descriptionService";
-import BlockContent from "@sanity/block-content-to-html";
+import { PortableText } from "@portabletext/react";
 
 export const ContentSection = (props: any) => {
   const matches = useMediaQuery("(max-width:1024px)");
   const matches2 = useMediaQuery("(max-width:400px)");
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState<any>([]);
   useEffect(() => {
     if (
       props.contentData &&
@@ -20,20 +20,34 @@ export const ContentSection = (props: any) => {
     }
   }, [props.contentData]);
 
+  const block = {
+    h1: ({ children }: any) => (
+      <h1 className="text-5xl fw_600 mb-2 mt-4">{children}</h1>
+    ),
+    h2: ({ children }: any) => (
+      <h2 className="text-4xl fw_600 mb-2 mt-4">{children}</h2>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="text-3xl fw_600 mb-2 mt-4">{children}</h3>
+    ),
+    h4: ({ children }: any) => (
+      <h4 className="text-2xl fw_600 mb-2 mt-4">{children}</h4>
+    ),
+    h5: ({ children }: any) => (
+      <h5 className="text-xl fw_600 mb-2 mt-4">{children}</h5>
+    ),
+    h6: ({ children }: any) => (
+      <h6 className="text-lg fw_600 mb-2 mt-4">{children}</h6>
+    ),
+  };
+
   return (
     <Container maxWidth={"lg"}>
       <div style={{ background: "#F1F8F1" }}>
         <div className="flex flex-col-reverse gap-y-6 gap-x-0 rounded-lg py-5 sm:py-10 px-3 sm:px-4 md:flex-row md:gap-y-0 md:gap-x-10 md:py-14 xl:px-14">
           <div className="scrollDiv h-80 overflow-y-auto pl-3 md:pl-5 lg:h-96">
             <div className="scrollItem">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: BlockContent({
-                    blocks: details,
-                    className: "flex flex-col gap-y-3",
-                  }),
-                }}
-              />
+              <PortableText value={details} components={{ block }} />
             </div>
           </div>
           <div
