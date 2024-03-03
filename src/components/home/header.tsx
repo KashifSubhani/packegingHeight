@@ -1,6 +1,5 @@
 import { Container, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
-
 import headerImg1 from '../../static/headerImg1.svg';
 
 export const Header = () => {
