@@ -1,54 +1,56 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-key */
-import { Container } from '@mui/material';
-import Image from 'next/image';
+import { Container } from "@mui/material";
+import Image from "next/image";
 
-import workImg from '../../static/workImg.svg';
-import workImg2 from '../../static/workImg2.svg';
-import workImg3 from '../../static/workImg3.svg';
+import workImg from "../../static/workImg.svg";
+import workImg2 from "../../static/workImg2.svg";
+import workImg3 from "../../static/workImg3.svg";
 
 const howWorksData = [
   {
-    name: 'Tiny minimums. No maximums.',
+    name: "Tiny minimums. No maximums.",
     desc: [
-      'There's no limit to what we can handle. plus, our',
-      <br className="hidden sm:block md:hidden xl:block" />,
-      ' prices are super competitive, so rest easy knowing ',
-      <br className="hidden sm:block md:hidden xl:block" />,
-      ' you're getting the best deal for your budget!',
+      "There's no limit to what we can handle. plus, our",
+      " prices are super competitive, so rest easy knowing ",
+      " you're getting the best deal for your budget!",
     ],
     img: workImg,
   },
   {
-    name: 'Instant quotes',
+    name: "Receive Instant Quotes",
     desc: [
-      'Pick your style, design your boxes, and get',
-      <br className="hidden sm:block md:hidden xl:block" />,
-      'an instant quote.',
+      "While you're busy crafting your custom boxes, ",
+      "we'll crunch the numbers in real time and ",
+      "give you instant quotes.",
     ],
     img: workImg2,
   },
   {
-    name: 'Fast turnarounds',
+    name: "Fast Turnarounds",
     desc: [
-      'Eligible orders may ship within 10 days or less',
-      <br className="hidden sm:block md:hidden xl:block" />,
-      ' with priority turnaround options.',
+      "With eligible orders shipping in 10 days or less ",
+      "and even speedier options for those who need it, ",
+      "you'll have your packaging in hand before you know it.",
     ],
     img: workImg3,
   },
 ];
 export const HowItWorks = () => {
   return (
-    <Container maxWidth={'lg'}>
+    <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
         <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
           How it works
         </h1>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
-          Browse through our packaging styles and find the perfect fit for your products. Once you've picked your style, it's time to specify the quantity you need. Next, select the size that best suits your products. Add your personal touch by customizing your boxes with images, text, and colors that reflect your brand identity.{' '}
+          Browse through our packaging styles and find the perfect fit for your
+          products. Once you've picked your style, it's time to specify the
+          quantity you need. Next, select the size that best suits your
+          products. Add your personal touch by customizing your boxes with
+          images, text, and colors that reflect your brand identity.{" "}
           <br className="hidden sm:block" />
-          And here's the best part: you'll receive instant quotes as you design,{' '}
+          And here's the best part: you'll receive instant quotes as you design,{" "}
           <br className="hidden sm:block" />
           ensuring full transparency on pricing!
         </p>
@@ -58,7 +60,7 @@ export const HowItWorks = () => {
           {howWorksData.map((data: any, ind: any) => (
             <div
               key={ind + 1}
-              className="grayBg col-span-12 flex flex-col items-center overflow-hidden rounded-md px-4 py-5 md:col-span-4 md:h-72"
+              className="grayBg col-span-12 flex flex-col items-center overflow-hidden rounded-md px-4 py-5 md:col-span-4 md:h-80"
             >
               <div className="flex h-32 items-center justify-center">
                 <Image src={data.img} alt="data.img" />
