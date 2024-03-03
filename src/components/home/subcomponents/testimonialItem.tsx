@@ -32,7 +32,7 @@ export const TestimonialItem = ({dataSet, key}:any) => {
             >
               “
             </p>
-            <h2 className="fw_600 text-sm">{getReview(dataSet).title}</h2>
+            <p className="fw_600 text-sm">{getReview(dataSet).title}</p>
             <div
               className="mt-2 flex items-center gap-x-1"
               style={{ fontSize: "14px" }}

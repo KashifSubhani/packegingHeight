@@ -31,9 +31,9 @@ export const Testimonials = (props: any) => {
     <Container maxWidth={"lg"}>
       {props.testimonials && props.testimonials.length > 0 && (
         <div className="pb-10 pt-4">
-          <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
+          <p className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
             Testimonials
-          </h1>
+          </p>
           <div className="block sm:hidden">
             <MobileTestimonials />
           </div>

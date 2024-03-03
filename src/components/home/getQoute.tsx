@@ -11,9 +11,9 @@ export const GetQoute = () => {
   return (
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
-        <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
+        <p className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
           Request Your Quote Now!
-        </h1>
+        </p>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
           Simply go to our website and give us the lowdown on your product
           specs, toss in your contact details, and if you've got a killer design
@@ -54,7 +54,7 @@ export const GetQoute = () => {
                     1
                   </div>
                   <div>
-                    <h1 className="fw_600 mb-2 text-sm">Request A process</h1>
+                    <p className="fw_600 mb-2 text-sm">Request A process</p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}
@@ -78,7 +78,7 @@ export const GetQoute = () => {
                     2
                   </div>
                   <div>
-                    <h1 className="fw_600 mb-2 text-sm">Choose Design</h1>
+                    <p className="fw_600 mb-2 text-sm">Choose Design</p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}
@@ -103,7 +103,7 @@ export const GetQoute = () => {
                     3
                   </div>
                   <div>
-                    <h1 className="fw_600 mb-2 text-sm">Confirmation</h1>
+                    <p className="fw_600 mb-2 text-sm">Confirmation</p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}
@@ -127,9 +127,9 @@ export const GetQoute = () => {
                     4
                   </div>
                   <div>
-                    <h1 className="fw_600 mb-2 text-sm">
+                    <p className="fw_600 mb-2 text-sm">
                       Manufacturing Process
-                    </h1>
+                    </p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}
@@ -153,7 +153,7 @@ export const GetQoute = () => {
                     5
                   </div>
                   <div>
-                    <h1 className="fw_600 mb-2 text-sm">Delivery</h1>
+                    <p className="fw_600 mb-2 text-sm">Delivery</p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}

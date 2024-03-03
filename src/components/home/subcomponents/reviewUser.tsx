@@ -20,7 +20,7 @@ export const ReviewUser = (props: any) => {
           className="h-14 w-14 rounded-full object-cover"
         />
         <div>
-          <h2 className="fw_600 text-sm">{props.user.reviewerName}</h2>
+          <p className="fw_600 text-sm">{props.user.reviewerName}</p>
           <p className="text-xs">{props.user.reviewerDesignation}</p>
         </div>
       </div>

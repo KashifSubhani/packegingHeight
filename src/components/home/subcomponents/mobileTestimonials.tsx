@@ -21,13 +21,13 @@ export const MobileTestimonials = () => {
         <div className="flex flex-col gap-y-5" key={ind + 1}>
           <ReviewUser img={d} setTab={() => {}} tab={ind} value={ind} />
           <div className="relative mx-auto">
-            <h2 className="fw_600 text-sm">
+            <p className="fw_600 text-sm">
               {ind === 0 &&
                 'Excellent service from the company, I like this company'}
               {ind === 1 && 'Its was a great experience'}
               {ind === 2 &&
                 "it helps me in my difficult times. It's my other brain!"}
-            </h2>
+            </p>
             <div className="mt-2 flex items-center gap-x-1 text-yellow-500">
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />

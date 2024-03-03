@@ -8,9 +8,9 @@ export const PackagingStyle = (props: any) => {
   return (
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
           Pick Your Custom Packaging Look!
-        </h1>
+        </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
          Here at Packaging Height, we've got loads of cool styles for
           <br className="hidden sm:block" />
@@ -36,9 +36,9 @@ export const PackagingStyle = (props: any) => {
                 >
                     <img src={getImg(data.imageWithAlt).url} alt={getImg(data.imageWithAlt).alt} />
                 </div>
-                <h2 className="fw_600 text-lg md:text-base lg:text-lg mt-3">
+                <p className="fw_600 text-lg md:text-base lg:text-lg mt-3">
                   {data.name}
-                </h2>
+                </p>
                 <p className="text-sm md:text-xs lg:text-sm mt-2 big_three_lines_elipsis">
                   {data.description}
                 </p>

@@ -38,11 +38,11 @@ export const Footer = () => {
       <Container maxWidth="lg">
         <div>
           <div className="border-b border-black pb-8">
-            <h2 className="fw_600 pt-10 text-xl text-black">
+            <p className="fw_600 pt-10 text-xl text-black">
               We collaborate with people and brands;
               <br className="hidden sm:block" />
               lets build something great together.
-            </h2>
+            </p>
             <div className="mt-4 flex flex-col justify-between gap-y-5 md:flex-row md:items-end lg:mt-0">
               <div>
                 <p className="fw_400 text-sm text-black">Connect with us!</p>
@@ -55,9 +55,9 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="ml-auto md:ml-0">
-                <h2 className="fw_400 text-sm text-black">
+                <p className="fw_400 text-sm text-black">
                   Sign up for exclusive offers and updats!
-                </h2>
+                </p>
                 <div className="mt-4 flex items-center gap-x-1">
                   <input
                     type="text"
@@ -84,7 +84,7 @@ export const Footer = () => {
             </div>
             <div className="col-span-12 grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-10 md:col-span-6 md:gap-x-5 lg:gap-x-8">
               <div>
-                <h2 className="fw_600 text-base text-black">Sustainability</h2>
+                <p className="fw_600 text-base text-black">Sustainability</p>
                 <p className="fw_400 mt-2 text-xs leading-5 text-black sm:mt-5 md:leading-8">
                   {" "}
                   Packaging height is pushing change for a greener tomorrow. For
@@ -94,7 +94,7 @@ export const Footer = () => {
               </div>
 
               <div>
-                <h2 className="fw_600 text-base text-black">Compliance</h2>
+                <p className="fw_600 text-base text-black">Compliance</p>
                 <p className="fw_400 mt-2 text-xs leading-5 text-black sm:mt-5 md:leading-8">
                   {" "}
                   Packaging height is committed to delivering manufacturing

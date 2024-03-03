@@ -40,9 +40,9 @@ export const HowItWorks = () => {
   return (
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
-        <h1 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
+        <h2 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
           How it works
-        </h1>
+        </h2>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
           Browse through our packaging styles and find the perfect fit for your
           products. Once you've picked your style, it's time to specify the
@@ -65,9 +65,9 @@ export const HowItWorks = () => {
               <div className="flex h-32 items-center justify-center">
                 <Image src={data.img} alt="data.img" />
               </div>
-              <h2 className="fw_600 mt-3 text-center text-sm lg:text-base">
+              <p className="fw_600 mt-3 text-center text-sm lg:text-base">
                 {data.name}
-              </h2>
+              </p>
               <p className="mt-2 text-center text-xs opacity-70 lg:text-sm">
                 {data.desc}
               </p>
