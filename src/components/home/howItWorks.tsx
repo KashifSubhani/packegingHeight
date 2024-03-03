@@ -46,13 +46,11 @@ export const HowItWorks = () => {
           How it works
         </h1>
         <p className="mt-2 text-center text-sm leading-5 opacity-70">
-          Select a packaging style, quantity, and choose from custom or stock
-          sizes – then start designing your custom boxes. Add{' '}
+          Browse through our packaging styles and find the perfect fit for your products. Once you've picked your style, it's time to specify the quantity you need. Next, select the size that best suits your products. Add your personal touch by customizing your boxes with images, text, and colors that reflect your brand identity.{' '}
           <br className="hidden sm:block" />
-          customization options like images, text, and any color your brand
-          requires. As you design you'll see an instant quote so you{' '}
+          And here's the best part: you'll receive instant quotes as you design,{' '}
           <br className="hidden sm:block" />
-          know exactly what your final order will come to.
+          ensuring full transparency on pricing!
         </p>
         <div
           className={`grid grid-cols-12 mt-14 gap-y-4 md:gap-y-0 md:gap-x-3 lg:gap-x-8`}
