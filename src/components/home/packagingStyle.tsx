@@ -9,13 +9,12 @@ export const PackagingStyle = (props: any) => {
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
         <h1 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
-          Custom Pakaging and Style
+          Pick Your Custom Packaging Look!
         </h1>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
-          Choose a packaging style for your custom boxes, start designing with
-          us, and get your
+         Here at Packaging Height, we've got loads of cool styles for
           <br className="hidden sm:block" />
-          boxes with the most advanced printing techniques
+          your fancy and funky packaging.
         </p>
         {props.list && props.list.length > 0 && (
           <div
