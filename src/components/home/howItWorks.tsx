@@ -11,11 +11,11 @@ const howWorksData = [
   {
     name: 'Tiny minimums. No maximums.',
     desc: [
-      'No matter the size of your custom packaging',
+      'There's no limit to what we can handle. plus, our',
       <br className="hidden sm:block md:hidden xl:block" />,
-      ' order, you’ll get the best boxes at prices',
+      ' prices are super competitive, so rest easy knowing ',
       <br className="hidden sm:block md:hidden xl:block" />,
-      ' to match.',
+      ' you're getting the best deal for your budget!',
     ],
     img: workImg,
   },
