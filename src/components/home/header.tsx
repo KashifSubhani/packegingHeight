@@ -16,9 +16,9 @@ export const Header = () => {
           <div className="flex flex-col-reverse gap-y-6 sm:grid sm:grid-cols-12">
             <div className="col-span-6">
               <h1 className="fw_600 text-2xl leading-tight md:text-3xl ">
-                Create custom boxes &
-                <br className={matches ? 'hidden' : 'block'} /> packaging of
-                your dreams
+                Create Custom Boxes &
+                <br className={matches ? 'hidden' : 'block'} /> Packaging of
+                Your Dreams
               </h1>
               <p
                 className={`text-sm ${
