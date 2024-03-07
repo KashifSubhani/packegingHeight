@@ -16,21 +16,21 @@ import copyright from "../../../static/copyright.svg";
 import { Categories } from "./subcomponents/categories";
 
 const linksData1 = [
-  "Products",
-  "Industries",
-  "Box by Material",
-  "Shape & Styles",
+  { link: "/allProducts", name: "Products" },
+  { link: "/allCategories", name: "Industries" },
+  { link: "/category/box-by-material", name: "Box by Material" },
+  { link: "/category/shape-and-styles", name: "Shape & Styles" },
 ];
 const linksData2 = [
-  "Why Us",
-  "About Us",
-  "Contact Us",
-  "Request a quote",
+  { link: "", name: "Why Us" },
+  { link: "", name: "About Us" },
+  { link: "/contactUs", name: "Contact Us" },
+  { link: "/requestQoute", name: "Request a quote" },
 ];
 const linksData3 = [
-  "Blog",
-  "Terms & Conditions",
-  "Privacy Policy",
+  { link: "", name: "Blog" },
+  { link: "", name: "Terms & Conditions" },
+  { link: "", name: "Privacy Policy" },
 ];
 
 export const Footer = () => {
