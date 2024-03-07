@@ -18,26 +18,19 @@ import { Categories } from "./subcomponents/categories";
 const linksData1 = [
   "Products",
   "Industries",
-  "Option Library",
-  "Inspiration Library",
-  "Turnkey Folding Carton",
-  "Digital Corrugated",
+  "Box by Material",
+  "Shape & Styles",
 ];
 const linksData2 = [
-  "Why PakFactory",
+  "Why Us",
   "About Us",
   "Contact Us",
   "Request a quote",
-  "Hours & Locations",
-  "Careers",
 ];
 const linksData3 = [
-  "Why PakFactory",
-  "About Us",
-  "Contact Us",
-  "Request a quote",
-  "Hours & Locations",
-  "Careers",
+  "Blog",
+  "Terms & Conditions",
+  "Privacy Policy",
 ];
 
 export const Footer = () => {
