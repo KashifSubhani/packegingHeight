@@ -22,7 +22,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     {/* Same as */}
     <ToastContainer />
     <Component {...pageProps} />
-    <FloatingWhatsApp phoneNumber="+1(307) 429 2922" accountName="Team" notification={false} />
+    <FloatingWhatsApp
+      phoneNumber="+1(307) 429 2922"
+      accountName="Team"
+      notification={false}
+      buttonClassName="left-10"
+      chatboxClassName="left-10"
+      allowClickAway
+    />
   </>
 );
 
