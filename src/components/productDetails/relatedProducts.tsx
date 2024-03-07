@@ -37,27 +37,29 @@ export const RelatedProducts = (props: any) => {
             Related Products
           </h1>
           <div className="mt-10">
-          <Carousel responsive={responsive}>
-            {props.product.relatedProducts.map((data: any, index: any) => (
-              <div
-                onClick={() => router.push("/" + getSlug(props.data.slug))}
-                key={index + 1}
-                className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2"
-              >
+            <Carousel responsive={responsive}>
+              {props.product.relatedProducts.map((data: any, index: any) => (
                 <div
-                  className="w-full rounded-md h-72 p-3 flex items-center justify-center overflow-hidden"
-                  style={{ background: "#eaf0f5" }}
+                  key={index + 1}
+                  onClick={() => router.push("/" + getSlug(data.slug))}
+                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2"
                 >
-                  {data.images && data.images.length > 0 && data.images[0] && (
-                    <img
-                      src={getImg(data.images[0]).url}
-                      alt={getImg(data.images[0]).alt}
-                    />
-                  )}
+                  <div
+                    className="w-full rounded-md h-72 p-3 flex items-center justify-center overflow-hidden"
+                    style={{ background: "#eaf0f5" }}
+                  >
+                    {data.images &&
+                      data.images.length > 0 &&
+                      data.images[0] && (
+                        <img
+                          src={getImg(data.images[0]).url}
+                          alt={getImg(data.images[0]).alt}
+                        />
+                      )}
+                  </div>
+                  <h1 className="text-base fw_400 mt-1">{data.name}</h1>
                 </div>
-                <h1 className="text-base fw_400 mt-1">{data.name}</h1>
-              </div>
-            ))}
+              ))}
             </Carousel>
           </div>
         </div>

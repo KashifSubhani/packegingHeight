@@ -1,6 +1,7 @@
 import "../styles/global.css";
 
 import type { AppProps } from "next/app";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,6 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     {/* Same as */}
     <ToastContainer />
     <Component {...pageProps} />
+    <FloatingWhatsApp phoneNumber="+1(307) 429 2922" accountName="Team" notification={false} />
   </>
 );
 

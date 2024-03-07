@@ -31,6 +31,14 @@ const linksData2 = [
   "Hours & Locations",
   "Careers",
 ];
+const linksData3 = [
+  "Why PakFactory",
+  "About Us",
+  "Contact Us",
+  "Request a quote",
+  "Hours & Locations",
+  "Careers",
+];
 
 export const Footer = () => {
   return (
@@ -80,7 +88,7 @@ export const Footer = () => {
             <div className="col-span-12 grid grid-cols-3 gap-x-5 md:col-span-6 lg:gap-x-8">
               <Categories list={linksData1} title="Solutions" />
               <Categories list={linksData2} title="Company" />
-              <Categories list={linksData1} title="Resources" />
+              <Categories list={linksData3} title="Resources" />
             </div>
             <div className="col-span-12 grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-10 md:col-span-6 md:gap-x-5 lg:gap-x-8">
               <div>

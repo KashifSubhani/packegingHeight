@@ -28,7 +28,6 @@ export const ContactDetails = () => {
             <div className="mt-6 flex flex-col gap-y-3">
               <a
                 title="Click for call me"
-                target="_blank"
                 href={`tel:+1(307) 429 2922`}
                 className="flex items-center gap-x-3 sm:gap-x-5 text-zinc-600 border-none hover:text-lime-500 no-underline"
               >
@@ -37,7 +36,6 @@ export const ContactDetails = () => {
               </a>
               <a
                 title="Click for call me"
-                target="_blank"
                 href={`tel:+1(307) 429 2922`}
                 className="flex items-center gap-x-3 sm:gap-x-5 text-zinc-600 hover:text-lime-500 no-underline border-none"
               >
@@ -46,7 +44,6 @@ export const ContactDetails = () => {
               </a>
               <a
                 title="Click for mail me"
-                target="_blank"
                 href={`mailto:info@packagingheight.com`}
                 className="flex items-center gap-x-3 sm:gap-x-5 text-zinc-600 hover:text-lime-500 no-underline border-none"
               >

@@ -36,7 +36,6 @@ export const DetailsContent = (props: any) => {
           />
         </div>
 
-        <h1 className="text-3xl fw_600 mt-8">Description</h1>
         <div className="mt-10 text-sm sm:text-base">
           <PortableText value={props.product.details} components={{ block }} />
         </div>

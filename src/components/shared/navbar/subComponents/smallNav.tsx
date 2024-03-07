@@ -46,7 +46,7 @@ export const SmallNav = (props: any) => {
           Beat the Price
         </button>
         <button className="text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 sm:w-40 buttonBorderRadius">
-          Get a Free Qoute
+          Get a Free Quote
         </button>
       </div>
     </div>

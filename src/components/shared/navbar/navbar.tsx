@@ -82,11 +82,21 @@ export const Navbar = (props: any) => {
               <p className="fw_400 whitespace-nowrap text-sm">
                 Talk to our packaging expert
               </p>
-              <p className="greenText fw_400">+1(307) 429 2922</p>
+              <a
+                title="Click for call me"
+                href={`tel:+1(307) 429 2922`}
+                className="greenText fw_400 border-none"
+              >
+                +1(307) 429 2922
+              </a>
             </div>
-            <p className="fw_400 hidden text-sm text-green-300 lg:block lg:text-zinc-700">
+            <a
+              title="Click for mail me"
+              href={`mailto:info@packagingheight.com`}
+              className="fw_400 hidden text-sm text-green-300 lg:block lg:text-zinc-700 border-none hover:text-lime-500"
+            >
               info@packagingheight.com
-            </p>
+            </a>
           </div>
         </div>
         <div
@@ -135,13 +145,20 @@ export const Navbar = (props: any) => {
             >
               Beat the Price
             </button>
-            <button className="fw_600 greenText greenBorder buttonBorderRadius w-36 bg-transparent py-2 text-xs lg:w-40">
-              Get a Free Qoute
+            <button
+              onClick={() => router.push("/requestQoute")}
+              className="fw_600 greenText greenBorder buttonBorderRadius w-36 bg-transparent py-2 text-xs lg:w-40"
+            >
+              Get a Free Quote
             </button>
           </div>
-          <p className="fw_400 block text-sm text-green-500 lg:hidden lg:text-zinc-700 mb-3">
+          <a
+            title="Click for mail me"
+            href={`mailto:info@packagingheight.com`}
+            className="fw_400 block text-sm text-green-500 lg:hidden lg:text-zinc-700 mb-3"
+          >
             info@packagingheight.com
-          </p>
+          </a>
         </div>
       </Container>
     </div>

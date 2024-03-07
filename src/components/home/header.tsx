@@ -37,7 +37,7 @@ export const Header = () => {
                 <button
                   className={`text-xs fw_600 greenBg text-white whitespace-nowrap bg-transparent greenBorder py-2 lg:py-3 w-48 sm:w-max sm:px-5 lg:px-8 buttonBorderRadius`}
                 >
-                  Request a Qoute
+                  Request a Quote
                 </button>
                 <button className="fw_600 greenText primaryShadow buttonBorderRadius w-48 whitespace-nowrap border border-white bg-white py-2 text-xs sm:w-max sm:px-5 lg:py-3 lg:px-8">
                   Choose Packaging Style

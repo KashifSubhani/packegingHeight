@@ -8,29 +8,41 @@ import { Navbar } from "@/components/shared/navbar/navbar";
 import { client } from "@/utils/sanityConfig";
 import { groq } from "next-sanity";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Index = ({ data, product, faqs }: any) => {
+  const router = useRouter();
+  useEffect(() => {
+    console.log("DDDDDDDDDDDDDDDD", product);
+    // Check if data is empty, and if so, redirect to 404 page
+    if (!product) {
+      router.push("/not-found");
+    }
+  }, [product, router]);
   return (
-    <div>
-      <NextSeo
-        title={product.metaTitle}
-        description={product.metaDescription}
-        canonical={product.slug.current}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content: product.metaTags,
-          },
-        ]}
-      />
-      <Navbar data={data} />
-      <DetailsHeader product={product} />
-      <DetailsContent product={product} />
-      <ContentSection contentData={product.content} />
-      <Faq faqs={faqs} />
-      <RelatedProducts product={product} />
-      <Footer />
-    </div>
+    product &&(
+      <div>
+        <NextSeo
+          title={product.metaTitle}
+          description={product.metaDescription}
+          canonical={product.slug.current}
+          additionalMetaTags={[
+            {
+              name: "keywords",
+              content: product.metaTags,
+            },
+          ]}
+        />
+        <Navbar data={data} />
+        <DetailsHeader product={product} />
+        <DetailsContent product={product} />
+        <ContentSection contentData={product.content} />
+        <Faq faqs={faqs} />
+        <RelatedProducts product={product} />
+        <Footer />
+      </div>
+    )
   );
 };
 
@@ -68,7 +80,7 @@ export async function getServerSideProps(context: any) {
   return {
     props: {
       data: data.reverse(),
-      product: product,
+      product: product && product._id ? product : null,
       faqs: result,
     },
   };

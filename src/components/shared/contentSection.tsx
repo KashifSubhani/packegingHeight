@@ -22,22 +22,22 @@ export const ContentSection = (props: any) => {
 
   const block = {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl fw_600 mb-2 mt-4">{children}</h1>
+      <h1 className="text-4xl fw_600 mb-2 mt-4">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-4xl fw_600 mb-2 mt-4">{children}</h2>
+      <h2 className="text-3xl fw_600 mb-2 mt-4">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl fw_600 mb-2 mt-4">{children}</h3>
+      <h3 className="text-2xl fw_600 mb-2 mt-4">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl fw_600 mb-2 mt-4">{children}</h4>
+      <h4 className="text-xl fw_600 mb-2 mt-4">{children}</h4>
     ),
     h5: ({ children }: any) => (
-      <h5 className="text-xl fw_600 mb-2 mt-4">{children}</h5>
+      <h5 className="text-lg fw_600 mb-2 mt-4">{children}</h5>
     ),
     h6: ({ children }: any) => (
-      <h6 className="text-lg fw_600 mb-2 mt-4">{children}</h6>
+      <h6 className="text-base fw_600 mb-2 mt-4">{children}</h6>
     ),
   };
 
@@ -51,7 +51,7 @@ export const ContentSection = (props: any) => {
             </div>
           </div>
           <div
-            className={`mx-auto flex rounded-md overflow-hidden ${
+            className={`mx-auto flex rounded-md overflow-hidden bg-zinc-100  ${
               matches2 ? "h-full" : "h-80 lg:h-96"
             } md:mx-0 `}
             style={{
@@ -59,21 +59,12 @@ export const ContentSection = (props: any) => {
               minWidth: matches ? (matches2 ? "100%" : "20rem") : "24rem",
             }}
           >
-            {props.contentData &&
-            props.contentData.contentImage &&
-            props.contentData.contentImage.realImg ? (
+            {props.contentData && props.contentData.contentImage && (
               <img
-                src={props.contentData.contentImage.realImg}
-                alt={props.contentData.contentImage.alt}
+                src={getImg(props.contentData.contentImage).url}
+                alt={getImg(props.contentData.contentImage).alt}
+                className="w-full h-full object-contain object-center"
               />
-            ) : (
-              props.contentData &&
-              props.contentData.contentImage && (
-                <img
-                  src={getImg(props.contentData.contentImage).url}
-                  alt={getImg(props.contentData.contentImage).alt}
-                />
-              )
             )}
           </div>
         </div>

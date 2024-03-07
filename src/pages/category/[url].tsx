@@ -7,30 +7,41 @@ import { Navbar } from "@/components/shared/navbar/navbar";
 import { client } from "@/utils/sanityConfig";
 import { groq } from "next-sanity";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Index = ({ data, category, products, faqs }: any) => {
+  const router = useRouter()
+  useEffect(() => {
+    // Check if data is empty, and if so, redirect to 404 page
+    if (!category) {
+      router.push("/not-found");
+    }
+  }, [category, router]);
   return (
-    <div>
-      <NextSeo
-        title={category.metaTitle}
-        description={category.metaDescription}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content: category.metaTags,
-          },
-        ]}
-        canonical={
-          "https://packagingheight.com/category/" + category.slug.current
-        }
-      />
-      <Navbar data={data} />
-      <CategoryHeader category={category} />
-      <CategoryCards products={products} />
-      <ContentSection contentData={category.content} />
-      <Faq faqs={faqs} />
-      <Footer />
-    </div>
+    category && (
+      <div>
+        <NextSeo
+          title={category.metaTitle}
+          description={category.metaDescription}
+          additionalMetaTags={[
+            {
+              name: "keywords",
+              content: category.metaTags,
+            },
+          ]}
+          canonical={
+            "https://packagingheight.com/category/" + category.slug.current
+          }
+        />
+        <Navbar data={data} />
+        <CategoryHeader category={category} />
+        <CategoryCards products={products} />
+        <ContentSection contentData={category.content} />
+        <Faq faqs={faqs} />
+        <Footer />
+      </div>
+    )
   );
 };
 
