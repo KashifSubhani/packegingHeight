@@ -13,7 +13,7 @@ export const Categories = (props: any) => {
             onClick={() => router.push(data.link)}
             key={ind + 1}
             style={{ fontSize: matches ? "10px" : "13px" }}
-            className="fw_400 cursor-pointer text-black underline"
+            className="fw_400 cursor-pointer text-black hover:text-lime-500 underline"
           >
             {data.name}
           </li>
