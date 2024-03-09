@@ -14,8 +14,6 @@ import { useEffect } from "react";
 const Index = ({ data, product, faqs }: any) => {
   const router = useRouter();
   useEffect(() => {
-    console.log("DDDDDDDDDDDDDDDD", product);
-    // Check if data is empty, and if so, redirect to 404 page
     if (!product) {
       router.push("/not-found");
     }

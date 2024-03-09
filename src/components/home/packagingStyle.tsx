@@ -12,7 +12,7 @@ export const PackagingStyle = (props: any) => {
           Pick Your Custom Packaging Look!
         </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
-         Here at Packaging Height, we've got loads of cool styles for
+          Here at Packaging Height, we've got loads of cool styles for
           <br className="hidden sm:block" />
           your fancy and funky packaging.
         </p>
@@ -34,7 +34,10 @@ export const PackagingStyle = (props: any) => {
                   className="p-3 h-80 md:h-60 lg:h-80 rounded-md flex items-center justify-center"
                   style={{ background: "#F1F8F1" }}
                 >
-                    <img src={getImg(data.imageWithAlt).url} alt={getImg(data.imageWithAlt).alt} />
+                  <img
+                    src={getImg(data.imageWithAlt).url}
+                    alt={getImg(data.imageWithAlt).alt}
+                  />
                 </div>
                 <p className="fw_600 text-lg md:text-base lg:text-lg mt-3">
                   {data.name}
