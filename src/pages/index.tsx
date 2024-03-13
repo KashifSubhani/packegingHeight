@@ -13,7 +13,7 @@ import { faqsData } from "@/demoData/faqsData";
 import { createArrayOfSets } from "@/services/descriptionService";
 import { HomeContentSection } from "@/components/home/homeContentSection";
 
-const Index = ({ data, featuredCategories, testimonials }: any) => {
+const Index = ({ data, featuredCategories, testimonials, products }: any) => {
   const router = useRouter();
   return (
     <div className="relative p-0 m-0 w-full h-full">
@@ -29,7 +29,7 @@ const Index = ({ data, featuredCategories, testimonials }: any) => {
       <PackagingStyle list={featuredCategories.filter((_d: any, ind: any) => ind < 4)} />
       <PremiumFinishes />
       <HowItWorks />
-      <GetQoute />
+      <GetQoute products={products} />
       <HomeContentSection />
       <Faq faqs={faqsData} />
       <Testimonials testimonials={createArrayOfSets(testimonials)} />

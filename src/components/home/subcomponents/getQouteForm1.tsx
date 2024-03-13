@@ -1,19 +1,25 @@
 import { resetForm } from "@/services/categoriesService";
 import { useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-export const GetQouteForm1 = () => {
+export const GetQouteForm1 = (props: any) => {
   const matches = useMediaQuery("(max-width:1000px)");
   const [finalData, setFinalData] = useState<any>({
     color: "1-Color",
     unit: "Inches",
   });
+
+  useEffect(() => {
+    if (props.products && props.products.length > 0)
+      setFinalData({ ...finalData, productName: props.products[0].name });
+  }, [props.products]);
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
+
   const router = useRouter();
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -51,27 +57,7 @@ export const GetQouteForm1 = () => {
         onSubmit={sendEmail}
         className="grid grid-cols-12 gap-3 bg-white p-3"
       >
-        <div className="col-span-3">
-          <input
-            type="number"
-            required
-            value={finalData.width}
-            onChange={(e) => onchnage("width", e.target.value)}
-            placeholder="Width"
-            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
-          />
-        </div>
-        <div className="col-span-3">
-          <input
-            type="number"
-            required
-            value={finalData.depth}
-            onChange={(e) => onchnage("depth", e.target.value)}
-            placeholder="Depth"
-            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
-          />
-        </div>
-        <div className="col-span-3">
+        <div className="col-span-4">
           <input
             type="number"
             required
@@ -81,7 +67,28 @@ export const GetQouteForm1 = () => {
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
-        <div className="col-span-3">
+        <div className="col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
+            placeholder="Width"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+          />
+        </div>
+        <div className="col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.depth}
+            onChange={(e) => onchnage("depth", e.target.value)}
+            placeholder="Depth"
+            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+          />
+        </div>
+
+        <div className="col-span-6">
           <select
             required
             value={finalData.unit}
@@ -89,20 +96,35 @@ export const GetQouteForm1 = () => {
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           >
             <option>Inches</option>
-            <option>MM</option>
             <option>CM</option>
+            <option>MM</option>
           </select>
         </div>
         <div className="col-span-6">
           <input
-            type="text"
+            type="date"
             required
-            value={finalData.productName}
-            onChange={(e) => onchnage("productName", e.target.value)}
-            placeholder="Product Name"
+            min={new Date().toISOString().split("T")[0]}
+            value={finalData.deadline}
+            onChange={(e) => onchnage("deadline", e.target.value)}
+            placeholder="Depth"
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
+        {props.products && props.products.length > 0 && (
+          <div className="col-span-6">
+            <select
+              required
+              value={finalData.productName}
+              onChange={(e) => onchnage("productName", e.target.value)}
+              className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            >
+              {props.products.map((product: any, index: any) => (
+                <option key={index + 1}>{product.name}</option>
+              ))}
+            </select>
+          </div>
+        )}
         <div className="col-span-6">
           <select
             required

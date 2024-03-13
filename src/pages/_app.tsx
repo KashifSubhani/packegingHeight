@@ -4,9 +4,11 @@ import type { AppProps } from "next/app";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ZohoChatWidget from "@/components/shared/zohoWidget";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
+    <ZohoChatWidget />
     <ToastContainer
       position="top-right"
       autoClose={5000}
@@ -26,8 +28,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       phoneNumber="+923074292922"
       accountName="Team"
       notification={false}
-      buttonClassName="left-10"
-      chatboxClassName="left-10"
+      buttonClassName="left-3 -mb-5"
+      chatboxClassName="left-20 "
       allowClickAway
     />
   </>

@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import { FaqItem } from "./subcomponents/faqItem";
 
 export const Faq = (props: any) => {
-  return (
+  return props.faqs && props.faqs.length > 0 ? (
     <Container maxWidth={"lg"}>
       <div className="py-10">
         <h3 className="fw_600 text-center text-2xl leading-tight md:text-3xl lg:text-4xl">
@@ -23,5 +23,7 @@ export const Faq = (props: any) => {
         </div>
       </div>
     </Container>
+  ) : (
+    <div className="pt-10"></div>
   );
 };

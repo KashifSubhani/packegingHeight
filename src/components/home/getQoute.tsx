@@ -4,7 +4,7 @@ import Image from "next/image";
 import steps from "../../static/steps.svg";
 import { GetQouteForm1 } from "./subcomponents/getQouteForm1";
 
-export const GetQoute = () => {
+export const GetQoute = (props: any) => {
   const matches = useMediaQuery("(max-width:880px)");
   const matches2 = useMediaQuery("(max-width:1250px)");
   const matches3 = useMediaQuery("(max-width:1100px)");
@@ -26,7 +26,7 @@ export const GetQoute = () => {
           style={{ background: "#F1F8F1" }}
         >
           <div className="col-span-11 flex justify-end md:col-span-6">
-            <GetQouteForm1 />
+            <GetQouteForm1 products={props.products} />
           </div>
           <div className="col-span-11 flex items-center md:col-span-5 xl:col-span-6">
             <div className="flex items-center gap-x-4 lg:gap-x-8">
@@ -127,9 +127,7 @@ export const GetQoute = () => {
                     4
                   </div>
                   <div>
-                    <p className="fw_600 mb-2 text-sm">
-                      Manufacturing Process
-                    </p>
+                    <p className="fw_600 mb-2 text-sm">Manufacturing Process</p>
                     <p
                       className="fw_400 m-0 p-0 text-xs"
                       style={{ color: "#024E77" }}

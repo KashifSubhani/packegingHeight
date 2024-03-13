@@ -19,11 +19,11 @@ export async function getServerSideProps() {
   const query2 = `*[_type == "category"]`;
   const query3 = `*[_type == 'product']`;
   const data = await client.fetch(query2);
-  const productsRelatedToCategory = await client.fetch(query3);
+  const products = await client.fetch(query3);
   return {
     props: {
       data: data.reverse(),
-      products: productsRelatedToCategory.reverse(),
+      products: products.reverse(),
     },
   };
 }

@@ -4,7 +4,7 @@ import { Container, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 
-const Index = ({data}:any) => {
+const Index = ({ data }: any) => {
   const matches = useMediaQuery("(max-width:640px)");
   const router = useRouter();
   return (
@@ -13,15 +13,19 @@ const Index = ({data}:any) => {
       <div>
         <Container maxWidth="lg">
           <div className="py-20">
-            <h1 className="fw_700 text-center" style={{ fontSize: matches? "5rem" : "8rem" }}>
+            <h1
+              className="fw_700 text-center"
+              style={{ fontSize: matches ? "5rem" : "8rem" }}
+            >
               Oops!
             </h1>
             <p className="uppercase fw_600 text-lg mt-5 text-center">
-              404 - Page not found
+              we are updating
             </p>
             <p className="text-base leading-5 mt-5 text-center">
               The Page you are looking for might have been removed
-              <br className="hidden sm:block" /> had it's name changed or is temporarily unavailable.
+              <br className="hidden sm:block" /> had it's name changed or is
+              temporarily unavailable.
             </p>
             <div className="flex justify-center w-full mt-8">
               <button

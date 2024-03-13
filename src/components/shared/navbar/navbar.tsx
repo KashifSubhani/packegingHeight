@@ -144,7 +144,7 @@ export const Navbar = (props: any) => {
               onClick={() => router.push("/contactUs")}
               className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 lg:w-40 buttonBorderRadius`}
             >
-              Beat the Price
+              Request a sample pack
             </button>
             <button
               onClick={() => router.push("/requestQoute")}
