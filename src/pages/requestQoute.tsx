@@ -167,7 +167,7 @@ const Index = ({ data, products }: any) => {
             </div>
 
             <div className="col-span-6">
-              <label className="text-sm sm:text-base">Select Unit</label>
+              <label className="hidden sm:block text-sm sm:text-base">Select Unit</label>
               <select
                 required
                 value={finalData.unit}
@@ -179,7 +179,7 @@ const Index = ({ data, products }: any) => {
                 <option>MM</option>
               </select>
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Delivery Deadline</label>
               <input
                 type="date"
