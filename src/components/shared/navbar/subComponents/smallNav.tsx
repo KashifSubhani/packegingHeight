@@ -39,16 +39,17 @@ export const SmallNav = (props: any) => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center gap-x-4 sm:gap-x-8">
+      <div className="flex items-center gap-x-2 sm:gap-x-8">
         <button
-         onClick={() => router.push("/contactUs")}
-          className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 sm:w-40 buttonBorderRadius`}
+          onClick={() => router.push("/contactUs")}
+          className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-40 buttonBorderRadius`}
         >
-          Beat the Price
+          Request a sample pack
         </button>
-        <button 
-         onClick={() => router.push("/requestQoute")}
-         className="text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 sm:w-40 buttonBorderRadius">
+        <button
+          onClick={() => router.push("/requestQoute")}
+          className="text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 sm:w-40 buttonBorderRadius"
+        >
           Get a Free Quote
         </button>
       </div>
