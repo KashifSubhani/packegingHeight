@@ -57,7 +57,7 @@ export const Footer = () => {
               </div>
               <div className="ml-auto md:ml-0">
                 <p className="fw_400 text-sm text-black">
-                  Sign up for exclusive offers and updats!
+                  Sign up for exclusive offers and updates!
                 </p>
                 <div className="mt-4 flex items-center gap-x-1">
                   <input
@@ -98,8 +98,8 @@ export const Footer = () => {
                 <p className="fw_600 text-base text-black">Compliance</p>
                 <p className="fw_400 mt-2 text-xs leading-5 text-black sm:mt-5 md:leading-8">
                   {" "}
-                  Packaging height is committed to delivering manufacturing
-                  excellence.
+                  Packaging height is committed to delivering
+                  excellent products.
                 </p>
               </div>
             </div>

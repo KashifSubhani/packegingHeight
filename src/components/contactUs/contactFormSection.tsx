@@ -55,7 +55,7 @@ export const ContactFormSection = () => {
                 <p className="mt-2">
                   Don’t hesitate to contact us on also during the non-working
                   hours / weekend on whatsapp. You will still get an answer in
-                  about 30 minutes.
+                  about 24 hours.
                 </p>
                 <form
                   onSubmit={sendEmail}

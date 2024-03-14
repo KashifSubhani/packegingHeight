@@ -122,6 +122,7 @@ export const GetQouteForm1 = (props: any) => {
               {props.products.map((product: any, index: any) => (
                 <option key={index + 1}>{product.name}</option>
               ))}
+            <option>Other</option>
             </select>
           </div>
         )}

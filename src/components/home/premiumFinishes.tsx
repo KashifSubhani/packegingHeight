@@ -1,6 +1,32 @@
 import { Container } from "@mui/material";
-import gallery from "../../static/gallery.svg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import contentImg from "../../static/contentImg.svg";
 import Image from "next/image";
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+    slidesToSlide: 3,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 export const PremiumFinishes = () => {
   return (
     <Container maxWidth={"lg"}>
@@ -9,15 +35,65 @@ export const PremiumFinishes = () => {
           Premimum Finishes
         </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
-          We know how crucial it is for your packaging to shine bright like a diamond! Our premium finishes guarantee that your packaging looks amazing and feels super fancy in your customers' hands. Because when it comes to packaging, it's all about making a statement, and we're here to help you do it with style!{" "}
+          We know how crucial it is for your packaging to shine bright like a
+          diamond! Our premium finishes guarantee that your packaging looks
+          amazing and feels super fancy in your customers' hands. Because when
+          it comes to packaging, it's all about making a statement, and we're
+          here to help you do it with style!{" "}
           <span className="lowercase">
             of finishing options to ensure SPECTACULAR LOOKS AND PREMIUM
           </span>
           <br className="hidden sm:block" />
           <span className="lowercase"> FEEL OF CUSTOM BOXES</span>
         </p>
-        <div className="w-full flex justify-center mt-14">
-          <Image src={gallery} alt="gallery" />
+        {/* <div className="w-full flex justify-center mt-14">
+          <Image src={contentImg} alt="contentImg" />
+        </div> */}
+        <div className="w-full mt-14">
+          <Carousel autoPlay responsive={responsive}>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+            <div className="p-3">
+              <Image
+                src={contentImg}
+                alt="contentImg"
+                style={{ objectFit: "cover", width: "100%" }}
+              />
+            </div>
+          </Carousel>
         </div>
       </div>
     </Container>

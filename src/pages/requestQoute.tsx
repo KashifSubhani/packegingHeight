@@ -110,6 +110,7 @@ const Index = ({ data, products }: any) => {
                   {products.map((product: any, index: any) => (
                     <option key={index + 1}>{product.name}</option>
                   ))}
+                  <option>Other</option>
                 </select>
               </div>
             )}
@@ -167,7 +168,9 @@ const Index = ({ data, products }: any) => {
             </div>
 
             <div className="col-span-6">
-              <label className="hidden sm:block text-sm sm:text-base">Select Unit</label>
+              <label className="hidden sm:block text-sm sm:text-base">
+                Select Unit
+              </label>
               <select
                 required
                 value={finalData.unit}
