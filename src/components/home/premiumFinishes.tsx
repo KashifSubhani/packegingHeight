@@ -53,7 +53,7 @@ export const PremiumFinishes = () => {
         <div className="w-full mt-14">
           <Carousel autoPlay responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
-              <div className="p-3" key={index + 1}>
+              <div className="sm:p-3" key={index + 1}>
                 <Image
                   src={item.img}
                   alt="contentImg"
