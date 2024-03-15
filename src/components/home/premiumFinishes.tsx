@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import contentImg from "../../static/contentImg.svg";
 import Image from "next/image";
+import { PremiumFinishesData } from "@/demoData/premiumFinishesData";
 
 const responsive = {
   superLargeDesktop: {
@@ -27,6 +27,7 @@ const responsive = {
     slidesToSlide: 1,
   },
 };
+
 export const PremiumFinishes = () => {
   return (
     <Container maxWidth={"lg"}>
@@ -51,48 +52,16 @@ export const PremiumFinishes = () => {
         </div> */}
         <div className="w-full mt-14">
           <Carousel autoPlay responsive={responsive}>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
-            <div className="p-3">
-              <Image
-                src={contentImg}
-                alt="contentImg"
-                style={{ objectFit: "cover", width: "100%" }}
-              />
-            </div>
+            {PremiumFinishesData.map((item: any, index: any) => (
+              <div className="p-3" key={index + 1}>
+                <Image
+                  src={item.img}
+                  alt="contentImg"
+                  style={{ objectFit: "cover", width: "100%" }}
+                />
+                <p className="fw_400 mt-2 text-lg">{item.name}</p>
+              </div>
+            ))}
           </Carousel>
         </div>
       </div>
