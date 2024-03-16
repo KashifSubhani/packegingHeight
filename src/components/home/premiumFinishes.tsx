@@ -54,11 +54,13 @@ export const PremiumFinishes = () => {
           <Carousel autoPlay responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
               <div className="sm:p-3" key={index + 1}>
-                <Image
-                  src={item.img}
-                  alt="contentImg"
-                  style={{ objectFit: "cover", width: "100%" }}
-                />
+                <div className="h-80 w-full overflow-hidden rounded-md">
+                  <Image
+                    src={item.img}
+                    alt="contentImg"
+                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  />
+                </div>
                 <p className="fw_400 mt-2 text-lg">{item.name}</p>
               </div>
             ))}

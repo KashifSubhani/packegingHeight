@@ -51,7 +51,7 @@ export const ContentSection = (props: any) => {
             </div>
           </div>
           <div
-            className={`mx-auto flex rounded-md overflow-hidden bg-zinc-100  ${
+            className={`mx-auto flex rounded-md overflow-hidden ${
               matches2 ? "h-full" : "h-80 lg:h-96"
             } md:mx-0 `}
             style={{
