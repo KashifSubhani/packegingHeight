@@ -9,6 +9,7 @@ import { SmallNav } from "./subComponents/smallNav";
 import { useRouter } from "next/router";
 import { linksData } from "@/demoData/navLinksData";
 import IndustriesDropdown from "./subComponents/industriesDropdown";
+import { SearchBox } from "./subComponents/searchBox";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -16,7 +17,7 @@ export const Navbar = (props: any) => {
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
   const [fullNav, setFullNav] = useState(true);
-
+  const [searchVal, setSearchVal] = useState("");
   const isActive = (p: any) => {
     if (router.asPath.includes(p)) {
       return true;
@@ -37,10 +38,13 @@ export const Navbar = (props: any) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  const handleSearch = (e: any) => {
+    e.preventDefault();
+    router.push(`/search?name=${searchVal}`);
+  };
   return (
     <div
-      className={`pb-3 md:pb-0 pt-3 md:px-6 lg:px-10 sticky duration-300 ${
+      className={`pb-3 md:pb-0 pt-3 xl:px-10 sticky duration-300 ${
         fullNav ? "top-0" : "top-0 md:-top-14"
       } z-30`}
       style={{
@@ -64,6 +68,12 @@ export const Navbar = (props: any) => {
               className="cursor-pointer"
               style={{ minWidth: "130" }}
             />
+            <form onSubmit={handleSearch} className="w-80 hidden sm:block">
+              <SearchBox
+                placeholder="Search"
+                onChange={(val: any) => setSearchVal(val)}
+              />
+            </form>
           </div>
           <button
             onClick={() => setShowNav(true)}
@@ -99,6 +109,12 @@ export const Navbar = (props: any) => {
             </a>
           </div>
         </div>
+        <form onSubmit={handleSearch} className="w-full mt-4 block sm:hidden">
+          <SearchBox
+            placeholder="Search"
+            onChange={(val: any) => setSearchVal(val)}
+          />
+        </form>
         <div
           className={`mt-2 hidden ${
             fullNav ? "items-end" : "items-center"
