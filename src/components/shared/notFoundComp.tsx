@@ -15,7 +15,7 @@ const NotFoundComp = ({ data }: any) => {
           <div className="py-20">
             <h1
               className="fw_700 text-center"
-              style={{ fontSize: matches ? "2rem" : "3rem" }}
+              style={{ fontSize: matches ? "1.5rem" : "3rem" }}
             >
               Data Not Found!
             </h1>
