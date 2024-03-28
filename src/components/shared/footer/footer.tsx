@@ -98,7 +98,7 @@ export const Footer = () => {
                 <p className="fw_600 text-base text-black">Compliance</p>
                 <p className="fw_400 mt-2 text-xs leading-5 text-black sm:mt-5 md:leading-8">
                   {" "}
-                  Packaging height is committed to delivering
+                  Packaging Height is committed to delivering
                   excellent products.
                 </p>
               </div>
@@ -113,7 +113,7 @@ export const Footer = () => {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
               <span className="text-xs text-black">
-                SSL 100% Secure Transacyions
+                SSL 100% Secure Transactions
               </span>
               <div className="flex items-center gap-x-1">
                 <Image src={method1} alt="method1" />
