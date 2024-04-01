@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import contactBg from "../../static/contactBg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faCalendar, faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
   faFacebookF,
   faInstagram,
@@ -52,10 +52,10 @@ export const ContactDetails = () => {
                   info@packagingheight.com
                 </span>
               </a>
-              <div className="flex items-center gap-x-3 sm:gap-x-5">
+              {/* <div className="flex items-center gap-x-3 sm:gap-x-5">
                 <FontAwesomeIcon icon={faCalendar} />
                 <span>24/7</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-x-3 sm:gap-x-5">
                 <FontAwesomeIcon icon={faLocationDot} />
                 <span>

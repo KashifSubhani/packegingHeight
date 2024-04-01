@@ -18,7 +18,7 @@ const Index = ({ data, featuredCategories, testimonials, products }: any) => {
   return (
     <div className="relative p-0 m-0 w-full h-full">
       <button
-        onClick={() => router.push("/requestQoute")}
+        onClick={() => router.push("/request-quote")}
         className="greenBg text-white w-36 text-xs py-1 -rotate-90 z-20 rounded-tl-sm rounded-tr-sm"
         style={{ position: "fixed", right: "-3.7rem", top: "20rem" }}
       >

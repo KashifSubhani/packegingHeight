@@ -16,16 +16,16 @@ import copyright from "../../../static/copyright.svg";
 import { Categories } from "./subcomponents/categories";
 
 const linksData1 = [
-  { link: "/allProducts", name: "Products" },
-  { link: "/allCategories", name: "Industries" },
+  { link: "/all-products", name: "Products" },
+  { link: "/all-categories", name: "Industries" },
   { link: "/category/box-by-material", name: "Box by Material" },
   { link: "/category/shape-and-styles", name: "Shape & Styles" },
 ];
 const linksData2 = [
   { link: "", name: "Why Us" },
   { link: "", name: "About Us" },
-  { link: "/contactUs", name: "Contact Us" },
-  { link: "/requestQoute", name: "Request a quote" },
+  { link: "/contact-us", name: "Contact Us" },
+  { link: "/request-quote", name: "Request a quote" },
 ];
 const linksData3 = [
   { link: "", name: "Blog" },

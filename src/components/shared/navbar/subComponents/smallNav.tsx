@@ -41,13 +41,13 @@ export const SmallNav = (props: any) => {
       </ul>
       <div className="flex items-center gap-x-2 sm:gap-x-8">
         <button
-          onClick={() => router.push("/contactUs")}
+          onClick={() => router.push("/contact-us")}
           className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-40 buttonBorderRadius`}
         >
           Request a sample pack
         </button>
         <button
-          onClick={() => router.push("/requestQoute")}
+          onClick={() => router.push("/request-quote")}
           className="text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 sm:w-40 buttonBorderRadius"
         >
           Get a Free Quote

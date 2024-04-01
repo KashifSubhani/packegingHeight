@@ -33,7 +33,7 @@ export const PremiumFinishes = () => {
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
-          Premimum Finishes
+          Premium Finishes
         </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
           We know how crucial it is for your packaging to shine bright like a
@@ -51,7 +51,7 @@ export const PremiumFinishes = () => {
           <Image src={contentImg} alt="contentImg" />
         </div> */}
         <div className="w-full mt-14">
-          <Carousel autoPlay responsive={responsive}>
+          <Carousel responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
               <div className="sm:p-3" key={index + 1}>
                 <div className="h-80 w-full overflow-hidden rounded-md">

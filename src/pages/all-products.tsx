@@ -1,8 +1,9 @@
-import { AllProductCardsContent } from "@/components/allProducts/allProductCardsContent";
-import { AllProductsHeader } from "@/components/allProducts/allProductsHeader";
-import { Footer } from "@/components/shared/footer/footer";
-import { Navbar } from "@/components/shared/navbar/navbar";
-import { client } from "@/utils/sanityConfig";
+import { Navbar } from "../components/shared/navbar/navbar";
+import { AllProductsHeader } from '../components/allProducts/allProductsHeader';
+import { AllProductCardsContent } from '../components/allProducts/allProductCardsContent';
+import { Footer } from "../components/shared/footer/footer";
+import React from "react";
+import { client } from '../utils/sanityConfig';
 
 const Index = ({ data, products }: any) => {
   return (
