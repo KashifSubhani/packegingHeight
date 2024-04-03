@@ -34,14 +34,14 @@ export const ContactDetails = () => {
                 <FontAwesomeIcon icon={faPhone} />
                 <span>+1(307) 429 2922</span>
               </a>
-              <a
+              {/* <a
                 title="Click for call me"
                 href={`tel:+1(307) 429 2922`}
                 className="flex items-center gap-x-3 sm:gap-x-5 text-zinc-600 hover:text-lime-500 no-underline border-none"
               >
                 <FontAwesomeIcon icon={faPhone} />
                 <span>+1(307) 429 2922</span>
-              </a>
+              </a> */}
               <a
                 title="Click for mail me"
                 href={`mailto:info@packagingheight.com`}

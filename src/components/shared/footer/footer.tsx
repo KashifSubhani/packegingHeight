@@ -48,31 +48,62 @@ export const Footer = () => {
               <div>
                 <p className="fw_400 text-sm text-black">Connect with us!</p>
                 <div className="mt-4 flex items-center gap-x-8 text-xl text-white">
-                  <Image
-                    src={linkedin}
-                    alt="linkedin"
-                    className="cursor-pointer"
-                  />
-                  <Image
-                    src={facebook}
-                    alt="facebook"
-                    className="cursor-pointer"
-                  />
-                  <Image
-                    src={instagram}
-                    alt="instagram"
-                    className="cursor-pointer"
-                  />
-                  <Image
-                    src={twitter}
-                    alt="twitter"
-                    className="cursor-pointer"
-                  />
-                  <Image
-                    src={pinterest}
-                    alt="pinterest"
-                    className="cursor-pointer"
-                  />
+                  <a
+                    href="https://www.pinterest.co.uk/packagingheight/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image
+                      src={linkedin}
+                      alt="linkedin"
+                      className="cursor-pointer"
+                    />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/packagingheight/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image
+                      src={facebook}
+                      alt="facebook"
+                      className="cursor-pointer"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/packagingheightusa"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image
+                      src={instagram}
+                      alt="instagram"
+                      className="cursor-pointer"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.pinterest.co.uk/packagingheight/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image
+                      src={twitter}
+                      alt="twitter"
+                      className="cursor-pointer"
+                    />
+                  </a>
+                  <a
+                    href="https://www.pinterest.com/packagingheight/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image
+                      src={pinterest}
+                      alt="pinterest"
+                      className="cursor-pointer"
+                    />
+                  </a>
                 </div>
               </div>
               <div className="ml-auto md:ml-0">
