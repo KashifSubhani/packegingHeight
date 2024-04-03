@@ -24,7 +24,7 @@ const Index = ({ data, product, faqs }: any) => {
         <NextSeo
           title={product.metaTitle}
           description={product.metaDescription}
-          canonical={product.slug.current}
+          canonical={"https://packagingheight.com/"+product.slug.current}
           additionalMetaTags={[
             {
               name: "keywords",
