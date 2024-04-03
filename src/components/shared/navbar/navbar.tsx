@@ -157,7 +157,7 @@ export const Navbar = (props: any) => {
 
           <div className="hidden items-center gap-x-4 lg:flex lg:gap-x-8 md:pb-3">
             <button
-              onClick={() => router.push("/contact-us")}
+              onClick={() => router.push("/request-sample-pack")}
               className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 lg:w-40 buttonBorderRadius`}
             >
               Request a sample pack

@@ -22,15 +22,15 @@ const linksData1 = [
   { link: "/category/shape-and-styles", name: "Shape & Styles" },
 ];
 const linksData2 = [
-  { link: "", name: "Why Us" },
-  { link: "", name: "About Us" },
+  { link: "/why-us", name: "Why Us" },
+  { link: "/about-us", name: "About Us" },
   { link: "/contact-us", name: "Contact Us" },
   { link: "/request-quote", name: "Request a quote" },
 ];
 const linksData3 = [
   { link: "", name: "Blog" },
-  { link: "", name: "Terms & Conditions" },
-  { link: "", name: "Privacy Policy" },
+  { link: "/terms-&-conditions", name: "Terms & Conditions" },
+  { link: "/privacy-policy", name: "Privacy Policy" },
 ];
 
 export const Footer = () => {
