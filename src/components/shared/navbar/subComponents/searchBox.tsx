@@ -3,7 +3,7 @@ import searchIcon from "../../../../static/searchIcon.svg";
 export const SearchBox = (props: any) => {
   return (
     <div
-      className={`rounded-md border bg-white flex items-center gap-x-3 px-3 ${
+      className={`rounded-full border bg-white flex items-center gap-x-3 px-3 ${
         props.height ? props.height : "h-10"
       }`}
       style={{ boxShadow: "0 0 10px -3px lightGrey" }}

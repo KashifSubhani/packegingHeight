@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export const SearchPageHeader = (props: any) => {
   const router = useRouter();
   return (
-    <div className="py-10" style={{ background: "#F1F8F1" }}>
+    <div className="py-10">
       <Container maxWidth={"lg"}>
         <div>
           <h1 className="text-4xl fw_600 text-center">

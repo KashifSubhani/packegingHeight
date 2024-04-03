@@ -1,4 +1,4 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
@@ -68,12 +68,6 @@ export const Navbar = (props: any) => {
               className="cursor-pointer"
               style={{ minWidth: "130" }}
             />
-            <form onSubmit={handleSearch} className="w-80 hidden sm:block">
-              <SearchBox
-                placeholder="Search"
-                onChange={(val: any) => setSearchVal(val)}
-              />
-            </form>
           </div>
           <button
             onClick={() => setShowNav(true)}
@@ -153,6 +147,12 @@ export const Navbar = (props: any) => {
                 </div>
               </li>
             ))}
+            <li
+              onClick={() => router.push("/search")}
+              className={`cursor-pointer pb-3 duration-300 hover:scale-105`}
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </li>
           </ul>
 
           <div className="hidden items-center gap-x-4 lg:flex lg:gap-x-8 md:pb-3">

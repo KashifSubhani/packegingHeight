@@ -48,11 +48,31 @@ export const Footer = () => {
               <div>
                 <p className="fw_400 text-sm text-black">Connect with us!</p>
                 <div className="mt-4 flex items-center gap-x-8 text-xl text-white">
-                  <Image src={linkedin} alt="linkedin" />
-                  <Image src={facebook} alt="facebook" />
-                  <Image src={instagram} alt="instagram" />
-                  <Image src={twitter} alt="twitter" />
-                  <Image src={pinterest} alt="pinterest" />
+                  <Image
+                    src={linkedin}
+                    alt="linkedin"
+                    className="cursor-pointer"
+                  />
+                  <Image
+                    src={facebook}
+                    alt="facebook"
+                    className="cursor-pointer"
+                  />
+                  <Image
+                    src={instagram}
+                    alt="instagram"
+                    className="cursor-pointer"
+                  />
+                  <Image
+                    src={twitter}
+                    alt="twitter"
+                    className="cursor-pointer"
+                  />
+                  <Image
+                    src={pinterest}
+                    alt="pinterest"
+                    className="cursor-pointer"
+                  />
                 </div>
               </div>
               <div className="ml-auto md:ml-0">
@@ -98,8 +118,8 @@ export const Footer = () => {
                 <p className="fw_600 text-base text-black">Compliance</p>
                 <p className="fw_400 mt-2 text-xs leading-5 text-black sm:mt-5 md:leading-8">
                   {" "}
-                  Packaging Height is committed to delivering
-                  excellent products.
+                  Packaging Height is committed to delivering excellent
+                  products.
                 </p>
               </div>
             </div>
