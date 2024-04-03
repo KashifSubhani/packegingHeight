@@ -62,7 +62,6 @@ export async function getServerSideProps(context: any) {
     productResponse.faqs.forEach((item: any) => ids.push(item._ref));
   }
   const result = await client.fetch(query4, { ids });
-
   if (
     productResponse &&
     productResponse.category &&

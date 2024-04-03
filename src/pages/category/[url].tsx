@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Index = ({ data, category, products, faqs }: any) => {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     // Check if data is empty, and if so, redirect to 404 page
     if (!category) {
@@ -49,13 +49,22 @@ export async function getServerSideProps(context: any) {
   const myUrl = context.query.url;
   const query = `*[ _type == "category" && slug.current  == "${myUrl}"][0]`;
   const query2 = `*[_type == "category"]`;
-  const query3 = `*[_type == 'product' && category->slug.current  == $myUrl]`;
+  const query3 = groq`*[_type == 'product' && _id in $p_ids]`;
   const query4 = groq`*[_type == 'faqs' && _id in $ids]`;
 
   const categoryResponse = await client.fetch(query);
   const data = await client.fetch(query2);
-  const productsRelatedToCategory = await client.fetch(query3, { myUrl });
   let ids: any = [];
+  let p_ids: any = [];
+  if (
+    categoryResponse &&
+    categoryResponse.products &&
+    categoryResponse.products.length > 0
+  ) {
+    categoryResponse.products.forEach((item: any) => p_ids.push(item._ref));
+  }
+  const productsRelatedToCategory = await client.fetch(query3, { p_ids });
+
   if (
     categoryResponse &&
     categoryResponse.faqs &&
