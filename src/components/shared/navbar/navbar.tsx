@@ -46,7 +46,7 @@ export const Navbar = (props: any) => {
     <div
       className={`pb-3 md:pb-0 pt-3 xl:px-10 sticky duration-300 ${
         fullNav ? "top-0" : "top-0 md:-top-14"
-      } z-30`}
+      } z-40`}
       style={{
         background: "#F1F1F2",
         boxShadow: "inset 0px -4px 4px 3px rgba(0, 0, 0, 0.05)",

@@ -50,7 +50,7 @@ export const PremiumFinishes = () => {
         {/* <div className="w-full flex justify-center mt-14">
           <Image src={contentImg} alt="contentImg" />
         </div> */}
-        <div className="w-full mt-14">
+        <div className="w-full mt-14 relative z-10">
           <Carousel responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
               <div className="sm:p-3" key={index + 1}>

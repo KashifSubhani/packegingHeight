@@ -98,7 +98,40 @@ const Index = ({ data, products }: any) => {
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
-            {products && products.length > 0 && (
+            <div className="col-span-12 sm:col-span-6">
+              <label className="text-sm sm:text-base">Company</label>
+              <input
+                type="text"
+                placeholder="Company"
+                required
+                value={finalData.company}
+                onChange={(e) => onchnage("company", e.target.value)}
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+              />
+            </div>
+            <div className="col-span-12 sm:col-span-6">
+              <label className="text-sm sm:text-base">Website</label>
+              <input
+                type="text"
+                placeholder="Website"
+                required
+                value={finalData.website}
+                onChange={(e) => onchnage("website", e.target.value)}
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+              />
+            </div>
+            <div className="col-span-12 sm:col-span-6">
+              <label className="text-sm sm:text-base">Physical Address</label>
+              <input
+                type="text"
+                placeholder="Physical Address"
+                required
+                value={finalData.physicalAddress}
+                onChange={(e) => onchnage("physicalAddress", e.target.value)}
+                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+              />
+            </div>
+            {/* {products && products.length > 0 && (
               <div className="col-span-12 sm:col-span-6">
                 <label className="text-sm sm:text-base">Product Name</label>
                 <select
@@ -113,8 +146,8 @@ const Index = ({ data, products }: any) => {
                   <option>Other</option>
                 </select>
               </div>
-            )}
-            <div className="col-span-12 sm:col-span-6">
+            )} */}
+            {/* <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Design varitations</label>
               <input
                 type="number"
@@ -124,8 +157,8 @@ const Index = ({ data, products }: any) => {
                 placeholder="Design varitations"
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
-            </div>
-            <div className="col-span-12 sm:col-span-6">
+            </div> */}
+            <div className="col-span-12">
               <label className="text-sm sm:text-base">Quantity</label>
               <input
                 type="number"
@@ -136,7 +169,7 @@ const Index = ({ data, products }: any) => {
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
-            <div className="col-span-6 sm:col-span-4">
+            {/* <div className="col-span-6 sm:col-span-4">
               <input
                 type="number"
                 required
@@ -193,7 +226,7 @@ const Index = ({ data, products }: any) => {
                 placeholder="Depth"
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
-            </div>
+            </div> */}
             <div className="col-span-12">
               <textarea
                 rows={5}
