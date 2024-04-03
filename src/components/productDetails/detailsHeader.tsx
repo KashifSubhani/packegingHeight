@@ -46,9 +46,9 @@ const DetailsHeader = (props: any) => {
                 {props.product.shortDescription}
               </p>
             </div>
-            <h2 className="text-xl fw_600 mt-8 text-center md:text-left">
+            <p className="text-xl fw_600 mt-8 text-center md:text-left">
               Get Custom Quote
-            </h2>
+            </p>
             <QouteForm3 productName={props.product.name} />
           </div>
         </div>
