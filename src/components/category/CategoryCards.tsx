@@ -15,9 +15,9 @@ export const CategoryCards = (props: any) => {
   return (
     <Container maxWidth={"lg"}>
       <div className="pt-10 pb-14">
-        <h1 className="text-xl sm:text-2xl fw_400">
+        <p className="text-xl sm:text-2xl fw_400">
           Explore Packaging Solutions
-        </h1>
+        </p>
         <div className="flex items-center justify-between mt-4 gap-y-5 gap-x-10 flex-wrap">
           <div className="drop-shadow-md h-10 w-80 items-center gap-x-3 rounded-md bg-white px-3 flex">
             <Image src={search} alt="" width={20} height={20} />
