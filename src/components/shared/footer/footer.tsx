@@ -49,7 +49,7 @@ export const Footer = () => {
                 <p className="fw_400 text-sm text-black">Connect with us!</p>
                 <div className="mt-4 flex items-center gap-x-8 text-xl text-white">
                   <a
-                    href="https://www.pinterest.co.uk/packagingheight/"
+                    href="https://www.linkedin.com/company/packagingheight/"
                     target="_blank"
                     className="border-none"
                   >
