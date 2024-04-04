@@ -57,7 +57,7 @@ export const RelatedProducts = (props: any) => {
                         />
                       )}
                   </div>
-                  <h1 className="text-base fw_400 mt-1">{data.name}</h1>
+                  <p className="text-base fw_400 mt-1">{data.name}</p>
                 </div>
               ))}
             </Carousel>
