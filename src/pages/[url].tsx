@@ -19,7 +19,7 @@ const Index = ({ data, product, faqs }: any) => {
     }
   }, [product, router]);
   return (
-    product &&(
+    product && (
       <div>
         <NextSeo
           title={product.metaTitle}
@@ -48,6 +48,7 @@ export async function getServerSideProps(context: any) {
   const myUrl = context.query.url;
   const query = `*[ _type == "product" && slug.current == "${myUrl}"][0]`;
   const query2 = `*[_type == "category"]`;
+  const query3 = groq`*[_type == 'product' && _id in $p_ids]`;
   const query4 = groq`*[_type == 'faqs' && _id in $ids]`;
 
   const productResponse = await client.fetch(query);
@@ -62,16 +63,23 @@ export async function getServerSideProps(context: any) {
     productResponse.faqs.forEach((item: any) => ids.push(item._ref));
   }
   const result = await client.fetch(query4, { ids });
-  if (
-    productResponse &&
-    productResponse.category &&
-    productResponse.category._ref
-  ) {
-    const query3 = `*[_type == 'product' && slug.current != "${myUrl}" && category->_id == $id]`;
-    const productsRelatedToCategory = await client.fetch(query3, {
-      id: productResponse.category._ref,
+  if (data && data.length > 0) {
+    let p_ids: any = [];
+    data.forEach((item: any) => {
+      if (
+        item.products &&
+        item.products.length > 0 &&
+        item.products.find((item: any) => item._ref === product._id)
+      ) {
+        item.products.forEach((item: any) => {
+          if (item._ref !== product._id) {
+            p_ids.push(item._ref);
+          }
+        });
+      }
     });
-    product = { ...product, relatedProducts: productsRelatedToCategory };
+    const relatedProducts = await client.fetch(query3, { p_ids });
+    product = { ...product, relatedProducts: relatedProducts };
   }
 
   return {

@@ -39,7 +39,7 @@ export const ImagesCarousel = (props: any) => {
       </div>
       <div className="w-full h-full p-1">
         <div
-          className="h-full w-full rounded-md bg-center bg-contain "
+          className="h-full w-full rounded-md bg-center bg-contain bg-no-repeat"
           style={{ backgroundImage: `url(${getImg(myImg).url})` }}
         ></div>
       </div>

@@ -9,19 +9,11 @@ const DetailsHeader = (props: any) => {
   return (
     <Container maxWidth={"lg"}>
       <div
-        className={`grid ${
+        className={`flex flex-col-reverse md:grid ${
           matches ? "grid-cols-11" : "grid-cols-12"
-        } gap-y-10 pb-10 pt-6 sm:py-10 md:gap-x-10`}
+        } gap-y-5 pb-10 pt-6 sm:py-10 md:gap-x-10`}
       >
-        <div className="col-span-11 md:col-span-6">
-          <div className="block md:hidden mb-8">
-            <h1 className="text-3xl lg:text-4xl fw_600">
-              {props.product.name}
-            </h1>
-            <p className="text-sm mb-4 mt-3">
-              {props.product.shortDescription}
-            </p>
-          </div>
+        <div className="col-span-6">
           {props.product &&
             props.product.images &&
             props.product.images.length > 0 && (
@@ -33,12 +25,10 @@ const DetailsHeader = (props: any) => {
             )}
         </div>
         <div
-          className={`${
-            matches ? "col-span-11 md:col-span-5" : "col-span-6"
-          } flex items-end`}
+          className={`${matches ? "col-span-5" : "col-span-6"} flex items-end`}
         >
           <div className="w-full">
-            <div className="hidden md:block">
+            <div>
               <h1 className="text-3xl lg:text-4xl fw_600 mb-3">
                 {props.product.name}
               </h1>
@@ -46,12 +36,20 @@ const DetailsHeader = (props: any) => {
                 {props.product.shortDescription}
               </p>
             </div>
-            <h2 className="text-xl fw_600 mt-8 text-center md:text-left">
-              Get Custom Quote
-            </h2>
-            <QouteForm3 productName={props.product.name} />
+            <div className="hidden md:block">
+              <h2 className="text-xl fw_600 mt-8 text-center md:text-left">
+                Get Custom Quote
+              </h2>
+              <QouteForm3 productName={props.product.name} />
+            </div>
           </div>
         </div>
+      </div>
+      <div className="block md:hidden">
+        <h2 className="text-xl fw_600 mt-8 text-center md:text-left">
+          Get Custom Quote
+        </h2>
+        <QouteForm3 productName={props.product.name} />
       </div>
     </Container>
   );
