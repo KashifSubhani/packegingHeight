@@ -10,12 +10,7 @@ const Index = ({ data }: any) => {
       <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
-          <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
-          </p>
+          
         </div>
       </div>
       <Container maxWidth={"lg"}>
