@@ -8,6 +8,7 @@ const Index = ({ data }: any) => {
     <div>
       <Navbar data={data} />
       <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
+        <Container maxWidth={"lg"}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
           <p className="mt-4 text-center fw_400">
