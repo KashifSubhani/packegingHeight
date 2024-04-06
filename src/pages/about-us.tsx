@@ -20,6 +20,8 @@ const Index = ({ data }: any) => {
       </div>
       <Container maxWidth={"lg"}>
         <div className="py-10">
+           <h1 className="mt-4 font-bold text-black text-xl">
+            Who We Are</h1>
           <p className="mt-4 p-0 text-black">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
