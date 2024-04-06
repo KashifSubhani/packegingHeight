@@ -19,12 +19,9 @@ const Index = ({ data }: any) => {
       <Container maxWidth={"lg"}>
         <div className="py-10">
           <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            Visiting our website RefinePackaging.com is an acceptance of agreement to the privacy policy described on our website. Refine Packaging knows well and is managing the privacy of users of the website strictly. It is assured that any information which is collected for processing of the order or any other query will not be shared or revealed to any third party user, and will cautiously be used only for customer service, fulfilling shipping request and for contacting the customers for feedback.
+<br>
+Please understand we will reveal your information when required by law or to protect our interests and safety and those of other visitors to our website, or when you allow us to do so. Your information can also be disclosed when we have a good-faith belief that it is necessary to abide by a current judicial proceeding, a court order or legal process served on our website.
           </p>
           <h1 className="mt-4 font-bold text-black text-xl">
             What Is a Terms of Service Agreement?
