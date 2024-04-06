@@ -8,7 +8,6 @@ const Index = ({ data }: any) => {
     <div>
       <Navbar data={data} />
       <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
-        <Container maxWidth={"lg"}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
           <p className="mt-4 text-center fw_400">
@@ -60,15 +59,6 @@ const Index = ({ data }: any) => {
             You can customize our free terms of service template below,
             including the title, so it works for you no matter if your own a:
           </p>
-          <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
-        <div>
-          <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
-          <p className="mt-4 text-center fw_400">
-            Protecting Your Products, Respecting Your Privacy
-            <br className="hidden md:block" /> Packaging Height's Commitment to Secure and Confidential Handling of Your Information.
-          </p>
-        </div>
-      </div>
 
           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
             <li>Dropshipping businesses</li>
