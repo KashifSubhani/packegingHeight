@@ -45,60 +45,23 @@ const Index = ({ data }: any) => {
             <li>Specialized CBD Boxes</li>
           </ul>
 
-          <p className="mt-8 p-0 text-black">
-            Despite the different names, these agreements are all the same.
-          </p>
-          <p className="mt-4 p-0 text-black">
-            No matter what you choose to call it, a generic terms of service
-            policy can help protect your business from users who might break the
-            law or cause harm to your website, app, or other users.
-          </p>
+         <h2 className="mt-4 font-bold text-black text-xl">
+            We Value Our Clients!
+          </h2>
+          <p className="mt-3 p-0 text-black">
+Our customers, whom we consider members of our family, are the most crucial component of our organization. We cherish and appreciate comments, and we encourage innovation in custom boxes and packaging. The simplest order placement processes are followed by our fully controlled packaging processes. From inquiry to delivery, we ensure complete guidance and support to the buyer through exceptional customer service in order to design and prepare premium-quality packaging boxes with love and care. We never compromise our quality and offer FREE design and delivery services. Our ad hoc discounts give customers true packaging flexibility, which helps your profit margins grow.</p>
 
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Personalized Packaging
+          </h2>
           <p className="mt-4 p-0 text-black">
-            You can customize our free terms of service template below,
-            including the title, so it works for you no matter if your own a:
-          </p>
+            The diverse range of effective packaging with distinctive beautiful, eye-catching, and well-crafted designs adorned with vivid colors helps businesses build or redefine their brands. We understand that care and fit matter the most. However, our custom packaging solutions are designed to meet your needs and requirements We may provide you with custom kraft boxes, window display boxes to promote your items in a fashionable and glamorous way, paper bags to ensure a clean atmosphere and appealing brand representation, or personalized pillow gift boxes to surprise your loved ones. For each and every event, product, and service, we have something to offer. If you are looking for something we are not offering, we can create and deliver them to your doorstep.</p>
 
-          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Dropshipping businesses</li>
-            <li>Marketplace shop</li>
-            <li>Retail store</li>
-            <li>Ecommerce website or app</li>
-            <li>Blog</li>
-            <li>Forum</li>
-            <li>Subscription-based platform</li>
-          </ul>
-
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Why You Need a Terms of Service for Your Website or App
-          </h1>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Sustainable Solutions
+          </h2>
           <p className="mt-4 p-0 text-black">
-            While a ToS agreement is not required by law, you need to post one
-            on your website or app to help:
-          </p>
-
-          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Set your users’ expectations</li>
-            <li>Protect your business from legal liabilities</li>
-            <li>Maintain rights over your intellectual property</li>
-            <li>Minimizes Disputes</li>
-            <li>Establish trust and transparency with your users</li>
-          </ul>
-
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Terms of Service Set Your Users’ Expectations
-          </h1>
-          <p className="mt-4 p-0 text-black">
-            One of the purposes of a terms of service policy is to explain the
-            rules and guidelines your users must follow while accessing your
-            services, which helps set their expectations.
-          </p>
-          <p className="mt-4 p-0 text-black">
-            By clearly communicating what’s allowed and prohibited on your
-            website or app and explaining to your users the consequences of
-            breaking those rules, you make it easier for your business to
-            prevent users from abusing your services or causing harm to others.
-          </p>
+            Our mission is to protect the environment and stop the harm that the packaging business does. Our goal is to produce goods that are recyclable and sustainable while reducing our carbon footprint. They are produced with less harmful materials, fewer boxes for packaging, non-toxic materials, and the capacity to reuse the same boxes repeatedly. These environmentally friendly packaging options may have a salutary but long-lasting effect on both customers and the environment. Businesses and start-ups need to stand out through their product packaging; thus, we provide them with eco-friendly packaging options that help them establish their brand identity.</p>
         </div>
       </Container>
       <Footer />
