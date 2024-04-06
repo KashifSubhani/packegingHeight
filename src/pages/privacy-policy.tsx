@@ -10,7 +10,10 @@ const Index = ({ data }: any) => {
       <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
-          
+          <p className="mt-4 text-center fw_400">
+            Protecting Your Products, Respecting Your Privacy
+            <br className="hidden md:block" /> Packaging Height's Commitment to Secure and Confidential Handling of Your Information
+          </p>
         </div>
       </div>
       <Container maxWidth={"lg"}>
