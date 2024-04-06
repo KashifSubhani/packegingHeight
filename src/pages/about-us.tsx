@@ -29,7 +29,7 @@ const Index = ({ data }: any) => {
             Our History
           </h2>
           <p className="mt-3 p-0 text-black">
-            Packaging Height is a family-owned business providing eco-friendly custom packaging solutions across the USA, Canada, and surrounding areas for 15 years. The company is the subsidiary company of the well-known Oasis Packaging Inc. Packaging Height, a Sheridan, Wyoming-based company, that has grown swiftly to rank among the top suppliers and producers in its field. Due to our strong ethos and ambition, modern technology, professionalism, and all-inclusive top-notch packaging solutions, we have been assisting businesses with packaging solutions and marking our success through our distinctive packaging in a saturated industry.
+            Packaging Height is a family-owned business providing eco-friendly custom packaging solutions across the USA, Canada, and surrounding areas for 15 years. Packaging Height, a Sheridan, Wyoming-based company, that has grown swiftly to rank among the top suppliers and producers in its field. Due to our strong ethos and ambition, modern technology, professionalism, and all-inclusive top-notch packaging solutions, we have been assisting businesses with packaging solutions and marking our success through our distinctive packaging in a saturated industry.
           </p>
           <h2 className="mt-4 font-bold text-black text-xl">
             What We Do
