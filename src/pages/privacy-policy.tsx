@@ -50,7 +50,7 @@ A cookie is actually set of data programmed and stored on your computer for an e
 
           <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
-          <p className="text-4xl fw_200 text-left">Contact US</p>
+          <p className="text-4xl fw_100 text-left">Contact US</p>
           <p className="mt-4 text-left fw_400">
 <strong>If there are any questions regarding this privacy policy, please call +1(307) 429 2922 or email info@packagingheight.com for assistance.</strong>
           </p>
