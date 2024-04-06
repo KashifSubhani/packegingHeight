@@ -20,34 +20,29 @@ const Index = ({ data }: any) => {
       </div>
       <Container maxWidth={"lg"}>
         <div className="py-10">
-           <h1 className="mt-4 font-bold text-black text-xl">
-            Who We Are</h1>
+           <h2 className="mt-4 font-bold text-black text-xl">
+            Who We Are</h2>
           <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            Packaging Height is a first-rate packaging solution platform dedicated to assisting small and large business owners with the highest quality, well-designed, and highly affordable packaging needs. Select from the largest packaging range of premium material boxes to satisfy your products’ requirements or order printed custom packaging boxes in any shape, size, color, design, and luxury finishing, we will manufacture them for you. Our in-house designing, manufacturing, and printing facilities allow us to make packaging easier for you!
           </p>
-          <h1 className="mt-4 font-bold text-black text-xl">
-            What Is a Terms of Service Agreement?
-          </h1>
+          <h2 className="mt-4 font-bold text-black text-xl">
+            Our History
+          </h2>
           <p className="mt-3 p-0 text-black">
-            A terms of service sets all user rules, restrictions, and prohibited
-            behaviors, and outlines your company’s liability limitations,
-            property rights, and dispute resolutions.
+            Packaging Height is a family-owned business providing eco-friendly custom packaging solutions across the USA, Canada, and surrounding areas for 15 years. The company is the subsidiary company of the well-known Oasis Packaging Inc. Packaging Height, a Sheridan, Wyoming-based company, that has grown swiftly to rank among the top suppliers and producers in its field. Due to our strong ethos and ambition, modern technology, professionalism, and all-inclusive top-notch packaging solutions, we have been assisting businesses with packaging solutions and marking our success through our distinctive packaging in a saturated industry.
           </p>
+          <h2 className="mt-4 font-bold text-black text-xl">
+            What We Do
+          </h2>
           <p className="mt-3 p-0 text-black">
-            You’ve probably seen some alternative titles for a terms of service
-            agreement, like:
+            We are specialized in designing and manufacturing unique custom packaging solutions for businesses. Our in-house dedicated teams guide the customers as per their individual and product needs. Packaging Height teams work hard, spend the optimum amount of time on research, and develop the most modern yet aesthetically appealing boxes and make your product prominent, leading to the most loving brand in the niche. Our services include:
           </p>
           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Terms of Use</li>
-            <li>Terms and Conditions</li>
-            <li>ToS Agreement</li>
-            <li>General Terms</li>
-            <li>Terms</li>
+            <li>Custom packaging FREE consultancy and design facility</li>
+            <li>Packaging boxes in a wide range of eco-friendly materials</li>
+            <li>Fastest turnaround time</li>
+            <li>Competitive pricing</li>
+            <li>Specialized CBD Boxes</li>
           </ul>
 
           <p className="mt-8 p-0 text-black">
