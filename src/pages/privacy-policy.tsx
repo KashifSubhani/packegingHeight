@@ -20,7 +20,7 @@ const Index = ({ data }: any) => {
         <div className="py-10">
           <p className="mt-4 p-0 text-black">
             Visiting our website <a href="https://packagingheight.com/">packagingheight.com</a> is an acceptance of agreement to the privacy policy described on our website. Packaging Height knows well and is managing the privacy of users of the website strictly. It is assured that any information that is collected for the processing of the order or any other query will not be shared or revealed to any third-party user, and will cautiously be used only for customer service, fulfilling shipping requests, and contacting the customers for feedback.
-<br />
+<br /><br />
 Please understand we will reveal your information when required by law or to protect our interests and safety and those of other visitors to our website, or when you allow us to do so. Your information can also be disclosed when we have a good-faith belief that it is necessary to abide by a current judicial proceeding, a court order or legal process served on our website.
           </p>
           <h2 className="mt-4 font-bold text-black text-xl">
@@ -45,8 +45,17 @@ We do not provide, distribute or sell our website users and customers’ informa
             Cookies
           </h2>
           <p className="mt-4 p-0 text-black">
-            Do we use cookies? Yes!
+            Do we use cookies? Yes!<br /><br />
 A cookie is actually set of data programmed and stored on your computer for an extended period of time by our website. A cookie will permit you to use our website as a specific individual and relate to your information in our servers/records. Cookies need to be enabled in order to use packagingheight.com website. You can remove cookies by following instructions in your web browser. Each browser is a little different, so look at your browser Help menu to learn the correct way to modify your cookies. If you turn cookies off, you won’t have access to many features that make your site experience more efficient and some of our services will not function properly. However, you can still use many features of our website.</p>
+
+          <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
+        <div>
+          <h2 className="text-4xl fw_600 text-left">Contact US</h2>
+          <p className="mt-4 text-left fw_400">
+<strong>If there are any questions regarding this privacy policy, please call +1(307) 429 2922 or email info@packagingheight.com for assistance.</strong>
+          </p>
+        </div>
+      </div>
          
         </div>
       </Container>
