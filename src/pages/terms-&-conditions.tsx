@@ -156,7 +156,7 @@ We will reproduce the colors of the submitted graphic files as accurately as pos
           <h2 className="mt-8 font-bold text-black text-xl">
            How to Contact US?</h2>
           <p className="mt-4 text-left fw_400">
-           <strong> You can contact us via email at +1(307) 429 2922 or mail us at info@packagingheight.com</strong>
+           <strong> You can contact us via email at <a title="Click for call me" href="tel:+1(307) 429 2922" class="greenText fw_400 border-none">+1(307) 429 2922</a> or mail us at <a title="Click for call me" href="mailto:info@packagingheight.com" class="greenText fw_400 border-none">info@packagingheight.com</a></strong>
           </p>
         </div>
       </div>
