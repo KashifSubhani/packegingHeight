@@ -33,24 +33,24 @@ const Index = ({ data }: any) => {
             User’s Conduct on Packaging Height
           </h2>
           <p className="mt-3 p-0 text-black">
-            Users are solely accountable for the content they send, post, upload, or otherwise transmit to or via our website. While using this website, you agree that any kind of material or data that you send, upload, or transmit to or via our website or in connection with our website contents will not include any images, text, trademark, service mark, design, or work copyrighted by any third party unless you have the written authorization or consent from the respective owners.
-
-You also agree and warrant that you will not upload, send, or transmit to or via our website any contents that are indecent, unlawful, infringe the intellectual property rights of our website or any third-party, or that restrict other users from using Packaging Height.
-
-We will not be accountable for the accuracy, quality, or integrity of content posted by our clients or users of our website. And under no circumstances, we will be liable to you for any content you may be exposed to or find offensive, objectionable, or indecent in any way.
-
-You must also know that Packaging Height and its authorized designers have the right but not the obligation to remove any content that violates terms of services or is objectionable otherwise, in their sole discretion. We can protect and disclose your content if needed by law or in case it is essential to comply with the legal procedures, for enforcing terms of service or responding to claims of third parties for violating intellectual rights, or for protecting property, personal safety, and the rights of our website and its users.
-
-It is up to users for providing the most accurate and latest information for the processing of their orders and requests. Our website is for humans and is not meant to be accessed or used by any automated means or robots. The fraudulent use of the content on our website not conforming to these terms and conditions is liable for legal action.
-
-While using our website and placing an order on it, you are warranting that you are legally permitted and have the authority to place an order. In this process, you also authorize Packaging Height to manufacture products on your behalf. In addition, you also have to warrant that you are of legal age before placing an order on our website for binding the legal obligation for any sort of liabilities that you may incur as a result of using our website.
-
-It is solely the user’s responsibility to protect their passwords and control access to their registered account. By using the Packaging Height website, you agree that you will be responsible for all orders placed through your registered account. At the time, when you or anybody who has the access to your account places an order by using your account and password, you are allowing us royalty-free and non-exclusive license to use, modify, publish, adapt, sub-license, display, and create derivative works from your content on our website or the final product for storing design or processing the orders.
-
-To access some segments of our website require users to have registered emails and names as well as passwords for future access. We have the right to ask for more business and personal information before registering your account.
-
-The user is the only responsible entity for protecting the privacy of their password and account credentials and should not be disclosing them to any other individual. In case of any unauthorized use of password-protected areas of our website, users have to agree that they shall be liable for all the consequences of such use.
-
+            Users are solely accountable for the content they send, post, upload, or otherwise transmit to or via our website. While using this website, you agree that any kind of material or data that you send, upload, or transmit to or via our website or in connection with our website contents will not include any images, text, trademark, service mark, design, or work copyrighted by any third party unless you have the written authorization or consent from the respective owners.</p>
+<p className="mt-4 p-0 text-black">
+You also agree and warrant that you will not upload, send, or transmit to or via our website any contents that are indecent, unlawful, infringe the intellectual property rights of our website or any third-party, or that restrict other users from using Packaging Height.</p>
+<p className="mt-4 p-0 text-black">
+We will not be accountable for the accuracy, quality, or integrity of content posted by our clients or users of our website. And under no circumstances, we will be liable to you for any content you may be exposed to or find offensive, objectionable, or indecent in any way.</p>
+<p className="mt-4 p-0 text-black">
+You must also know that Packaging Height and its authorized designers have the right but not the obligation to remove any content that violates terms of services or is objectionable otherwise, in their sole discretion. We can protect and disclose your content if needed by law or in case it is essential to comply with the legal procedures, for enforcing terms of service or responding to claims of third parties for violating intellectual rights, or for protecting property, personal safety, and the rights of our website and its users.</p>
+<p className="mt-4 p-0 text-black">
+It is up to users for providing the most accurate and latest information for the processing of their orders and requests. Our website is for humans and is not meant to be accessed or used by any automated means or robots. The fraudulent use of the content on our website not conforming to these terms and conditions is liable for legal action.</p>
+<p className="mt-4 p-0 text-black">
+While using our website and placing an order on it, you are warranting that you are legally permitted and have the authority to place an order. In this process, you also authorize Packaging Height to manufacture products on your behalf. In addition, you also have to warrant that you are of legal age before placing an order on our website for binding the legal obligation for any sort of liabilities that you may incur as a result of using our website.</p>
+<p className="mt-4 p-0 text-black">
+It is solely the user’s responsibility to protect their passwords and control access to their registered account. By using the Packaging Height website, you agree that you will be responsible for all orders placed through your registered account. At the time, when you or anybody who has the access to your account places an order by using your account and password, you are allowing us royalty-free and non-exclusive license to use, modify, publish, adapt, sub-license, display, and create derivative works from your content on our website or the final product for storing design or processing the orders.</p>
+<p className="mt-4 p-0 text-black">
+To access some segments of our website require users to have registered emails and names as well as passwords for future access. We have the right to ask for more business and personal information before registering your account.</p>
+<p className="mt-4 p-0 text-black">
+The user is the only responsible entity for protecting the privacy of their password and account credentials and should not be disclosing them to any other individual. In case of any unauthorized use of password-protected areas of our website, users have to agree that they shall be liable for all the consequences of such use.</p>
+<p className="mt-4 p-0 text-black">
 Your use of Packaging Height constitutes the agreement to use and collection of your information as explained in our Privacy Policy. You can read and acknowledge the explanation of our privacy policy and the usage and collection of your personal and business information.
           </p>
           <h2 className="mt-8 font-bold text-black text-xl">
@@ -153,8 +153,8 @@ We will reproduce the colors of the submitted graphic files as accurately as pos
             </p>
           <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
-          <h2 className="text-4xl fw_600 text-center">How to Contact Half Price Packaging?</h2>
-          <p className="mt-4 text-center fw_400">
+          <h2 className="text-4xl fw_600 text-left">How to Contact Packaging Height?</h2>
+          <p className="mt-4 text-left fw_400">
             You can contact us via email at +1(307) 429 2922 or mail us at info@packagingheight.com
           </p>
         </div>
