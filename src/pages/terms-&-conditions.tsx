@@ -76,10 +76,10 @@ Your use of Packaging Height constitutes the agreement to use and collection of 
              </ul>
 
           <p className="mt-8 p-0 text-black">
-            Under no conditions Half Price Packaging or its employees, members, directors, vendors, representatives, affiliates, subcontractors, and suppliers are responsible for any death, injury, damage, loss, claim, the act of God, delay, accident, or any punitive, special, consequential, or incidental damages regardless of their nature, whether they are in contract, tort, or not.
+            Under no conditions Packaging Height or its employees, members, directors, vendors, representatives, affiliates, subcontractors, and suppliers are responsible for any death, injury, damage, loss, claim, the act of God, delay, accident, or any punitive, special, consequential, or incidental damages regardless of their nature, whether they are in contract, tort, or not.
           </p>
           <p className="mt-4 p-0 text-black">
-            We are also not liable for damages that may take place in any way connected to any use of Half Price Packaging, or any delays or inabilities to use this website, and for any data, information, software, products, and services obtained via our website, even if the other part has advised about the possibility of such damages or troubles. Under no circumstances Half Price Packaging is totally liable to you for losses, damages, and causes of action including but not limited to negligence or arising from this contract or use of our website exceeding the paid amounts by customers to the company for their orders and requests.
+            We are also not liable for damages that may take place in any way connected to any use of Packaging Height, or any delays or inabilities to use this website, and for any data, information, software, products, and services obtained via our website, even if the other part has advised about the possibility of such damages or troubles. Under no circumstances Packaging Height is totally liable to you for losses, damages, and causes of action including but not limited to negligence or arising from this contract or use of our website exceeding the paid amounts by customers to the company for their orders and requests.
           </p>
           <h2 className="mt-8 font-bold text-black text-xl">
             Return and Refund Policy
@@ -153,7 +153,7 @@ We will reproduce the colors of the submitted graphic files as accurately as pos
             </p>
           <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
-          <h2 className="text-4xl fw_600 text-left">How to Contact Packaging Height?</h2>
+          <h2 className="text-4xl fw_600 text-left">How to Contact US?</h2>
           <p className="mt-4 text-left fw_400">
             You can contact us via email at +1(307) 429 2922 or mail us at info@packagingheight.com
           </p>
