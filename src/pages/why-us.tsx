@@ -20,21 +20,21 @@ const Index = ({ data }: any) => {
       </div>
       <Container maxWidth={"lg"}>
         <div className="py-10">
+          <h2 className="mt-4 font-bold text-black text-xl">
+            Why 1000s of Businesses Trust Packaging Height
+          </h2>
           <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            We're the best-kept secret of the world's top brands. Let’s face it, perfect branding takes hard work. That's why Packaging Height only offers the very best when it comes to making your custom boxes—a seasoned design team, hi-tech printing technologies, and prompt delivery. Join thousands of brands that already benefit from this winning combination–from small startups to Fortune 500 brands alike.
           </p>
-          <h1 className="mt-4 font-bold text-black text-xl">
-            What Is a Terms of Service Agreement?
-          </h1>
+          <h2 className="mt-4 font-bold text-black text-xl">
+            Fast & Reliable Custom Packaging Boxes
+          </h2>
           <p className="mt-3 p-0 text-black">
-            A terms of service sets all user rules, restrictions, and prohibited
-            behaviors, and outlines your company’s liability limitations,
-            property rights, and dispute resolutions.
+         We're on a mission to help companies, large and small, harness the potential of custom packaging. We firmly believe that creative packaging can do way more than just protect your products. It can be a conversation starter for your brand.<br /><br />
+
+Get high-quality custom printed boxes that you can customize from corner to corner: the shape, color, artwork, texture and size. With a low minimum quantity starting from 100 boxes, your custom box order will be shipped flat and arrive within 8-10 business days or sooner with expedited shipping.<br /><br />
+
+Together, we'll revolutionize your custom printed box strategy - at a price you'll love. Let your creative streak run wild and unbox your brand's latest asset with custom boxes. No matter the idea, logo, artwork, shape or size of your box, nothing is out of reach.
           </p>
           <p className="mt-3 p-0 text-black">
             You’ve probably seen some alternative titles for a terms of service
