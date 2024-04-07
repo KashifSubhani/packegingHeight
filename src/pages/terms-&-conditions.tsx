@@ -153,9 +153,10 @@ We will reproduce the colors of the submitted graphic files as accurately as pos
             </p>
           <div className="py-10  px-3" style={{ background: "#F1F8F1" }}>
         <div>
-          <h2 className="text-4xl fw_600 text-left">How to Contact US?</h2>
+          <h2 className="mt-8 font-bold text-black text-xl">
+           How to Contact US?</h2>
           <p className="mt-4 text-left fw_400">
-            You can contact us via email at +1(307) 429 2922 or mail us at info@packagingheight.com
+           <strong> You can contact us via email at +1(307) 429 2922 or mail us at info@packagingheight.com</strong>
           </p>
         </div>
       </div>
