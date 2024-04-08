@@ -47,7 +47,7 @@ export const Footer = () => {
             <div className="mt-4 flex flex-col justify-between gap-y-5 md:flex-row md:items-end lg:mt-0">
               <div>
                 <p className="fw_400 text-sm text-black">Connect with us!</p>
-                <div className="mt-4 flex items-center gap-x-8 text-xl text-white">
+                <div className="mt-4 flex items-center gap-x-8 text-xl text-black">
                   <a
                     href="https://www.linkedin.com/company/packagingheight/"
                     target="_blank"
