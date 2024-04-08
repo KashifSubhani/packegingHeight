@@ -11,10 +11,8 @@ const Index = ({ data }: any) => {
         <div>
           <h1 className="text-4xl fw_600 text-center">Terms & Conditions</h1>
           <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
+             Transparency in Every Detail:
+            <br className="hidden md:block" />  Discover Packaging Height's Comprehensive Terms & Conditions for Premium Packaging Services.  
           </p>
         </div>
       </div>
