@@ -35,7 +35,7 @@ const linksData3 = [
 
 export const Footer = () => {
   return (
-    <div style={{ background: "#A6A8AB" }} className="lg:px-4 xl:px-14">
+    <div style={{ background: "#F1F1F2" }} className="lg:px-4 xl:px-14">
       <Container maxWidth="lg">
         <div>
           <div className="border-b border-black pb-8">
