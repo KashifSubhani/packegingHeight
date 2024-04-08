@@ -11,10 +11,8 @@ const Index = ({ data }: any) => {
         <div>
           <h1 className="text-4xl fw_600 text-center">About Us</h1>
           <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
+            A Leading Provider of Innovative Packaging Solutions, Dedicated to Quality, Sustainability,
+            <br className="hidden md:block" /> and Customer Satisfaction. Learn More About Our Commitment to Excellence and Environmental Responsibility.
           </p>
         </div>
       </div>
