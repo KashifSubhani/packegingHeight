@@ -30,6 +30,7 @@ const linksData2 = [
 const linksData3 = [
   { link: "/terms-&-conditions", name: "Terms & Conditions" },
   { link: "/privacy-policy", name: "Privacy Policy" },
+  { link: "/request-sample-pack/", name: "Request a Sample Pack" },
 ];
 
 export const Footer = () => {
