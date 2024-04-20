@@ -1,6 +1,4 @@
 import { Container } from "@mui/material";
-import Image from "next/image";
-import search from "../../static/search.svg";
 import { PortableText } from "@portabletext/react";
 
 export const DetailsContent = (props: any) => {
