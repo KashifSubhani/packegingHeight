@@ -19,14 +19,6 @@ export const CategoryCards = (props: any) => {
           Explore Packaging Solutions
         </p>
         <div className="flex items-center justify-between mt-4 gap-y-5 gap-x-10 flex-wrap">
-          <div className="drop-shadow-md h-10 w-80 items-center gap-x-3 rounded-md bg-white px-3 flex">
-            <Image src={search} alt="" width={20} height={20} />
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full border-none bg-white text-xs shadow-none outline-none"
-            />
-          </div>
           <div className="hidden sm:flex items-center gap-x-3 ml-auto">
             <button onClick={() => setTab(1)}>
               <Image
