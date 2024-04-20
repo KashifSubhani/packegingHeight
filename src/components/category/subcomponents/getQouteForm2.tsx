@@ -98,7 +98,6 @@ export const GetQouteForm2 = (props: any) => {
         <div className="col-span-6">
           <input
             type="tel"
-            required
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
@@ -145,7 +144,6 @@ export const GetQouteForm2 = (props: any) => {
         <div className="col-span-12">
           <textarea
             rows={6}
-            required
             value={finalData.message}
             onChange={(e) => onchnage("message", e.target.value)}
             className="w-full rounded-md border border-zinc-200 px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
