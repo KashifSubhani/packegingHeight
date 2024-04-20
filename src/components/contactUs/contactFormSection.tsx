@@ -103,7 +103,6 @@ export const ContactFormSection = () => {
                   </div>
                   <div className="col-span-12">
                     <textarea
-                      required
                       value={finalData.message}
                       onChange={(e) => onchnage("message", e.target.value)}
                       rows={5}

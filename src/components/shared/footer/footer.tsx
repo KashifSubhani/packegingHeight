@@ -28,9 +28,9 @@ const linksData2 = [
   { link: "/request-quote", name: "Request a quote" },
 ];
 const linksData3 = [
-  { link: "", name: "Blog" },
   { link: "/terms-&-conditions", name: "Terms & Conditions" },
   { link: "/privacy-policy", name: "Privacy Policy" },
+  { link: "/request-sample-pack/", name: "Request a Sample Pack" },
 ];
 
 export const Footer = () => {

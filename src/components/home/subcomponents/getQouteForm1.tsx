@@ -103,7 +103,6 @@ export const GetQouteForm1 = (props: any) => {
         <div className="col-span-6">
           <input
             type="date"
-            required
             min={new Date().toISOString().split("T")[0]}
             value={finalData.deadline}
             onChange={(e) => onchnage("deadline", e.target.value)}
@@ -166,7 +165,6 @@ export const GetQouteForm1 = (props: any) => {
         <div className="col-span-6">
           <input
             type="tel"
-            required
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="+1 123-123-1234"
@@ -183,31 +181,9 @@ export const GetQouteForm1 = (props: any) => {
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
-        {/* <div className="col-span-12">
-          <label className="fw_400 text-xs">Attach Your Design:</label>
-          <label className="flex h-10 rounded-md border border-zinc-200">
-            <p className="mb-0 flex h-full items-center bg-zinc-200 px-2 text-xs">
-              Choose File
-            </p>
-            <p className="flex h-full items-center px-4 text-xs">
-              {finalData && finalData.file && finalData.file.name
-                ? finalData.file.name
-                : "No file choosen"}
-            </p>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e: any) => {
-                handleUpload(e.target.files[0]);
-              }}
-              className="hidden h-8 w-full rounded-md border border-zinc-200 px-2 text-xs"
-            />
-          </label>
-        </div> */}
         <div className="col-span-12">
           <textarea
             rows={5}
-            required
             value={finalData.message}
             onChange={(e) => onchnage("message", e.target.value)}
             className="w-full rounded-md border border-zinc-200 px-2 py-1 text-xs"
