@@ -66,7 +66,7 @@ const Index = ({ data, products }: any) => {
             className="bg-white rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5"
           >
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Enter your Name</label>
+              <label className="text-sm sm:text-base">Enter your Name*</label>
               <input
                 type="text"
                 placeholder="Full Name"
@@ -77,7 +77,7 @@ const Index = ({ data, products }: any) => {
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Email</label>
+              <label className="text-sm sm:text-base">Email*</label>
               <input
                 type="email"
                 required
@@ -91,7 +91,6 @@ const Index = ({ data, products }: any) => {
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
                 type="tel"
-                required
                 value={finalData.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
@@ -100,7 +99,7 @@ const Index = ({ data, products }: any) => {
             </div>
             {products && products.length > 0 && (
               <div className="col-span-12 sm:col-span-6">
-                <label className="text-sm sm:text-base">Product Name</label>
+                <label className="text-sm sm:text-base">Product Name*</label>
                 <select
                   required
                   value={finalData.productName}
@@ -115,7 +114,7 @@ const Index = ({ data, products }: any) => {
               </div>
             )}
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Design varitations</label>
+              <label className="text-sm sm:text-base">Design varitations*</label>
               <input
                 type="number"
                 required
@@ -126,7 +125,7 @@ const Index = ({ data, products }: any) => {
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Quantity</label>
+              <label className="text-sm sm:text-base">Quantity*</label>
               <input
                 type="number"
                 required
@@ -169,7 +168,7 @@ const Index = ({ data, products }: any) => {
 
             <div className="col-span-6">
               <label className="hidden sm:block text-sm sm:text-base">
-                Select Unit
+                Select Unit*
               </label>
               <select
                 required
@@ -186,7 +185,6 @@ const Index = ({ data, products }: any) => {
               <label className="text-sm sm:text-base">Delivery Deadline</label>
               <input
                 type="date"
-                required
                 min={new Date().toISOString().split("T")[0]}
                 value={finalData.deadline}
                 onChange={(e) => onchnage("deadline", e.target.value)}
@@ -197,7 +195,6 @@ const Index = ({ data, products }: any) => {
             <div className="col-span-12">
               <textarea
                 rows={5}
-                required
                 value={finalData.message}
                 onChange={(e) => onchnage("message", e.target.value)}
                 className="w-full rounded-md border border-zinc-300 px-3 py-2 text-xs"
