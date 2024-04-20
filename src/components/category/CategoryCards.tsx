@@ -2,7 +2,6 @@ import gridActiveImg from "../../static/gridActiveImg.svg";
 import GridBlack from "../../static/2GridBlack.png";
 import GreenList from "../../static/GreenList.png";
 import blackList from "../../static/blackList.svg";
-import search from "../../static/search.svg";
 import Image from "next/image";
 import { Container, useMediaQuery } from "@mui/material";
 import { CardsGrid } from "./cardsGrid";
