@@ -91,7 +91,6 @@ const Index = ({ data, products }: any) => {
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
                 type="tel"
-                required
                 value={finalData.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
