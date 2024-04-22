@@ -3,10 +3,10 @@ import { getServerSideProps } from "@/services/categoriesService";
 import qouteBg from "../static/qouteBg.svg";
 import { Footer } from "@/components/shared/footer/footer";
 
-const ThankYou = ({ data }: any) => {
+const ThankYou = ({ data, boxProducts, shapeProducts }: any) => {
   return (
     <div>
-      <Navbar data={data} />
+      <Navbar data={data}  boxProducts={boxProducts} shapeProducts={shapeProducts} />
       <div className="sm:px-6 sm:py-6">
         <div
           className="bg-center bg-cover flex flex-col items-center justify-center w-fullpx-5"

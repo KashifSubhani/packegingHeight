@@ -10,7 +10,14 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-const Index = ({ data, category, products, faqs }: any) => {
+const Index = ({
+  data,
+  category,
+  products,
+  faqs,
+  boxProducts,
+  shapeProducts,
+}: any) => {
   const router = useRouter();
   useEffect(() => {
     // Check if data is empty, and if so, redirect to 404 page
@@ -34,7 +41,11 @@ const Index = ({ data, category, products, faqs }: any) => {
             "https://packagingheight.com/category/" + category.slug.current
           }
         />
-        <Navbar data={data} />
+        <Navbar
+          data={data}
+          boxProducts={boxProducts}
+          shapeProducts={shapeProducts}
+        />
         <CategoryHeader category={category} />
         <CategoryCards products={products} />
         <ContentSection contentData={category.content} />
@@ -51,6 +62,30 @@ export async function getServerSideProps(context: any) {
   const query2 = `*[_type == "category"]`;
   const query3 = groq`*[_type == 'product' && _id in $p_ids]`;
   const query4 = groq`*[_type == 'faqs' && _id in $ids]`;
+
+  const cat1Name = "Box by Material";
+  const cat2Name = "Shape & Styles";
+  const query5 = `*[ _type == "category" && name  == "${cat1Name}"][0]`;
+  const query6 = groq`*[_type == 'product' && _id in $p_ids1]`;
+
+  const query7 = `*[ _type == "category" && name  == "${cat2Name}"][0]`;
+  const query8 = groq`*[_type == 'product' && _id in $p_ids2]`;
+
+  const cat1 = await client.fetch(query5, { cat1Name });
+  const cat2 = await client.fetch(query7, { cat2Name });
+
+  let p_ids1: any = [];
+  if (cat1 && cat1.products && cat1.products.length > 0) {
+    cat1.products.forEach((item: any) => p_ids1.push(item._ref));
+  }
+
+  let p_ids2: any = [];
+  if (cat2 && cat2.products && cat2.products.length > 0) {
+    cat2.products.forEach((item: any) => p_ids2.push(item._ref));
+  }
+
+  const products1 = await client.fetch(query6, { p_ids1 });
+  const products2 = await client.fetch(query8, { p_ids2 });
 
   const categoryResponse = await client.fetch(query);
   const data = await client.fetch(query2);
@@ -79,6 +114,8 @@ export async function getServerSideProps(context: any) {
       category: categoryResponse,
       products: productsRelatedToCategory,
       faqs: result,
+      boxProducts: products1,
+      shapeProducts: products2,
     },
   };
 }
