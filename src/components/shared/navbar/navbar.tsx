@@ -1,4 +1,4 @@
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import { linksData } from "@/demoData/navLinksData";
 import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
+import searchIcon from "../../../../static/searchIcon.svg";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -188,7 +189,10 @@ export const Navbar = (props: any) => {
               onClick={() => router.push("/search")}
               className={`cursor-pointer pb-3 duration-300 hover:scale-105`}
             >
-              <FontAwesomeIcon icon={faSearch} />
+               <Image
+              src={searchIcon}
+              alt={"searchIcon"}
+            />
             </li>
           </ul>
 
