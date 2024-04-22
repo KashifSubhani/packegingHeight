@@ -11,7 +11,7 @@ import { linksData } from "@/demoData/navLinksData";
 import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
-import searchIcon from "../../../../static/searchIcon.svg";
+import searchIcon from "../../../static/searchIcon.svg";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -189,10 +189,7 @@ export const Navbar = (props: any) => {
               onClick={() => router.push("/search")}
               className={`cursor-pointer pb-3 duration-300 hover:scale-105`}
             >
-               <Image
-              src={searchIcon}
-              alt={"searchIcon"}
-            />
+              <Image src={searchIcon} alt={"searchIcon"} />
             </li>
           </ul>
 
