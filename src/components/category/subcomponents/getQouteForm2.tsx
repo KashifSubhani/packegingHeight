@@ -114,6 +114,7 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           />
         </div>
+        
         <div className="col-span-6">
           <select
             required
