@@ -141,6 +141,7 @@ export const QouteForm3 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>
