@@ -114,7 +114,36 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           />
         </div>
-        
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.length}
+            onChange={(e) => onchnage("length", e.target.value)}
+            placeholder="Length"
+            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
+            placeholder="Width"
+            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.depth}
+            onChange={(e) => onchnage("depth", e.target.value)}
+            placeholder="Depth"
+            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
+          />
+        </div>
         <div className="col-span-6">
           <select
             required
