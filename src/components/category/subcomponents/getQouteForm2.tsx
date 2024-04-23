@@ -97,11 +97,11 @@ export const GetQouteForm2 = (props: any) => {
         </div>
         <div className="col-span-6">
           <input
-            type="tel"
+            type="number"
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
-            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
+            className="num_input h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -175,7 +175,6 @@ export const GetQouteForm2 = (props: any) => {
         </div>
         <div className="col-span-6 sm:col-span-4">
           <select
-            required
             value={finalData.stock}
             onChange={(e) => onchnage("stock", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"

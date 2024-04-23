@@ -94,11 +94,11 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
-                type="tel"
+                type="number"
                 value={finalData.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
-                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="num_input h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -134,33 +134,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
-            {/* {products && products.length > 0 && (
-              <div className="col-span-12 sm:col-span-6">
-                <label className="text-sm sm:text-base">Product Name</label>
-                <select
-                  required
-                  value={finalData.productName}
-                  onChange={(e) => onchnage("productName", e.target.value)}
-                  className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-                >
-                  {products.map((product: any, index: any) => (
-                    <option key={index + 1}>{product.name}</option>
-                  ))}
-                  <option>Other</option>
-                </select>
-              </div>
-            )} */}
-            {/* <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Design varitations</label>
-              <input
-                type="number"
-                required
-                value={finalData.varitations}
-                onChange={(e) => onchnage("varitations", e.target.value)}
-                placeholder="Design varitations"
-                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
-            </div> */}
             <div className="col-span-12">
               <label className="text-sm sm:text-base">Quantity</label>
               <input
@@ -172,64 +145,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
-            {/* <div className="col-span-6 sm:col-span-4">
-              <input
-                type="number"
-                required
-                value={finalData.length}
-                onChange={(e) => onchnage("length", e.target.value)}
-                placeholder="Length"
-                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-4">
-              <input
-                type="number"
-                required
-                value={finalData.width}
-                onChange={(e) => onchnage("width", e.target.value)}
-                placeholder="Width"
-                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-4">
-              <input
-                type="number"
-                required
-                value={finalData.depth}
-                onChange={(e) => onchnage("depth", e.target.value)}
-                placeholder="Depth"
-                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
-            </div>
-
-            <div className="col-span-6">
-              <label className="hidden sm:block text-sm sm:text-base">
-                Select Unit
-              </label>
-              <select
-                required
-                value={finalData.unit}
-                onChange={(e) => onchnage("unit", e.target.value)}
-                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              >
-                <option>Inches</option>
-                <option>CM</option>
-                <option>MM</option>
-              </select>
-            </div>
-            <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Delivery Deadline</label>
-              <input
-                type="date"
-                required
-                min={new Date().toISOString().split("T")[0]}
-                value={finalData.deadline}
-                onChange={(e) => onchnage("deadline", e.target.value)}
-                placeholder="Depth"
-                className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
-            </div> */}
             <div className="col-span-12">
               <textarea
                 rows={5}

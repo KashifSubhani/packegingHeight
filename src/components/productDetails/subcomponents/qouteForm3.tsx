@@ -74,11 +74,11 @@ export const QouteForm3 = (props: any) => {
         </div>
         <div className="col-span-6">
           <input
-            type="tel"
+            type="number"
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="num_input pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -152,7 +152,6 @@ export const QouteForm3 = (props: any) => {
         </div>
         <div className="col-span-6 sm:col-span-4">
           <select
-            required
             value={finalData.stock}
             onChange={(e) => onchnage("stock", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"

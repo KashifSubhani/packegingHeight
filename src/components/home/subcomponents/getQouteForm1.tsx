@@ -164,11 +164,11 @@ export const GetQouteForm1 = (props: any) => {
         </div>
         <div className="col-span-6">
           <input
-            type="tel"
+            type="number"
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="+1 123-123-1234"
-            className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="num_input h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           />
         </div>
         <div className="col-span-6">

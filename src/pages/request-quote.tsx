@@ -94,11 +94,11 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
-                type="tel"
+                type="number"
                 value={finalData.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
-                className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+                className="num_input h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
             {products && products.length > 0 && (

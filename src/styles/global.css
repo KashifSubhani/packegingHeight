@@ -85,19 +85,19 @@ body {
 /* Input Placeholder color change */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: rgb(161 161 170);
+  color: rgb(131, 131, 131);
 }
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: rgb(161 161 170);
+  color: rgb(131, 131, 131);
 }
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: rgb(161 161 170);
+  color: rgb(131, 131, 131);
 }
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: rgb(161 161 170);
+  color: rgb(131, 131, 131);
 }
 
 /* overall Scrollbar css */
@@ -165,4 +165,17 @@ textarea:-ms-input-placeholder {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.num_input::-webkit-outer-spin-button,
+.num_input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.num_input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+ 
+  /* Your Tailwind CSS classes here */
 }
