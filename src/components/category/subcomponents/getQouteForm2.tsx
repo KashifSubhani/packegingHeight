@@ -151,6 +151,7 @@ export const GetQouteForm2 = (props: any) => {
             onChange={(e) => onchnage("unit", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           >
+            <option>Select Unit</option>
             <option>Inches</option>
             <option>CM</option>
             <option>MM</option>
@@ -163,6 +164,7 @@ export const GetQouteForm2 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>
@@ -180,6 +182,7 @@ export const GetQouteForm2 = (props: any) => {
             onChange={(e) => onchnage("stock", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           >
+            <option>Select Stock</option>
             <option>12 PT</option>
             <option>14 PT</option>
             <option>16 PT</option>
@@ -187,8 +190,7 @@ export const GetQouteForm2 = (props: any) => {
             <option>20 PT</option>
             <option>Kraft Stock</option>
             <option>Corrugated Stock</option>
-            <option>Rigid</option>
-            <option>Stock</option>
+            <option>Rigid Stock</option>
           </select>
         </div>
         <div className="col-span-12">
