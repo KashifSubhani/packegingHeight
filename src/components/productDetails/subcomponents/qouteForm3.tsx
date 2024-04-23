@@ -91,7 +91,49 @@ export const QouteForm3 = (props: any) => {
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.length}
+            onChange={(e) => onchnage("length", e.target.value)}
+            placeholder="Length"
+            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
+            placeholder="Width"
+            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            required
+            value={finalData.depth}
+            onChange={(e) => onchnage("depth", e.target.value)}
+            placeholder="Depth"
+            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-4">
+          <select
+            required
+            value={finalData.unit}
+            onChange={(e) => onchnage("unit", e.target.value)}
+            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+          >
+            <option>Inches</option>
+            <option>CM</option>
+            <option>MM</option>
+          </select>
+        </div>
+        <div className="col-span-6 sm:col-span-4">
           <select
             required
             value={finalData.color}
@@ -108,15 +150,23 @@ export const QouteForm3 = (props: any) => {
             <option>4/4-Color</option>
           </select>
         </div>
-        <div className="col-span-6">
-          <input
-            type="text"
+        <div className="col-span-6 sm:col-span-4">
+          <select
             required
-            value={finalData.shortDescription}
-            onChange={(e) => onchnage("shortDescription", e.target.value)}
-            placeholder="Description"
+            value={finalData.stock}
+            onChange={(e) => onchnage("stock", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
-          />
+          >
+            <option>12 PT</option>
+            <option>14 PT</option>
+            <option>16 PT</option>
+            <option>18 PT</option>
+            <option>20 PT</option>
+            <option>Kraft Stock</option>
+            <option>Corrugated Stock</option>
+            <option>Rigid</option>
+            <option>Stock</option>
+          </select>
         </div>
         <div className="col-span-12">
           <textarea

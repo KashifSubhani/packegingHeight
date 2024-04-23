@@ -72,7 +72,7 @@ export const GetQouteForm2 = (props: any) => {
       <form
         onSubmit={sendEmail}
         className={`grid grid-cols-12 ${
-          matches2 ? "gap-3" : "gap-6"
+          matches2 ? "gap-3" : "gap-3"
         } bg-white p-3 lg:p-5`}
       >
         <div className="col-span-6">
@@ -144,7 +144,19 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-6 sm:col-span-4">
+          <select
+            required
+            value={finalData.unit}
+            onChange={(e) => onchnage("unit", e.target.value)}
+            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+          >
+            <option>Inches</option>
+            <option>CM</option>
+            <option>MM</option>
+          </select>
+        </div>
+        <div className="col-span-6 sm:col-span-4">
           <select
             required
             value={finalData.color}
@@ -161,15 +173,23 @@ export const GetQouteForm2 = (props: any) => {
             <option>4/4-Color</option>
           </select>
         </div>
-        <div className="col-span-6">
-          <input
-            type="text"
+        <div className="col-span-6 sm:col-span-4">
+          <select
             required
-            value={finalData.shortDescription}
-            onChange={(e) => onchnage("shortDescription", e.target.value)}
-            placeholder="Description"
+            value={finalData.stock}
+            onChange={(e) => onchnage("stock", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
-          />
+          >
+            <option>12 PT</option>
+            <option>14 PT</option>
+            <option>16 PT</option>
+            <option>18 PT</option>
+            <option>20 PT</option>
+            <option>Kraft Stock</option>
+            <option>Corrugated Stock</option>
+            <option>Rigid</option>
+            <option>Stock</option>
+          </select>
         </div>
         <div className="col-span-12">
           <textarea
