@@ -128,7 +128,8 @@ export const QouteForm3 = (props: any) => {
             onChange={(e) => onchnage("unit", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           >
-            <option>Inches</option>
+             <option>Select Unit</option>
+             <option>Inches</option>
             <option>CM</option>
             <option>MM</option>
           </select>
