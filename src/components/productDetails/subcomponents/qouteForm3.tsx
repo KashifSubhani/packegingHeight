@@ -157,6 +157,7 @@ export const QouteForm3 = (props: any) => {
             onChange={(e) => onchnage("stock", e.target.value)}
             className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
           >
+            <option>Select Stock</option>
             <option>12 PT</option>
             <option>14 PT</option>
             <option>16 PT</option>
@@ -164,8 +165,7 @@ export const QouteForm3 = (props: any) => {
             <option>20 PT</option>
             <option>Kraft Stock</option>
             <option>Corrugated Stock</option>
-            <option>Rigid</option>
-            <option>Stock</option>
+            <option>Rigid Stock</option>
           </select>
         </div>
         <div className="col-span-12">
