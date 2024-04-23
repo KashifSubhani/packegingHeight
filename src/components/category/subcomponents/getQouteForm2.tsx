@@ -10,7 +10,6 @@ export const GetQouteForm2 = (props: any) => {
   const matches3 = useMediaQuery("(max-width:767px)");
   const router = useRouter();
   const [finalData, setFinalData] = useState<any>({
-    color: "1-Color",
     productName: props.productName,
   });
 

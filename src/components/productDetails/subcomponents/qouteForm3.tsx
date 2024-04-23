@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 export const QouteForm3 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({
-    color: "1-Color",
     productName: props.productName,
   });
   const router = useRouter();
