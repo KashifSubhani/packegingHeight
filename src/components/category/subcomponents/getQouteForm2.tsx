@@ -148,7 +148,7 @@ export const GetQouteForm2 = (props: any) => {
             required
             value={finalData.unit}
             onChange={(e) => onchnage("unit", e.target.value)}
-            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
+            className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none lg:text-sm"
           >
             <option>Select Unit</option>
             <option>Inches</option>
