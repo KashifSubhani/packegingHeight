@@ -164,6 +164,7 @@ export const GetQouteForm2 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 lg:h-12 w-full rounded-md border border-zinc-200 px-2 text-xs lg:text-sm outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>
