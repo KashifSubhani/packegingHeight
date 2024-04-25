@@ -94,6 +94,7 @@ export const GetQouteForm1 = (props: any) => {
             onChange={(e) => onchnage("unit", e.target.value)}
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           >
+            <option>Select Unit</option>
             <option>Inches</option>
             <option>CM</option>
             <option>MM</option>
@@ -131,6 +132,7 @@ export const GetQouteForm1 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 w-full rounded-md border border-zinc-200 px-2 text-xs outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>
