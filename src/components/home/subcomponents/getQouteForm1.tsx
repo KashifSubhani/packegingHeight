@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 export const GetQouteForm1 = (props: any) => {
   const matches = useMediaQuery("(max-width:1000px)");
   const [finalData, setFinalData] = useState<any>({
-    unit: "Inches",
   });
 
   useEffect(() => {
