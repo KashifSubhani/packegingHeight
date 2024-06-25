@@ -18,8 +18,8 @@ export const Header = () => {
           <div className="flex flex-col-reverse gap-y-6 sm:grid sm:grid-cols-12">
             <div className="col-span-6">
               <h1 className="fw_600 text-2xl leading-tight md:text-3xl ">
-                Get Ready To Own Custom Boxes
-                <br className={matches ? "hidden" : "block"} /> and Packaging You Wished For!
+                Ready To Own Custom Boxes
+                <br className={matches ? "hidden" : "block"} /> & Packaging You Wished For!
               </h1>
               <p className={`text-sm ${matches ? "mt-6" : "mt-10 xl:mt-14"}`}>
                 Packaging Height is the ultimate destination for top-notch{" "}
