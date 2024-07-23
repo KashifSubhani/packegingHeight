@@ -23,7 +23,7 @@ export const CardItem = (props: any) => {
           )}
       </div>
       <div className="pt-4 pb-6 px-4">
-        <h3 className="text-base mb-2 fw_600">{props.data.name}</h3>
+        <p className="text-base mb-2 fw_600">{props.data.name}</p>
         <p className="text-sm mb-0 two_lines_elipsis">
           {props.data.shortDescription}
         </p>
