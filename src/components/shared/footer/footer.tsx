@@ -81,18 +81,6 @@ export const Footer = () => {
                       className="cursor-pointer"
                     />
                   </a>
-
-                  <a
-                    href="https://www.pinterest.co.uk/packagingheight/"
-                    target="_blank"
-                    className="border-none"
-                  >
-                    <Image
-                      src={twitter}
-                      alt="twitter"
-                      className="cursor-pointer"
-                    />
-                  </a>
                   <a
                     href="https://www.pinterest.com/packagingheight/"
                     target="_blank"
