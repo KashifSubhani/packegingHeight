@@ -10,7 +10,6 @@ import method5 from "../../../static/method5.svg";
 import linkedin from "../../../static/linkedin.svg";
 import facebook from "../../../static/facebook.svg";
 import instagram from "../../../static/instagram.svg";
-import twitter from "../../../static/twitter.svg";
 import pinterest from "../../../static/pinterest.svg";
 import copyright from "../../../static/copyright.svg";
 import { Categories } from "./subcomponents/categories";
