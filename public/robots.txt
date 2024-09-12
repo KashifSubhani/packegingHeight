@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /blog?view=
+Disallow: /get-quote
+Disallow: /quote-ajax
+Disallow: /404
+Disallow: /cdn-cgi
+Disallow: /search/
+Disallow: /framework/
+Disallow: /backup/
+Disallow: /application/
+
+sitemap: https://packagingheight.com/sitemap_index.xml

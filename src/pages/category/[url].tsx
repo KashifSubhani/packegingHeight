@@ -38,7 +38,7 @@ const Index = ({
             },
           ]}
           canonical={
-            "https://packagingheight.com/category/" + category.slug.current
+            "https://packagingheight.com/category/" + category.slug.current + "/"
           }
         />
         <Navbar

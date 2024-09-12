@@ -12,6 +12,7 @@ import { getServerSideProps } from "@/services/categoriesService";
 import { faqsData } from "@/demoData/faqsData";
 import { createArrayOfSets } from "@/services/descriptionService";
 import { HomeContentSection } from "@/components/home/homeContentSection";
+import { NextSeo } from "next-seo";
 
 const Index = ({
   data,
@@ -23,31 +24,47 @@ const Index = ({
 }: any) => {
   const router = useRouter();
   return (
-    <div className="relative p-0 m-0 w-full h-full">
-      <button
-        onClick={() => router.push("/contact-us")}
-        className="greenBg text-white w-36 text-xs py-1 -rotate-90 z-20 rounded-tl-sm rounded-tr-sm"
-        style={{ position: "fixed", right: "-3.7rem", top: "20rem" }}
-      >
-        Request for call
-      </button>
-      <Navbar
-        data={data}
-        boxProducts={boxProducts}
-        shapeProducts={shapeProducts}
+    <>
+      <NextSeo
+        title="Home | Packaging Height"
+        description="Packaging Height is the ultimate destination for top-notch custom packaging solutions for every brand."
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content: "Packaging Height, packaging"
+          },
+        ]}
+        canonical={
+          "https://packagingheight.com"
+        }
       />
-      <Header />
-      <PackagingStyle
-        list={featuredCategories.filter((_d: any, ind: any) => ind < 4)}
-      />
-      <PremiumFinishes />
-      <HowItWorks />
-      <GetQoute products={products} />
-      <HomeContentSection />
-      <Faq faqs={faqsData} />
-      <Testimonials testimonials={createArrayOfSets(testimonials)} />
-      <Footer />
-    </div>
+
+      <div className="relative p-0 m-0 w-full h-full">
+        <button
+          onClick={() => router.push("/contact-us")}
+          className="greenBg text-white w-36 text-xs py-1 -rotate-90 z-20 rounded-tl-sm rounded-tr-sm"
+          style={{ position: "fixed", right: "-3.7rem", top: "20rem" }}
+        >
+          Request for call
+        </button>
+        <Navbar
+          data={data}
+          boxProducts={boxProducts}
+          shapeProducts={shapeProducts}
+        />
+        <Header />
+        <PackagingStyle
+          list={featuredCategories.filter((_d: any, ind: any) => ind < 4)}
+        />
+        <PremiumFinishes />
+        <HowItWorks />
+        <GetQoute products={products} />
+        <HomeContentSection />
+        <Faq faqs={faqsData} />
+        <Testimonials testimonials={createArrayOfSets(testimonials)} />
+        <Footer />
+      </div>
+    </>
   );
 };
 export { getServerSideProps };
