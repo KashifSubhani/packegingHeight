@@ -35,6 +35,16 @@ async function generateSitemap() {
           <lastmod>2023-05-11T19:00:11+00:00</lastmod>
           <priority>1.00</priority>
       </url>
+      <url>
+          <loc>${SITE_URL}contact-us/</loc>
+          <lastmod>2023-05-11T19:00:11+00:00</lastmod>
+          <priority>1.00</priority>
+      </url>
+      <url>
+          <loc>${SITE_URL}all-products/</loc>
+          <lastmod>2023-05-11T19:00:11+00:00</lastmod>
+          <priority>1.00</priority>
+      </url>
       ${documents.map((item) => `
         <url>
           <loc>${SITE_URL}${item.slug}/</loc>
