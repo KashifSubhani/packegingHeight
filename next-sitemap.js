@@ -52,15 +52,13 @@ async function generateSitemap() {
           <priority>0.80</priority>
         </url>
       `).join("")}
-      ${documentsForCategory.map((item) =>
-        item?.products?.map((i) => (`
-            <url>
-                <loc>${SITE_URL}${item.slug}/${i.slug}/</loc>
-                <lastmod>${i._updatedAt}</lastmod>
-                <priority>0.80</priority>
-            </url>
-        `))
-    ).join("")}
+      ${documentsForCategory.map((item) => (`
+        <url>
+            <loc>${SITE_URL}category/${item.slug}/</loc>
+            <lastmod>${item._updatedAt}</lastmod>
+            <priority>0.80</priority>
+        </url>
+      `)).join("")}
     </urlset>
   `;
     fs.writeFileSync("public/sitemap.xml", sitemap);
