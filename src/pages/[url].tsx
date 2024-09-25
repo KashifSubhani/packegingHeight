@@ -5,9 +5,10 @@ import { ContentSection } from "@/components/shared/contentSection";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
+import { getImg } from "@/services/descriptionService";
 import { client } from "@/utils/sanityConfig";
 import { groq } from "next-sanity";
-import { NextSeo } from "next-seo";
+import { NextSeo, ProductJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -18,32 +19,59 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
       router.push("/not-found");
     }
   }, [product, router]);
+
+  const imagesArray = product?.images?.map((item:any)=> getImg(item).url)
+
   return (
     product && (
-      <div>
-        <NextSeo
-          title={product.metaTitle}
-          description={product.metaDescription}
-          canonical={"https://packagingheight.com/" + product.slug.current + "/"}
-          additionalMetaTags={[
-            {
-              name: "keywords",
-              content: product.metaTags,
-            },
-          ]}
-        />
-        <Navbar
-          data={data}
-          boxProducts={boxProducts}
-          shapeProducts={shapeProducts}
-        />
-        <DetailsHeader product={product} />
-        <DetailsContent product={product} />
-        <ContentSection contentData={product.content} />
-        <Faq faqs={faqs} />
-        <RelatedProducts product={product} />
-        <Footer />
-      </div>
+      <>
+
+        <div>
+          <NextSeo
+            title={product.metaTitle}
+            description={product.metaDescription}
+            canonical={`https://packagingheight.com/${product.slug.current}/`}
+            additionalMetaTags={[
+              {
+                name: "keywords",
+                content: product.metaTags,
+              },
+            ]}
+          />
+
+          <ProductJsonLd
+            productName={product.metaTitle}
+            images={imagesArray}
+            description={product.metaDescription}
+            brand="Packaging Height"
+            offers={{
+              priceCurrency: "USD",
+              lowPrice: "0.2",
+              highPrice: "50",
+              availability: "http://schema.org/InStock",
+              itemCondition: "http://schema.org/NewCondition",
+              offerCount: "100000"
+            }}
+            aggregateRating={{
+              ratingValue: "4.5",
+              bestRating: "5",
+              ratingCount: "120"
+            }}
+            url={`https://packagingheight.com/${product.slug.current}/`}
+          />
+
+          <Navbar
+            data={data}
+            boxProducts={boxProducts}
+            shapeProducts={shapeProducts}
+          />
+          <DetailsHeader product={product} />
+          <DetailsContent product={product} />
+          <ContentSection contentData={product.content} />
+          <Faq faqs={faqs} />
+          <RelatedProducts product={product} />
+          <Footer />
+        </div></>
     )
   );
 };
