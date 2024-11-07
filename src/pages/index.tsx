@@ -26,8 +26,8 @@ const Index = ({
   return (
     <>
       <NextSeo
-        title="Home | Packaging Height"
-        description="Packaging Height is the ultimate destination for top-notch custom packaging solutions for every brand."
+        title="Get Custom Boxes & Packaging Solutions | Packaging Height"
+        description="Custom boxes & packaging for all industries, crafted to showcase your brand. Quality solutions made easy. Request your free quote!"
         additionalMetaTags={[
           {
             name: "keywords",
