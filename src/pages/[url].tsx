@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
+  console.log("🚀 ~ Index ~ product:", product)
   const router = useRouter();
   useEffect(() => {
     if (!product) {
@@ -40,7 +41,7 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
           />
 
           <ProductJsonLd
-            productName={product.metaTitle}
+            productName={product.metaTitle || product?.name}
             images={imagesArray}
             description={product.metaDescription}
             brand="Packaging Height"
@@ -48,6 +49,9 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
               priceCurrency: "USD",
               lowPrice: "0.2",
               highPrice: "50",
+              price: "50",
+              shippingDetails: "",
+              hasMerchantReturnPolicy: false,
               availability: "http://schema.org/InStock",
               itemCondition: "http://schema.org/NewCondition",
               offerCount: "100000"
