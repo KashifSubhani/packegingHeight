@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
-  console.log("🚀 ~ Index ~ product:", product)
+  
   const router = useRouter();
   useEffect(() => {
     if (!product) {
@@ -63,6 +63,7 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
             }}
             url={`https://packagingheight.com/${product.slug.current}/`}
           />
+
 
           <Navbar
             data={data}
