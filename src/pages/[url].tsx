@@ -51,7 +51,7 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
               highPrice: "50",
               price: "50",
               shippingDetails: "",
-              hasMerchantReturnPolicy: false,
+              hasMerchantReturnPolicy: "false",
               availability: "http://schema.org/InStock",
               itemCondition: "http://schema.org/NewCondition",
               offerCount: "100000"
