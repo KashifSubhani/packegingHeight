@@ -26,7 +26,6 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
   return (
     product && (
       <>
-
         <div>
           <NextSeo
             title={product.metaTitle}
@@ -63,7 +62,6 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
             }}
             url={`https://packagingheight.com/${product.slug.current}/`}
           />
-
 
           <Navbar
             data={data}
