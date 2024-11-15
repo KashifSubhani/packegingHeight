@@ -75,10 +75,9 @@ export const Navbar = (props: any) => {
           </div>
           <button
             onClick={() => setShowNav(true)}
-            className=" flex justify-center items-center text-lg md:hidden"
+            className="block text-lg md:hidden"
           >
-            <FontAwesomeIcon icon={faBars} />
-            <span className="">M</span>
+            Menu
           </button> 
           <SmallNav
             show={showNav}
