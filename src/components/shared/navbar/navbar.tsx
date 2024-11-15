@@ -78,7 +78,7 @@ export const Navbar = (props: any) => {
             className="block text-lg md:hidden"
           >
             <FontAwesomeIcon icon={faBars} />
-          </button>
+          </button> 
           <SmallNav
             show={showNav}
             setShow={setShowNav}
@@ -219,3 +219,4 @@ export const Navbar = (props: any) => {
     </div>
   );
 };
+
