@@ -1,5 +1,5 @@
-// import { faBars } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -12,7 +12,6 @@ import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
 import searchIcon from "../../../static/searchIcon.svg";
-import menuicon from "../../../../public/menu.png"
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -78,8 +77,8 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            <Image src="/menu.png" width={30} height={30} alt="Menu" />
-            <span className="absolute opacity-0">M</span>
+            <FontAwesomeIcon icon={faBars} />
+            <span>M</span>
           </button> 
           <SmallNav
             show={showNav}
