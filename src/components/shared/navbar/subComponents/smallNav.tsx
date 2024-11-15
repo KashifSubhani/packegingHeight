@@ -24,7 +24,7 @@ export const SmallNav = (props: any) => {
         onClick={() => props.setShow(false)}
         className="absolute top-5 right-5 text-2xl"
       >
-        <FontAwesomeIcon icon={faClose} />
+        <FontAwesomeIcon icon={faClose} /> x
       </button>
       <ul className="flex flex-col items-center gap-y-10">
         {linksData.map((d: any, ind: any) => (
