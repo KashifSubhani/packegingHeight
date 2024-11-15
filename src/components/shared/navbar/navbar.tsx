@@ -77,7 +77,7 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            <FontAwesomeIcon icon={faBars} /> M
+            <FontAwesomeIcon icon={faBars} />
           </button> 
           <SmallNav
             show={showNav}
