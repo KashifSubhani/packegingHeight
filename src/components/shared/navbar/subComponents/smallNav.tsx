@@ -1,6 +1,7 @@
 import { linksData } from "@/demoData/navLinksData";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export const SmallNav = (props: any) => {
@@ -24,12 +25,7 @@ export const SmallNav = (props: any) => {
         onClick={() => props.setShow(false)}
         className="absolute top-5 right-5 text-2xl"
       >
-        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none">
-          <g stroke="#000000" stroke-linecap="round" stroke-width="2">
-            <path d="M6 18L18 6"/>
-            <path d="M18 18L6 6"/>
-          </g>
-        </svg>
+        <Image src="/x.png" width={30} height={30} alt="x" />
       </button>
       <ul className="flex flex-col items-center gap-y-10">
         {linksData.map((d: any, ind: any) => (

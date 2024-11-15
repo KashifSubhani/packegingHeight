@@ -1,5 +1,5 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBars } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
 import searchIcon from "../../../static/searchIcon.svg";
+import menuicon from "../../../../public/menu.png"
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -77,9 +78,7 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> M
+            <Image src="/menu.png" width={30} height={30} alt="Menu" />
           </button> 
           <SmallNav
             show={showNav}
