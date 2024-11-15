@@ -78,7 +78,7 @@ export const Navbar = (props: any) => {
             className=" flex justify-center items-center text-lg md:hidden"
           >
             <FontAwesomeIcon icon={faBars} />
-            <span className="absolute">M</span>
+            <span className="">M</span>
           </button> 
           <SmallNav
             show={showNav}
