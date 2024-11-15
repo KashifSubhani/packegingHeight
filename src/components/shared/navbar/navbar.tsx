@@ -77,7 +77,9 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            Menu
+            <div className="h-[1.5px] bg-black w-7"/>
+            <div className="h-[1.5px] bg-black w-7 my-2"/>
+            <div className="h-[1.5px] bg-black w-7"/>
           </button> 
           <SmallNav
             show={showNav}

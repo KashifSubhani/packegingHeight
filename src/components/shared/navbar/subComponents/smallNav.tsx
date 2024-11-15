@@ -22,9 +22,10 @@ export const SmallNav = (props: any) => {
     >
       <button
         onClick={() => props.setShow(false)}
-        className="absolute top-5 right-5 text-2xl"
+        className="absolute top-5 right-5 text-2xl mt-5"
       >
-          X
+          <div className="pt-[1px] bg-black w-7 rotate-45"/>
+          <div className="pt-[1px] bg-black w-7 -rotate-45"/>
       </button>
       <ul className="flex flex-col items-center gap-y-10">
         {linksData.map((d: any, ind: any) => (
