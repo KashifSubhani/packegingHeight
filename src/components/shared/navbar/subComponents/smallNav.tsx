@@ -26,6 +26,7 @@ export const SmallNav = (props: any) => {
         className="absolute top-5 right-5 text-2xl"
       >
         <Image src="/x.png" width={30} height={30} alt="x" />
+        <span className="absolute opacity-0">X</span>
       </button>
       <ul className="flex flex-col items-center gap-y-10">
         {linksData.map((d: any, ind: any) => (
