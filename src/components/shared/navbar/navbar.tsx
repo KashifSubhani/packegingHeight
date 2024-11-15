@@ -78,7 +78,7 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            <Image src="/menu.png" width={30} height={30} alt="Menu" />
+            <Image src="/menu.png" width={30} height={30} alt="Menu" />M
           </button> 
           <SmallNav
             show={showNav}
