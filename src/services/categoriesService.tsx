@@ -6,6 +6,7 @@ export async function getServerSideProps() {
   const cat2Name = "Shape & Styles";
   const query = `*[_type == "category"]`;
   const query2 = `*[_type == "category" && featured == true]`;
+  const query2A = `*[_type == "category" && box_by_material == true]`;
   const query3 = `*[_type == "testimonial"]`;
   const query4 = `*[_type == 'product']`;
   const query5 = `*[ _type == "category" && name  == "${cat1Name}"][0]`;
@@ -17,6 +18,7 @@ export async function getServerSideProps() {
   const data = await client.fetch(query);
   const data2 = await client.fetch(query2);
   const data3 = await client.fetch(query3);
+  const dataBoxByMaterial = await client.fetch(query2A);
   const products = await client.fetch(query4);
   const cat1 = await client.fetch(query5, { cat1Name });
   const cat2 = await client.fetch(query7, { cat2Name });
@@ -41,6 +43,7 @@ export async function getServerSideProps() {
       testimonials: data3,
       products,
       boxProducts: products1,
+      dataBoxByMaterial,
       shapeProducts: products2,
     },
   };

@@ -21,6 +21,7 @@ const Index = ({
   products,
   boxProducts,
   shapeProducts,
+  dataBoxByMaterial
 }: any) => {
   const router = useRouter();
   return (
@@ -51,6 +52,7 @@ const Index = ({
           data={data}
           boxProducts={boxProducts}
           shapeProducts={shapeProducts}
+          dataBoxByMaterial={dataBoxByMaterial}
         />
         <Header />
         <PackagingStyle

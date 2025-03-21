@@ -12,6 +12,7 @@ import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
 import searchIcon from "../../../static/searchIcon.svg";
+import { client } from "@/utils/sanityConfig";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -22,6 +23,7 @@ export const Navbar = (props: any) => {
   const [showShapeDropdown, setShowShapeDropdown] = useState(false);
   const [fullNav, setFullNav] = useState(true);
   const [searchVal, setSearchVal] = useState("");
+  const [bbm, setBBM] = useState([]);
   const isActive = (p: any) => {
     if (router.asPath.includes(p)) {
       return true;
@@ -46,6 +48,15 @@ export const Navbar = (props: any) => {
     e.preventDefault();
     router.push(`/search?name=${searchVal}`);
   };
+
+  useEffect(()=>{
+    const query2A = `*[_type == "category" && box_by_material == true]`;
+    (async()=>{
+      const dataBoxByMaterial = await client.fetch(query2A);
+      setBBM(dataBoxByMaterial)
+    })()
+  },[])
+
   return (
     <div
       className={`pb-3 md:pb-0 pt-3 xl:px-10 sticky duration-300 ${
@@ -174,8 +185,9 @@ export const Navbar = (props: any) => {
                   )}
                   {showBoxDropdown && d.name === "Box by Material" && (
                     <BoxDropdown
-                      list={props.boxProducts}
+                      list={bbm}
                       setShowDropdown={setShowBoxDropdown}
+                      basepath="/category"
                     />
                   )}
                   {showShapeDropdown && d.name === "Shape & Styles" && (

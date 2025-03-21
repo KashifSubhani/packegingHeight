@@ -1,11 +1,12 @@
 "use client";
 
 import { getSlug } from "@/services/categoriesService";
-import { useRouter } from "next/router";
+import Link from "next/link";
+// import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const BoxDropdown = (props: any) => {
-  const router = useRouter();
+  // const router = useRouter();
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -22,8 +23,9 @@ const BoxDropdown = (props: any) => {
         {list &&
           list.length > 0 &&
           list.map((item: any, index: any) => (
-            <div
-              onClick={() => router.push(`/${getSlug(item.slug)}`)}
+            <Link
+              // onClick={() => router.push(props?.basepath ? `${props?.basepath}/${getSlug(item.slug)}` : `/${getSlug(item.slug)}`)}
+              href={props?.basepath ? `${props?.basepath}/${getSlug(item.slug)}` : `/${getSlug(item.slug)}`}
               key={index + 1}
               className={`flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black py-3 px-3 ${
                 (index !== list.length - 1) ? "border-b" : ""
@@ -32,23 +34,8 @@ const BoxDropdown = (props: any) => {
               <h2 className="text-xs sm:text-sm fw_400">
                 {item.name}
               </h2>
-            </div>
+            </Link>
           ))}
-        {/* <div
-          onClick={() => router.push("/all-categories")}
-          className="flex items-center gap-x-3 cursor-pointer text-black rounded-lg justify-center px-2 h-12 sm:h-14 md:h-16 bg-zinc-100 hover:scale-95 duration-300"
-        >
-          <h2 className="text-xs sm:text-sm md:text-base fw_600 text-black">
-            Show All
-          </h2>
-          <Image
-            src={chev}
-            alt=""
-            width={16}
-            height={16}
-            style={{ transform: "rotate(-90deg)" }}
-          />
-        </div> */}
       </div>
     </div>
   );
