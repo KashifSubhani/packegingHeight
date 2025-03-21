@@ -146,7 +146,7 @@ export const Footer = () => {
             <div className="flex items-center gap-x-2 text-black">
               <Image src={copyright} alt={copyright} />
               <span className="text-xs text-black">
-                2024 Packaging Height. All Rights Reserved
+                2025 Packaging Height. All Rights Reserved
               </span>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
