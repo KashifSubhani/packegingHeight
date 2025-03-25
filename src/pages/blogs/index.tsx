@@ -1,5 +1,4 @@
 import { BlogMain } from "@/components/blog/blogMain";
-import { BlogQouteForm } from "@/components/blog/blogQouteForm";
 import { FeaturedCategories } from "@/components/blog/featuredCategories";
 import { FollowUS } from "@/components/blog/followUS";
 import { PopularPosts } from "@/components/blog/popularPosts";
