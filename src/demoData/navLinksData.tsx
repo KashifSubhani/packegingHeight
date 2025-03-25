@@ -1,7 +1,6 @@
 export const linksData = [
   { name: "Industries", path: "/all-categories", active: "/all-categories" },
   { name: "Products", path: "/all-products", active: "/all-products" },
-  { name: "Blog", path: "/blogs", active: "/blogs" },
   {
     name: "Box by Material",
     path: "/category/box-by-material",
@@ -12,5 +11,6 @@ export const linksData = [
     path: "/category/shape-and-styles",
     active: "/category/shape-and-styles",
   },
+  { name: "Blog", path: "/blogs", active: "/blogs" },
   { name: "Contact Us", path: "/contact-us", active: "/contact-us" },
 ];
