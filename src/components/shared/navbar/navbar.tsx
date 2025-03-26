@@ -55,7 +55,7 @@ export const Navbar = (props: any) => {
       const dataBoxByMaterial = await client.fetch(query2A);
       setBBM(dataBoxByMaterial)
     })()
-  },[])
+  },[bbm])
 
   return (
     <div
