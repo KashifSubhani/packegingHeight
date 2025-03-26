@@ -74,13 +74,13 @@ export const Navbar = (props: any) => {
     router.push(`/search?name=${searchVal}`);
   };
 
-  useEffect(() => {
-    const query2A = `*[_type == "category" && box_by_material == true]`;
-    (async () => {
-      const dataBoxByMaterial = await client.fetch(query2A);
-      setBBM(dataBoxByMaterial);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   const query2A = `*[_type == "category" && box_by_material == true]`;
+  //   (async () => {
+  //     const dataBoxByMaterial = await client.fetch(query2A);
+  //     setBBM(dataBoxByMaterial);
+  //   })();
+  // }, []);
 
   return (
     <div
