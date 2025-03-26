@@ -23,7 +23,32 @@ export const Navbar = (props: any) => {
   const [showShapeDropdown, setShowShapeDropdown] = useState(false);
   const [fullNav, setFullNav] = useState(true);
   const [searchVal, setSearchVal] = useState("");
-  const [bbm, setBBM] = useState([]);
+  const [bbm, setBBM] = useState([
+    {
+      name: "Corrugated Boxes",
+      slug: {
+        current: "corrugated-boxes",
+      },
+    },
+    {
+      slug: {
+        current: "kraft-boxes",
+      },
+      name: "Kraft Boxes",
+    },
+    {
+      name: "Rigid Boxes",
+      slug: {
+        current: "rigid-boxes",
+      },
+    },
+    {
+      slug: {
+        current: "cardboard-boxes",
+      },
+      name: "Cardboard Boxes",
+    },
+  ]);
   const isActive = (p: any) => {
     if (router.asPath.includes(p)) {
       return true;
@@ -49,13 +74,13 @@ export const Navbar = (props: any) => {
     router.push(`/search?name=${searchVal}`);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const query2A = `*[_type == "category" && box_by_material == true]`;
-    (async()=>{
+    (async () => {
       const dataBoxByMaterial = await client.fetch(query2A);
-      setBBM(dataBoxByMaterial)
-    })()
-  },[bbm])
+      setBBM(dataBoxByMaterial);
+    })();
+  }, []);
 
   return (
     <div
@@ -88,10 +113,10 @@ export const Navbar = (props: any) => {
             onClick={() => setShowNav(true)}
             className="block text-lg md:hidden"
           >
-            <div className="h-[1.5px] bg-black w-7"/>
-            <div className="h-[1.5px] bg-black w-7 my-2"/>
-            <div className="h-[1.5px] bg-black w-7"/>
-          </button> 
+            <div className="h-[1.5px] bg-black w-7" />
+            <div className="h-[1.5px] bg-black w-7 my-2" />
+            <div className="h-[1.5px] bg-black w-7" />
+          </button>
           <SmallNav
             show={showNav}
             setShow={setShowNav}
@@ -233,4 +258,3 @@ export const Navbar = (props: any) => {
     </div>
   );
 };
-
