@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 export const CardListItem = (props: any) => {
-  const router = useRouter();
   return (
     <Link href={`/${getSlug(props.data.slug)}`}
       className="text-[#606062] shadow-md rounded-lg overflow-hidden flex items-center gap-x-4 w-full cursor-pointer"

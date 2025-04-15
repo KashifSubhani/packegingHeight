@@ -1,14 +1,11 @@
 "use client";
-
 import { getSlug } from "@/services/categoriesService";
 import Link from "next/link";
-// import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const BoxDropdown = (props: any) => {
   // const router = useRouter();
   const [list, setList] = useState([]);
-
   useEffect(() => {
     let arr = props.list.filter((_d: any, i: any) => i < 10);
     setList(arr);

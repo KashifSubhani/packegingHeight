@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const IndustriesDropdown = (props: any) => {
-  const router = useRouter();
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -28,7 +27,6 @@ const IndustriesDropdown = (props: any) => {
           list.length > 0 &&
           list.map((category: any, index: any) => (
             <Link href={`/category/${getSlug(category.slug)}`}
-              // onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
               key={index + 1}
               className="text-[#606062] flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black h-12 sm:h-14 md:h-16"
             >
