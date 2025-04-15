@@ -6,6 +6,7 @@ import chev from "../../../../static/chev.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const IndustriesDropdown = (props: any) => {
   const router = useRouter();
@@ -26,10 +27,10 @@ const IndustriesDropdown = (props: any) => {
         {list &&
           list.length > 0 &&
           list.map((category: any, index: any) => (
-            <div
-              onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
+            <Link href={`/category/${getSlug(category.slug)}`}
+              // onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
               key={index + 1}
-              className="flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black h-12 sm:h-14 md:h-16"
+              className="text-[#606062] flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black h-12 sm:h-14 md:h-16"
             >
               <div>
                 <img
@@ -42,7 +43,7 @@ const IndustriesDropdown = (props: any) => {
               <h2 className="text-xs sm:text-sm md:text-base fw_400">
                 {category.name}
               </h2>
-            </div>
+            </Link>
           ))}
         <div
           onClick={() => router.push("/all-categories")}

@@ -16,7 +16,6 @@ const BoxDropdown = (props: any) => {
   return (
     <div
       onMouseEnter={() => props.setShowDropdown(true)}
-    //   onMouseLeave={() => props.setShowDropdown(false)}
       className="absolute w-60 top-full left-0 right-0 bg-white z-30 rounded-lg shadow-lg mt-3"
     >
       <div className="flex flex-col">
@@ -24,10 +23,9 @@ const BoxDropdown = (props: any) => {
           list.length > 0 &&
           list.map((item: any, index: any) => (
             <Link
-              // onClick={() => router.push(props?.basepath ? `${props?.basepath}/${getSlug(item.slug)}` : `/${getSlug(item.slug)}`)}
               href={props?.basepath ? `${props?.basepath}/${getSlug(item.slug)}` : `/${getSlug(item.slug)}`}
               key={index + 1}
-              className={`flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black py-3 px-3 ${
+              className={`text-[#606062] flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black py-3 px-3 ${
                 (index !== list.length - 1) ? "border-b" : ""
               }`}
             >

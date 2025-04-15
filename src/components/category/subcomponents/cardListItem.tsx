@@ -1,14 +1,14 @@
 import { getSlug } from "@/services/categoriesService";
 import { getImg } from "@/services/descriptionService";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const CardListItem = (props: any) => {
   const router = useRouter();
   return (
-    <div
-      className="shadow-md rounded-lg overflow-hidden flex items-center gap-x-4 w-full cursor-pointer"
-      onClick={() => router.push("/" + getSlug(props.data.slug))}
-    >
+    <Link href={`/${getSlug(props.data.slug)}`}
+      className="text-[#606062] shadow-md rounded-lg overflow-hidden flex items-center gap-x-4 w-full cursor-pointer"
+          >
       <div
         className="rounded-md h-60 p-3 flex items-center justify-center overflow-hidden"
         style={{ width: "16rem", minWidth: "16rem", background: "#eaf0f5" }}
@@ -28,6 +28,6 @@ export const CardListItem = (props: any) => {
           {props.data.shortDescription}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };

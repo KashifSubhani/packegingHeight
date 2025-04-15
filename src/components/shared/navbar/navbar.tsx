@@ -13,6 +13,7 @@ import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
 import searchIcon from "../../../static/searchIcon.svg";
 import { client } from "@/utils/sanityConfig";
+import Link from "next/link";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -25,16 +26,10 @@ export const Navbar = (props: any) => {
   const [searchVal, setSearchVal] = useState("");
   const [bbm, setBBM] = useState([
     {
-      name: "Corrugated Boxes",
       slug: {
-        current: "corrugated-boxes",
+        current: "cardboard-boxes",
       },
-    },
-    {
-      slug: {
-        current: "kraft-boxes",
-      },
-      name: "Kraft Boxes",
+      name: "Cardboard Boxes",
     },
     {
       name: "Rigid Boxes",
@@ -44,9 +39,15 @@ export const Navbar = (props: any) => {
     },
     {
       slug: {
-        current: "cardboard-boxes",
+        current: "kraft-boxes",
       },
-      name: "Cardboard Boxes",
+      name: "Kraft Boxes",
+    },
+    {
+      name: "Corrugated Boxes",
+      slug: {
+        current: "corrugated-boxes",
+      },
     },
   ]);
   const isActive = (p: any) => {
@@ -174,17 +175,17 @@ export const Navbar = (props: any) => {
                   setShowShapeDropdown(false);
                 }}
               >
-                <div
-                  onClick={() =>
-                    d.name === "Industries"
-                      ? setShowDropdown(!showDropdown)
-                      : d.name === "Box by Material"
-                      ? setShowBoxDropdown(!showBoxDropdown)
-                      : d.name === "Shape & Styles"
-                      ? setShowShapeDropdown(!showShapeDropdown)
-                      : router.push(d.path)
-                  }
-                  className={`cursor-pointer fw_600 text-xs lg:text-sm whitespace-nowrap flex items-center gap-x-2 ${
+                <Link href={d.path}
+                  // onClick={() =>
+                  //   d.name === "Industries"
+                  //     ? setShowDropdown(!showDropdown)
+                  //     : d.name === "Box by Material"
+                  //     ? setShowBoxDropdown(!showBoxDropdown)
+                  //     : d.name === "Shape & Styles"
+                  //     ? setShowShapeDropdown(!showShapeDropdown)
+                  //     : router.push(d.path)
+                  // }
+                  className={`text-[#606062] cursor-pointer fw_600 text-xs lg:text-sm whitespace-nowrap flex items-center gap-x-2 ${
                     d.name !== "Industries" &&
                     d.name !== "Box by Material" &&
                     d.name !== "Shape & Styles"
@@ -221,7 +222,7 @@ export const Navbar = (props: any) => {
                       setShowDropdown={setShowShapeDropdown}
                     />
                   )}
-                </div>
+                </Link>
               </li>
             ))}
             <li

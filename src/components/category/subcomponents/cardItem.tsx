@@ -1,13 +1,13 @@
 import { getImg } from "@/services/descriptionService";
 import { useRouter } from "next/router";
 import { getSlug } from "@/services/categoriesService";
+import Link from "next/link";
 
 export const CardItem = (props: any) => {
   const router = useRouter();
   return (
-    <div
-      className="shadow-md hover:drop-shadow-xl duration-300 rounded-lg overflow-hidden cursor-pointer bg-white"
-      onClick={() => router.push("/" + getSlug(props.data.slug))}
+    <Link href={`/${getSlug(props.data.slug)}`}
+      className="text-[#606062] shadow-md hover:drop-shadow-xl duration-300 rounded-lg overflow-hidden cursor-pointer bg-white"
     >
       <div
         className="w-full rounded-md h-72 lg:h-72 p-3 flex items-center justify-center overflow-hidden"
@@ -28,6 +28,6 @@ export const CardItem = (props: any) => {
           {props.data.shortDescription}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
