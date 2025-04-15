@@ -1,10 +1,10 @@
 import { useMediaQuery } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 
 export const Categories = (props: any) => {
   const matches = useMediaQuery("(max-width:640px)");
-  const router = useRouter();
+ 
   return (
     <div>
       <p className="fw_600 text-sm text-black sm:text-base">{props.title}</p>
