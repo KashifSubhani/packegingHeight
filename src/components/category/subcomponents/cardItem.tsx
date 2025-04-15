@@ -1,11 +1,9 @@
 import { getImg } from "@/services/descriptionService";
-import { useRouter } from "next/router";
 import { getSlug } from "@/services/categoriesService";
 import Link from "next/link";
 
 export const CardItem = (props: any) => {
-  const router = useRouter();
-  return (
+ return (
     <Link href={`/${getSlug(props.data.slug)}`}
       className="text-[#606062] shadow-md hover:drop-shadow-xl duration-300 rounded-lg overflow-hidden cursor-pointer bg-white"
     >
