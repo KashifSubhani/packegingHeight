@@ -1,10 +1,10 @@
 import { Container, useMediaQuery } from "@mui/material";
-import { useRouter } from "next/router";
 import { getImg } from "@/services/descriptionService";
 import { getSlug } from "@/services/categoriesService";
+import Link from "next/link";
 export const PackagingStyle = (props: any) => {
   const matches = useMediaQuery("(max-width:450px)");
-  const router = useRouter();
+
   return (
     <Container maxWidth={"lg"}>
       <div className="pb-10 pt-5">
@@ -23,10 +23,10 @@ export const PackagingStyle = (props: any) => {
             }`}
           >
             {props.list.map((data: any, ind: any) => (
-              <div
+              <Link
                 key={ind + 1}
-                onClick={() => router.push(`/category/${getSlug(data.slug)}`)}
-                className={`cursor-pointer ${
+                href={`/category/${getSlug(data.slug)}`}
+                className={`cursor-pointer text-[#606062] ${
                   matches ? "col-span-12" : "col-span-6 md:col-span-3"
                 }`}
               >
@@ -45,7 +45,7 @@ export const PackagingStyle = (props: any) => {
                 <p className="text-sm md:text-xs lg:text-sm mt-2 big_three_lines_elipsis">
                   {data.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         )}

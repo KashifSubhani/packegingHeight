@@ -7,12 +7,12 @@ import { Testimonials } from "@/components/home/testimonials";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
-import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 import { faqsData } from "@/demoData/faqsData";
 import { createArrayOfSets } from "@/services/descriptionService";
 import { HomeContentSection } from "@/components/home/homeContentSection";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 
 const Index = ({
   data,
@@ -23,7 +23,7 @@ const Index = ({
   shapeProducts,
   dataBoxByMaterial
 }: any) => {
-  const router = useRouter();
+
   return (
     <>
       <NextSeo
@@ -41,13 +41,13 @@ const Index = ({
       />
 
       <div className="relative p-0 m-0 w-full h-full">
-        <button
-          onClick={() => router.push("/contact-us")}
+        <Link
+        href="/contact-us"
           className="greenBg text-white w-36 text-xs py-1 -rotate-90 z-20 rounded-tl-sm rounded-tr-sm"
           style={{ position: "fixed", right: "-3.7rem", top: "20rem" }}
         >
           Request for call
-        </button>
+        </Link>
         <Navbar
           data={data}
           boxProducts={boxProducts}

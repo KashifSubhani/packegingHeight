@@ -1,12 +1,12 @@
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
 import { Container, useMediaQuery } from "@mui/material";
-import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
+import Link from "next/link";
 
 const Index = ({ data, boxProducts, shapeProducts }: any) => {
   const matches = useMediaQuery("(max-width:640px)");
-  const router = useRouter();
+
   return (
     <div>
       <Navbar
@@ -32,12 +32,12 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
               temporarily unavailable.
             </p>
             <div className="flex justify-center w-full mt-8">
-              <button
-                onClick={() => router.push("/")}
-                className="uppercase text-sm w-52 py-2 hover:scale-95 duration-300 greenBg text-white fw_400 rounded-full shadow-xl mx-auto"
+              <Link
+                href="/"
+                className="uppercase text-sm w-52 py-2 hover:scale-95 duration-300 greenBg text-white fw_400 rounded-full shadow-xl mx-auto text-center"
               >
                 Got to HomePage
-              </button>
+              </Link>
             </div>
           </div>
         </Container>

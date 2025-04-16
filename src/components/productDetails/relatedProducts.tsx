@@ -1,9 +1,9 @@
 import { Container } from "@mui/material";
 import { getImg } from "@/services/descriptionService";
-import { useRouter } from "next/router";
 import { getSlug } from "@/services/categoriesService";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from "next/link";
 
 const responsive = {
   superLargeDesktop: {
@@ -26,7 +26,7 @@ const responsive = {
 };
 
 export const RelatedProducts = (props: any) => {
-  const router = useRouter();
+
   return (
     props.product &&
     props.product.relatedProducts &&
@@ -39,10 +39,10 @@ export const RelatedProducts = (props: any) => {
           <div className="mt-10">
             <Carousel responsive={responsive}>
               {props.product.relatedProducts.map((data: any, index: any) => (
-                <div
+                <Link
                   key={index + 1}
-                  onClick={() => router.push("/" + getSlug(data.slug))}
-                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2"
+                  href={`/${getSlug(data.slug)}`}
+                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2 text-[#606062]"
                 >
                   <div
                     className="w-full rounded-md h-72 p-3 flex items-center justify-center overflow-hidden"
@@ -58,7 +58,7 @@ export const RelatedProducts = (props: any) => {
                       )}
                   </div>
                   <p className="text-base fw_400 mt-1">{data.name}</p>
-                </div>
+                </Link>
               ))}
             </Carousel>
           </div>

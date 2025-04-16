@@ -1,9 +1,9 @@
 import { Container, useMediaQuery } from "@mui/material";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 const NotFoundComp = (props: any) => {
   const matches = useMediaQuery("(max-width:640px)");
-  const router = useRouter();
+
   return (
     <Container maxWidth="lg">
       <div className="py-20">
@@ -15,12 +15,12 @@ const NotFoundComp = (props: any) => {
         </h1>
         <p className="text-base leading-5 mt-5 text-center">{props.desc}</p>
         <div className="flex justify-center w-full mt-8">
-          <button
-            onClick={() => router.push("/")}
-            className="uppercase text-sm w-52 py-2 hover:scale-95 duration-300 greenBg text-white fw_400 rounded-full shadow-xl mx-auto"
+          <Link
+          href="/"
+            className="uppercase text-sm w-52 py-2 hover:scale-95 duration-300 greenBg text-white fw_400 rounded-full shadow-xl mx-auto text-center"
           >
             Got to HomePage
-          </button>
+          </Link>
         </div>
       </div>
     </Container>

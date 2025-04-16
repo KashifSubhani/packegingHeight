@@ -1,11 +1,10 @@
 import { PortableText } from "@portabletext/react";
 import { getImg } from "@/services/descriptionService";
 import { getSlug } from "@/services/categoriesService";
-import { useRouter } from "next/router";
 import BlogAuthor from "./blog-author";
+import Link from "next/link";
 
 export const BlogCard = (props: any) => {
-  const router = useRouter();
 
   const block = {
     h1: ({ children }: any) => (
@@ -29,9 +28,8 @@ export const BlogCard = (props: any) => {
   };
   return (
     props.blog && (
-      <div
-        onClick={() => router.push("/blog/" + getSlug(props.blog.slug))}
-        className="rounded-md cursor-pointer overflow-hidden w-full"
+      <Link  href={`/blog/${getSlug(props.blog.slug)}`}
+        className="rounded-md cursor-pointer overflow-hidden w-full text-[#606062]"
         style={{ background: "#F5F5F5" }}
       >
         <div className="h-40 sm:h-60 xl:h-80">
@@ -56,7 +54,7 @@ export const BlogCard = (props: any) => {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     )
   );
 };

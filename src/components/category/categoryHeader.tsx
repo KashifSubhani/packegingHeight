@@ -1,23 +1,22 @@
 import { Container } from "@mui/material";
 import { GetQouteForm2 } from "./subcomponents/getQouteForm2";
-import { useRouter } from "next/router";
 import { getImg } from "@/services/descriptionService";
+import Link from "next/link";
 
 export const CategoryHeader = (props: any) => {
-  const router = useRouter();
+
   return (
     props.category && (
       <Container maxWidth={"lg"}>
         <div className="flex flex-col md:flex-row gap-y-10 md:items-end justify-between py-10 md:gap-x-10">
           <div style={{ maxWidth: "680px" }}>
             <span className="text-xs greenText">
-              <button
-                className="outline-none shadow-none"
-                onClick={() => router.push("/")}
+              <Link href="/"
+                className="outline-none shadow-none text-[#606062]"
               >
                 Home
-              </button>{" "}
-              /<span className="text-zinc-600"> {router.query.url}</span>
+              </Link>{" "}
+              /<span className="text-zinc-600"> {props.category.name}</span>
             </span>
             <h1 className="text-4xl fw_600 mt-3">{props.category.name}</h1>
             <p className="text-sm mb-4 mt-3">{props.category.description}</p>

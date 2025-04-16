@@ -4,11 +4,9 @@ import blackFacebook from "../../static/blackFacebook.svg";
 import blackIinkedin from "../../static/blackIinkedin.svg";
 import blackTwitter from "../../static/blackTwitter.svg";
 import blackYoutube from "../../static/blackYoutube.svg";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export const FollowUS = () => {
-  const router = useRouter();
   return (
     <div className="w-full ">
       <h1 className="fw_600 text-2xl primaryText text-[#6fc957]">Follow Us:</h1>
@@ -59,19 +57,17 @@ export const FollowUS = () => {
             style={{ fontSize: "10px" }}
           >
             By submitting this form you agree to our{" "}
-            <button
-              className="underline"
-              onClick={() => router.push("/terms-&-conditions")}
+            <Link href="/terms-&-conditions"
+              className="underline text-[#606062]"
             >
               Terms of Service
-            </button>{" "}
+            </Link>{" "}
             and{" "}
-            <button
-              className="underline"
-              onClick={() => router.push("/privacy-policy")}
+            <Link href="/privacy-policy"
+              className="underline text-[#606062]"
             >
               Privacy Policy
-            </button>
+            </Link>
             .
           </p>
         </div>
