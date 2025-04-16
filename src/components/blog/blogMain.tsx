@@ -4,10 +4,9 @@ import moment from "moment";
 import { PortableText } from "@portabletext/react";
 import { getImg } from "@/services/descriptionService";
 import { getSlug } from "@/services/categoriesService";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const BlogMain = (props: any) => {
-  const router = useRouter();
   const [visibleBlogs, setVisibleBlogs] = useState(8); // Track how many blogs are displayed
 
   const loadMoreBlogs = () => {
@@ -39,22 +38,22 @@ export const BlogMain = (props: any) => {
 
   return props.blogs && props.blogs.length > 0 ? (
     <div>
+      <Link href={`/blog/${getSlug(props.blogs[0].slug)}`}>
       <img
-        onClick={() => router.push("/blog/" + getSlug(props.blogs[0].slug))}
         src={getImg(props.blogs[0].imageWithAlt).url}
         alt={getImg(props.blogs[0].imageWithAlt).alt}
         style={{ objectFit: "cover" }}
         className="w-full h-full cursor-pointer"
       />
+      </Link>
       <div className="bg-[#f5f5f5] p-5 rounded-b">
 
 
-        <p
-          className="primaryText fw_600 text-2xl mt-3 cursor-pointer"
-          onClick={() => router.push("/blog/" + getSlug(props.blogs[0].slug))}
-        >
+        <Link 
+          className="text-[#606062] fw_600 text-2xl mt-3 cursor-pointer"
+          href={`/blog/${getSlug(props.blogs[0].slug)}`}>
           {props.blogs[0].name}
-        </p>
+        </Link>
         <div className="flex items-center gap-x-3 mt-5">
           <img
             src={getImg(props.blogs[0].userImage).url}

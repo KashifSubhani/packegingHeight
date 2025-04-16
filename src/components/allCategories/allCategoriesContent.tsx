@@ -1,19 +1,18 @@
 import { getSlug } from "@/services/categoriesService";
 import { getIcon } from "@/services/descriptionService";
 import { Container } from "@mui/material";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const AllCategoriesContent = (props: any) => {
-  const router = useRouter();
   return (
     <Container maxWidth="lg">
       {props.data && props.data.length > 0 ? (
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 pb-14">
           {props.data.map((category: any, index: any) => (
-            <div
-              onClick={() => router.push(`/category/${getSlug(category.slug)}`)}
+            <Link 
+            href={`/category/${getSlug(category.slug)}`}
               key={index + 1}
-              className="flex flex-col items-center justify-center gap-x-3 cursor-pointer hover:font-bold hover:text-black rounded-lg shadow-md hover:shadow-lg px-3 h-40 border"
+              className="text-[#606062] flex flex-col items-center justify-center gap-x-3 cursor-pointer hover:font-bold hover:text-black rounded-lg shadow-md hover:shadow-lg px-3 h-40 border"
             >
               <div>
                 <img
@@ -26,7 +25,7 @@ export const AllCategoriesContent = (props: any) => {
               <h2 className="text-sm md:text-base fw_400 text-center">
                 {category.name}
               </h2>
-            </div>
+            </Link>
           ))}
         </div>
       ) : (

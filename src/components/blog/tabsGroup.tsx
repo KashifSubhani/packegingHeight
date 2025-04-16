@@ -27,7 +27,7 @@ export const TabsGroup = (props: any) => {
           key={ind + 1}
           onClick={() => handleClicked(category)}
           className={`${
-            selected === category ? "primaryBg text-white" : "bg-zinc-200"
+            selected === category ? "bg-[#6fc957] text-white" : "bg-zinc-200"
           } rounded-lg py-2 px-4 text-sm sm:text-base`}
         >
           {category}

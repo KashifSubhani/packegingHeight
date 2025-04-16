@@ -1,9 +1,8 @@
 import { getSlug } from "@/services/categoriesService";
 import { getImg } from "@/services/descriptionService";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const PopularPosts = (props: any) => {
-  const router = useRouter();
   return (
     props.blogs &&
     props.blogs.length > 0 && (
@@ -14,10 +13,10 @@ export const PopularPosts = (props: any) => {
           className="w-full grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col gap-x-4 lg:gap-x-0 gap-y-4 p-3 mt-3 rounded-xl"
         >
           {props.blogs.map((item: any, ind: any) => (
-            <div
-              onClick={() => router.push("/blog/" + getSlug(item.slug))}
+            <Link
+              href={`/blog/${getSlug(item.slug)}`}
               key={ind}
-              className="flex items-center gap-x-5 bg-white rounded-xl p-4"
+              className="text-[#606062] flex items-center gap-x-5 bg-white rounded-xl p-4"
             >
               <div className="rounded-lg overflow-hidden">
                 <img
@@ -30,7 +29,7 @@ export const PopularPosts = (props: any) => {
               <p className="primaryText2 text-sm md:text-base fw_600">
                 {item.name}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
