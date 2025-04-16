@@ -1,10 +1,8 @@
 "use client";
-
 import { getSlug } from "@/services/categoriesService";
 import { getIcon } from "@/services/descriptionService";
 import chev from "../../../../static/chev.svg";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -43,8 +41,7 @@ const IndustriesDropdown = (props: any) => {
               </h2>
             </Link>
           ))}
-        <div
-          onClick={() => router.push("/all-categories")}
+        <Link href={`/all-categories`}
           className="flex items-center gap-x-3 cursor-pointer text-black rounded-lg justify-center px-2 h-12 sm:h-14 md:h-16 bg-zinc-100 hover:scale-95 duration-300"
         >
           <h2 className="text-xs sm:text-sm md:text-base fw_600 text-black">
@@ -57,7 +54,7 @@ const IndustriesDropdown = (props: any) => {
             height={16}
             style={{ transform: "rotate(-90deg)" }}
           />
-        </div>
+        </Link>
       </div>
     </div>
   );

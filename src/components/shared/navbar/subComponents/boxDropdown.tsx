@@ -20,7 +20,7 @@ const BoxDropdown = (props: any) => {
           list.length > 0 &&
           list.map((item: any, index: any) => (
             <Link
-              href={props?.basepath ? `${props?.basepath}/${getSlug(item.slug)}` : `/${getSlug(item.slug)}`}
+              href={props?.basepath ? `${props?.basepath}/${item.slug}` : `/${getSlug(item.slug)}`}
               key={index + 1}
               className={`text-[#606062] flex items-center gap-x-3 cursor-pointer hover:font-bold hover:text-black py-3 px-3 ${
                 (index !== list.length - 1) ? "border-b" : ""

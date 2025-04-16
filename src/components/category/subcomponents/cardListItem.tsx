@@ -1,6 +1,5 @@
 import { getSlug } from "@/services/categoriesService";
 import { getImg } from "@/services/descriptionService";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export const CardListItem = (props: any) => {

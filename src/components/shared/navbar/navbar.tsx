@@ -12,8 +12,8 @@ import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
 import BoxDropdown from "./subComponents/boxDropdown";
 import searchIcon from "../../../static/searchIcon.svg";
-import { client } from "@/utils/sanityConfig";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
@@ -24,38 +24,25 @@ export const Navbar = (props: any) => {
   const [showShapeDropdown, setShowShapeDropdown] = useState(false);
   const [fullNav, setFullNav] = useState(true);
   const [searchVal, setSearchVal] = useState("");
-  const [bbm, setBBM] = useState([
+  const pathname = usePathname();
+  const bbm = [
     {
-      slug: {
-        current: "cardboard-boxes",
-      },
+      slug: "cardboard-boxes",
       name: "Cardboard Boxes",
     },
     {
       name: "Rigid Boxes",
-      slug: {
-        current: "rigid-boxes",
-      },
+      slug: "rigid-boxes",
     },
     {
-      slug: {
-        current: "kraft-boxes",
-      },
+      slug: "kraft-boxes",
       name: "Kraft Boxes",
     },
     {
       name: "Corrugated Boxes",
-      slug: {
-        current: "corrugated-boxes",
-      },
+      slug: "corrugated-boxes",
     },
-  ]);
-  const isActive = (p: any) => {
-    if (router.asPath.includes(p)) {
-      return true;
-    }
-    return false;
-  };
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,9 +72,8 @@ export const Navbar = (props: any) => {
 
   return (
     <div
-      className={`pb-3 md:pb-0 pt-3 xl:px-10 sticky duration-300 ${
-        fullNav ? "top-0" : "top-0 md:-top-14"
-      } z-40`}
+      className={`pb-3 md:pb-0 pt-3 xl:px-10 sticky duration-300 ${fullNav ? "top-0" : "top-0 md:-top-14"
+        } z-40`}
       style={{
         background: "#F1F1F2",
         boxShadow: "inset 0px -4px 4px 3px rgba(0, 0, 0, 0.05)",
@@ -95,20 +81,19 @@ export const Navbar = (props: any) => {
     >
       <Container maxWidth={"xl"}>
         <div
-          className={`flex w-full justify-between gap-x-10 ${
-            fullNav ? "" : "md:invisible"
-          }`}
+          className={`flex w-full justify-between gap-x-10 ${fullNav ? "" : "md:invisible"
+            }`}
         >
           <div className="flex items-center gap-x-10 xl:gap-x-20">
-            <Image
-              onClick={() => router.push("/")}
-              src={logo}
-              alt={"logo"}
-              width={130}
-              height={50}
-              className="cursor-pointer"
-              style={{ minWidth: "130" }}
-            />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt={"logo"}
+                width={130}
+                height={50}
+                className="cursor-pointer"
+                style={{ minWidth: "130" }}
+              /></Link>
           </div>
           <button
             onClick={() => setShowNav(true)}
@@ -129,21 +114,22 @@ export const Navbar = (props: any) => {
               <p className="fw_400 whitespace-nowrap text-sm">
                 Talk to our packaging expert
               </p>
-              <a
+              <Link
+                target="_blank"
                 title="Click for call me"
-                href={`tel:+1(307) 429 2922`}
+                href={`tel:+1(307)4292922`}
                 className="greenText fw_400 border-none"
               >
                 +1(307) 429 2922
-              </a>
+              </Link>
             </div>
-            <a
+            <Link target="_blank"
               title="Click for mail me"
               href={`mailto:info@packagingheight.com`}
               className="fw_400 hidden text-sm text-green-300 lg:block lg:text-zinc-700 border-none hover:text-lime-500"
             >
               info@packagingheight.com
-            </a>
+            </Link>
           </div>
         </div>
         <form onSubmit={handleSearch} className="w-full mt-4 block sm:hidden">
@@ -153,9 +139,8 @@ export const Navbar = (props: any) => {
           />
         </form>
         <div
-          className={`mt-2 hidden ${
-            fullNav ? "items-end" : "items-center"
-          } duration-300 justify-between gap-x-5 md:flex relative`}
+          className={`mt-2 hidden ${fullNav ? "items-end" : "items-center"
+            } duration-300 justify-between gap-x-5 md:flex relative`}
         >
           <ul className="flex items-center gap-x-6 lg:gap-x-10 xl:gap-x-14">
             {linksData.map((d: any, ind: any) => (
@@ -166,44 +151,31 @@ export const Navbar = (props: any) => {
                   d.name === "Industries"
                     ? setShowDropdown(true)
                     : d.name === "Box by Material"
-                    ? setShowBoxDropdown(true)
-                    : d.name === "Shape & Styles" && setShowShapeDropdown(true)
+                      ? setShowBoxDropdown(true)
+                      : d.name === "Shape & Styles" && setShowShapeDropdown(true)
                 }
                 onMouseLeave={() => {
                   setShowDropdown(false);
                   setShowBoxDropdown(false);
                   setShowShapeDropdown(false);
                 }}
+
               >
-                <Link href={d.path}
-                  // onClick={() =>
-                  //   d.name === "Industries"
-                  //     ? setShowDropdown(!showDropdown)
-                  //     : d.name === "Box by Material"
-                  //     ? setShowBoxDropdown(!showBoxDropdown)
-                  //     : d.name === "Shape & Styles"
-                  //     ? setShowShapeDropdown(!showShapeDropdown)
-                  //     : router.push(d.path)
-                  // }
-                  className={`text-[#606062] cursor-pointer fw_600 text-xs lg:text-sm whitespace-nowrap flex items-center gap-x-2 ${
-                    d.name !== "Industries" &&
-                    d.name !== "Box by Material" &&
-                    d.name !== "Shape & Styles"
+                <Link href={`${d.path}`}
+                  className={`${pathname === `${d.path}/` ? "activeLink" : "inactiveLink"} text-[#606062] cursor-pointer fw_600 text-xs lg:text-sm whitespace-nowrap flex items-center gap-x-2
+                        ${!["Industries", "Box by Material", "Shape & Styles"].includes(d.name)
                       ? "hover:scale-95 duration-300"
                       : ""
-                  } ${
-                    d.name === "Box by Material" || d.name === "Shape & Styles"
-                      ? "relative"
-                      : ""
-                  } ${isActive(d.active) ? "activeLink" : "inactiveLink"}`}
-                >
+                    }
+                        ${["Box by Material", "Shape & Styles"].includes(d.name) ? "relative" : ""}`} >
                   {d.name}
                   {(d.name === "Industries" ||
                     d.name === "Shape & Styles" ||
                     d.name === "Box by Material") && (
-                    <Image src={chev} alt="" width={14} height={14} />
-                  )}
+                      <Image src={chev} alt="" width={14} height={14} />
+                    )}
                   {showDropdown && d.name === "Industries" && (
+
                     <IndustriesDropdown
                       list={props.data}
                       setShowDropdown={setShowDropdown}
@@ -225,27 +197,24 @@ export const Navbar = (props: any) => {
                 </Link>
               </li>
             ))}
-            <li
-              onClick={() => router.push("/search")}
-              className={`cursor-pointer pb-3 duration-300 hover:scale-105`}
-            >
-              <Image src={searchIcon} alt={"searchIcon"} />
+            <li className="cursor-pointer pb-3 duration-300 hover:scale-105">
+              <Link href="/search">
+                <Image src={searchIcon} alt="searchIcon" />
+              </Link>
             </li>
           </ul>
 
           <div className="hidden items-center gap-x-4 lg:flex lg:gap-x-8 md:pb-3">
-            <button
-              onClick={() => router.push("/request-sample-pack")}
-              className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 lg:w-40 buttonBorderRadius`}
+            <Link href="/request-sample-pack"
+              className={`text-xs fw_600 greenText bg-transparent greenBorder py-2 w-36 lg:w-40 buttonBorderRadius block text-center`}
             >
               Request a sample pack
-            </button>
-            <button
-              onClick={() => router.push("/request-quote")}
-              className="fw_600 greenText greenBorder buttonBorderRadius w-36 bg-transparent py-2 text-xs lg:w-40"
+            </Link>
+            <Link href="/request-quote"
+              className="fw_600 greenText greenBorder buttonBorderRadius w-36 bg-transparent py-2 text-xs lg:w-40 block text-center"
             >
               Get a Free Quote
-            </button>
+            </Link>
           </div>
           <a
             title="Click for mail me"
