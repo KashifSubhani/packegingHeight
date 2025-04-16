@@ -43,6 +43,7 @@ export const Navbar = (props: any) => {
       slug: "corrugated-boxes",
     },
   ];
+  
 
   useEffect(() => {
     const handleScroll = () => {
