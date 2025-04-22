@@ -42,10 +42,10 @@ export const RelatedProducts = (props: any) => {
                 <Link
                   key={index + 1}
                   href={`/${getSlug(data.slug)}`}
-                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-4 text-[#606062]"
+                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer m-4 text-[#606062]"
                 >
                   <div
-                    className="w-full rounded-md h-72 p-4 flex items-center justify-center overflow-hidden"
+                    className="w-full rounded-md h-72 m-4 flex items-center justify-center overflow-hidden"
                     style={{ background: "#eaf0f5" }}
                   >
                     {data.images &&
