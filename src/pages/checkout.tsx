@@ -41,7 +41,7 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
     const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await fetch("https://formspree.io/f/mjvnrldz", {
+            const response = await fetch("https://formspree.io/f/manoqlbd", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
