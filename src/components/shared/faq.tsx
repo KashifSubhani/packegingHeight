@@ -16,7 +16,7 @@ export const Faq = (props: any) => {
           style={{ background: "#F1F8F1" }}
         >
           {props.faqs.map((item: any, ind: any) => (
-            <div className="col-span-12 md:col-span-6 h-max">
+            <div key={ind} className="col-span-12 md:col-span-6 h-max">
               <FaqItem key={ind + 1} item={item} />
             </div>
           ))}

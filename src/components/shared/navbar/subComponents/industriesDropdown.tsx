@@ -10,9 +10,13 @@ const IndustriesDropdown = (props: any) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    let arr = props.list.filter((_d: any, i: any) => i < 10);
-    setList(arr);
-  }, []);
+    if (Array.isArray(props.list)) {
+      let arr = props.list.filter((_d: any, i: any) => i < 10);
+      setList(arr);
+    } else {
+      setList([]);
+    }
+  }, [props.list]);
   return (
     <div
       onMouseEnter={() => props.setShowDropdown(true)}

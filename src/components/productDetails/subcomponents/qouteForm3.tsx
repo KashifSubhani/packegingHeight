@@ -45,11 +45,11 @@ export const QouteForm3 = (props: any) => {
         width: "100%",
         maxWidth: "100%",
       }}
-      className="overflow-hidden mt-5"
+      className="overflow-hidden"
     >
       <form
         onSubmit={sendEmail}
-        className={`grid grid-cols-12 gap-y-6 gap-x-4 lg:gap-6 bg-white`}
+        className={`grid grid-cols-12 gap-y-6 gap-x-4 lg:gap-6 bg-[#f1f1f1] p-5`}
       >
         <div className="col-span-6">
           <input
@@ -58,7 +58,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.name}
             onChange={(e) => onchnage("name", e.target.value)}
             placeholder="Name"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6">
@@ -68,7 +68,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.email}
             onChange={(e) => onchnage("email", e.target.value)}
             placeholder="Email"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6">
@@ -77,7 +77,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
-            className="num_input pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="num_input p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6">
@@ -87,7 +87,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.quantity}
             onChange={(e) => onchnage("quantity", e.target.value)}
             placeholder="Quantity"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6 sm:col-span-4">
@@ -97,7 +97,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.length}
             onChange={(e) => onchnage("length", e.target.value)}
             placeholder="Length"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6 sm:col-span-4">
@@ -107,7 +107,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.width}
             onChange={(e) => onchnage("width", e.target.value)}
             placeholder="Width"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6 sm:col-span-4">
@@ -117,7 +117,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.depth}
             onChange={(e) => onchnage("depth", e.target.value)}
             placeholder="Depth"
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           />
         </div>
         <div className="col-span-6 sm:col-span-4">
@@ -125,7 +125,7 @@ export const QouteForm3 = (props: any) => {
             required
             value={finalData.unit}
             onChange={(e) => onchnage("unit", e.target.value)}
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           >
              <option>Select Unit</option>
              <option>Inches</option>
@@ -138,7 +138,7 @@ export const QouteForm3 = (props: any) => {
             required
             value={finalData.color}
             onChange={(e) => onchnage("color", e.target.value)}
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           >
             <option>Color</option>
             <option>1-Color</option>
@@ -155,7 +155,7 @@ export const QouteForm3 = (props: any) => {
           <select
             value={finalData.stock}
             onChange={(e) => onchnage("stock", e.target.value)}
-            className="pb-1 w-full border-b border-zinc-200 px-0 text-xs lg:text-sm outline-none"
+            className="p-3 w-full border-b border-zinc-200 text-xs lg:text-sm outline-none bg-white"
           >
             <option>Select Stock</option>
             <option>12 PT</option>
@@ -173,7 +173,7 @@ export const QouteForm3 = (props: any) => {
             rows={1}
             value={finalData.message}
             onChange={(e) => onchnage("message", e.target.value)}
-            className="w-full rounded-md border-b border-zinc-200 px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
+            className="w-full rounded-md border-b border-zinc-200 text-xs lg:text-sm outline-none shadow-none p-3 bg-white"
             placeholder="Write your message"
           ></textarea>
         </div>
