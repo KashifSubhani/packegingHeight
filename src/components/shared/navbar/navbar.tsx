@@ -43,7 +43,7 @@ export const Navbar = (props: any) => {
       slug: "corrugated-boxes",
     },
   ];
-  
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +82,7 @@ export const Navbar = (props: any) => {
     >
       <Container maxWidth={"xl"}>
         <div
-          className={`flex w-full justify-between gap-x-10 ${fullNav ? "" : "md:invisible"
+          className={`flex w-full justify-between md:gap-x-10 gap-8 ${fullNav ? "" : "md:invisible"
             }`}
         >
           <div className="flex items-center gap-x-10 xl:gap-x-20">
@@ -96,14 +96,24 @@ export const Navbar = (props: any) => {
                 style={{ minWidth: "130" }}
               /></Link>
           </div>
-          <button
-            onClick={() => setShowNav(true)}
-            className="block text-lg md:hidden"
-          >
-            <div className="h-[1.5px] bg-black w-7" />
-            <div className="h-[1.5px] bg-black w-7 my-2" />
-            <div className="h-[1.5px] bg-black w-7" />
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <Link
+              target="_blank"
+              title="Click for call me"
+              href={`tel:+1(307)4292922`}
+              className="greenText fw_400 border-none text-sm"
+            >
+              +1(307) 429 2922
+            </Link>
+            <button
+              onClick={() => setShowNav(true)}
+              className="block text-lg"
+            >
+              <div className="h-[1.5px] bg-black w-7" />
+              <div className="h-[1.5px] bg-black w-7 my-2" />
+              <div className="h-[1.5px] bg-black w-7" />
+            </button>
+          </div>
           <SmallNav
             show={showNav}
             setShow={setShowNav}

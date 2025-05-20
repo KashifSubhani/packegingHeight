@@ -3,29 +3,30 @@ import React, { useState } from "react";
 import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
 import { StandarSize } from "./subcomponents/standardSizeForm";
+import Link from "next/link";
 
 const DetailsHeader = (props: any) => {
   const matches = useMediaQuery("(max-width:1100px)");
-  const [activeTab, setActiveTab] = useState("standard");
+  const [activeTab, setActiveTab] = useState("quote");
   const tabs = [
-    {
-      id: "standard",
-      title: "Standard Sizes",
-      content: (
-        <div>
-          <p className="text-lg fw_600 mt-8 text-center tracking-wide md:text-left greenBg text-white p-4">
-            Standard Sizes
-          </p>
-          <StandarSize productName={props.product.name} />
-        </div>
-      ),
-    },
+    // {
+    //   id: "standard",
+    //   title: "Standard Sizes",
+    //   content: (
+    //     <div>
+    //       <p className="text-lg fw_600 mt-8 text-center tracking-wide md:text-left greenBg text-white p-4">
+    //         Standard Sizes
+    //       </p>
+    //       <StandarSize productName={props.product.name} />
+    //     </div>
+    //   ),
+    // },
     {
       id: "quote",
       title: "Get Custom Quote",
       content: (
         <div>
-          <p className="text-lg fw_600 mt-8 text-center tracking-wide md:text-left greenBg text-white p-4">
+          <p className="text-lg fw_600 mt-4 text-center tracking-wide md:text-left greenBg text-white p-4">
             Get Custom Quote
           </p>
           <QouteForm3 productName={props.product.name} />
@@ -40,6 +41,27 @@ const DetailsHeader = (props: any) => {
           } gap-y-5 pb-10 pt-6 sm:py-10 md:gap-x-10`}
       >
         <div className="col-span-6">
+          <nav aria-label="breadcrumb" className="w-fit md:mb-16 mb-10">
+            <ol className="flex w-full flex-wrap items-center rounded-md bg-[#F1F1F2] px-4 py-2">
+              <li>
+                <Link href="/" className="text-base font-semibold text-[#606062]">Home</Link>
+                <span className="pointer-events-none mx-2">
+                  /
+                </span>
+              </li>
+              <li>
+                <Link href="/all-products" className="text-base font-semibold text-[#606062]">Products</Link>
+                <span className="pointer-events-none mx-2">
+                  /
+                </span>
+              </li>
+              <li>
+                <span className="text-base font-semibold greenText">
+                  {props.product.name}
+                </span>
+              </li>
+            </ol>
+          </nav>
           {props.product &&
             props.product.images &&
             props.product.images.length > 0 && (
@@ -69,7 +91,7 @@ const DetailsHeader = (props: any) => {
                   <li
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`md:text-base text-sm fw_600 mt-8 text-center md:text-left py-5 border-b-2 cursor-pointer ${activeTab === tab.id
+                    className={`md:text-base text-sm fw_600 text-center md:text-left pb-3 border-b-2 cursor-pointer ${activeTab === tab.id
                       ? "text-[#606062] border-black"
                       : "text-[#606062]/60 border-transparent hover:text-[#606062] hover:border-black"
                       }`}
