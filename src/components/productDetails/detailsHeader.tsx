@@ -2,7 +2,7 @@ import { Container, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
-import { StandarSize } from "./subcomponents/standardSizeForm";
+//import { StandarSize } from "./subcomponents/standardSizeForm";
 import Link from "next/link";
 
 const DetailsHeader = (props: any) => {
@@ -86,7 +86,7 @@ const DetailsHeader = (props: any) => {
             </div>
             <div className="hidden md:block">
               {/* Tab Headers */}
-              <ul className="border-b border-black/15 flex items-center gap-8">
+              {/* <ul className="border-b border-black/15 flex items-center gap-8">
                 {tabs.map((tab) => (
                   <li
                     key={tab.id}
@@ -99,7 +99,7 @@ const DetailsHeader = (props: any) => {
                     {tab.title}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
 
               {/* Tab Content */}
               {tabs.map(
