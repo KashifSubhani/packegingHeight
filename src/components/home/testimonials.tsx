@@ -45,7 +45,7 @@ export const Testimonials = (props: any) => {
           >
             <Carousel responsive={responsive}>
               {props.testimonials.map((dataSet: any, index: any) => (
-                <TestimonialItem dataSet={dataSet} key={index + 1} />
+                <TestimonialItem dataSet={dataSet} key={index} ids={index + 1} />
               ))}
             </Carousel>
           </div>

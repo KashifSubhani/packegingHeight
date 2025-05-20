@@ -4,7 +4,7 @@ import { ReviewUser } from "./reviewUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-export const TestimonialItem = ({dataSet, key}:any) => {
+export const TestimonialItem = ({dataSet, ids}:any) => {
     const matches = useMediaQuery("(max-width:640px)");
     const [tab, setTab] = useState(dataSet[0].reviewerName);
     const getReview: any = (dataSet: any) => {
@@ -12,7 +12,7 @@ export const TestimonialItem = ({dataSet, key}:any) => {
     };
   return (
     <div
-      key={key}
+      key={ids}
       className="hidden grid-cols-12 gap-y-14 sm:grid sm:gap-x-10 sm:gap-y-0 lg:gap-x-20 p-8 sm:py-0 md:px-14"
       style={{ height: matches ? "max-content" : "30rem" }}
     >
