@@ -13,7 +13,7 @@ export const SmallNav = (props: any) => {
       className={`fixed h-full w-full z-50 left-0 right-0 flex flex-col gap-y-14 items-center justify-center ${props.show ? "top-0" : "-top-full"
         } duration-300`}
     >
-      <button
+      <button aria-label="Open Menu"
         onClick={() => props.setShow(false)}
         className="absolute top-5 right-5 text-2xl mt-5"
       >
